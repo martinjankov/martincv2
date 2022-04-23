@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "hero-home-sections.css",
+	"sources": [
+		"../../../sass/guttenberg-blocks/hero-home-sections.scss"
+	],
+	"names": [],
+	"mappings": "AAAA,AAAA,kBAAkB,CAAC;CAClB,UAAU,EAAE,kBAAkB;CAC9B"
+}

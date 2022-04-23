@@ -1,0 +1,32 @@
+{
+  "name": "martincv",
+  "version": "1.0.0",
+  "description": "Theme for MartinCV",
+  "author": "MartinCV",
+  "license": "GPL-3.0-or-later",
+  "keywords": [
+    "WordPress",
+    "Theme"
+  ],
+  "homepage": "https://www.martincv.com",
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  },
+  "rtlcssConfig": {
+    "options": {
+      "autoRename": false,
+      "autoRenameStrict": false,
+      "blacklist": {},
+      "clean": true,
+      "greedy": false,
+      "processUrls": false,
+      "stringMap": []
+    },
+    "plugins": [],
+    "map": false
+  },
+  "scripts": {
+    "watch": "node-sass assets/sass/ -o ./assets/public/css/ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
+    "compile:css": "node-sass assets/sass/ -o ./assets/public/css/"
+  }
+}
