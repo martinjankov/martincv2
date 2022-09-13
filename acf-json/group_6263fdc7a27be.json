@@ -181,6 +181,90 @@
                     "maxlength": ""
                 }
             ]
+        },
+        {
+            "key": "field_6320884025d04",
+            "label": "Background Image Type",
+            "name": "background_image_type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "textual": "Textual (SVG)",
+                "media": "Media Library"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_632087f481dbd",
+            "label": "Background Image",
+            "name": "background_image_media",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6320884025d04",
+                        "operator": "==",
+                        "value": "media"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_6320887325d05",
+            "label": "Background Image",
+            "name": "background_image_textual",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6320884025d04",
+                        "operator": "==",
+                        "value": "textual"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
         }
     ],
     "location": [
@@ -201,5 +285,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1650720433
+    "modified": 1663076715
 }

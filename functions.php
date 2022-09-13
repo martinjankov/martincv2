@@ -67,10 +67,7 @@ function martincv_setup() {
 	add_theme_support( 'title-tag' );
 
 	register_nav_menu( 'primary', esc_html__( 'Main Menu', 'martincv' ) );
-	register_nav_menu( 'header-top', esc_html__( 'Header Top Menu', 'martincv' ) );
 	register_nav_menu( 'footer', esc_html__( 'Footer Menu', 'martincv' ) );
-	register_nav_menu( 'footer-secondary', esc_html__( 'Footer Secondary Menu', 'martincv' ) );
-	register_nav_menu( 'primary-mob', esc_html__( 'Main Menu for Mobile', 'martincv' ) );
 
 	/* This theme uses a custom image size for featured images, displayed on "standard" posts. */
 	add_theme_support( 'post-thumbnails' );
