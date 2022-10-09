@@ -1,0 +1,48 @@
+.martincv-hero-home {
+	background: rgba(0, 0, 0, 0.9);
+	background-size: cover;
+	background-position: center;
+	color: #ffffff;
+	position: relative;
+	height: 500px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+@media (min-width: 980px) {
+	.martincv-hero-home {
+		height: 680px;
+	}
+}
+
+.martincv-hero-home a {
+	color: #ffffff;
+}
+
+.martincv-hero-home h1, .martincv-hero-home h2 {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.martincv-hero-home h2 {
+	opacity: 0.5;
+	font-size: 16px;
+}
+
+.martincv-hero-home .martincv-hero-home__cta {
+	text-align: center;
+}
+
+.martincv-hero-home .martincv-hero-home__cta a {
+	margin-right: 10px;
+	text-decoration: none;
+}
+
+.martincv-hero-home .martincv-hero-home__link {
+	position: absolute;
+	top: 0;
+}
+
+/*# sourceMappingURL=hero-home-section.css.map */

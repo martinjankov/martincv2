@@ -24,16 +24,50 @@ body, html, p {
 }
 
 header {
+	position: relative;
+	z-index: 1;
+}
+
+@media (min-width: 980px) {
+	header {
+		display: flex;
+		width: calc(100% - 100px);
+		background: transparent;
+		justify-content: space-between;
+		padding: 0 50px;
+	}
+}
+
+header .martincv-header__wrapper {
 	position: absolute;
-	width: calc(100% - 100px);
-	background-color: #282828;
+	background: transparent;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 50px;
+	width: calc(100% - 20px);
+	padding: 10px;
+	top: 0;
+	height: 50px;
 }
 
-header .martincv-logo .martincv-logo__dot {
+header .martincv-header__wrapper.menu-open {
+	background: rgba(40, 40, 40, 0.5);
+}
+
+@media (min-width: 980px) {
+	header .martincv-header__wrapper {
+		padding: 0;
+		width: auto;
+		position: initial;
+		height: auto;
+	}
+}
+
+header .martincv-header__wrapper .martincv-logo {
+	line-height: 0;
+}
+
+header .martincv-header__wrapper .martincv-logo .martincv-logo__dot {
 	width: 6px;
 	height: 6px;
 	border-radius: 50%;
@@ -41,17 +75,62 @@ header .martincv-logo .martincv-logo__dot {
 	display: inline-block;
 }
 
+header .martincv-header__wrapper .martincv-mobile-nav {
+	line-height: 0;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+@media (min-width: 980px) {
+	header .martincv-header__wrapper .martincv-mobile-nav {
+		display: none;
+	}
+}
+
 header nav {
-	margin-right: 25%;
+	display: none;
+	background: rgba(40, 40, 40, 0.5);
+	width: 100%;
+	top: 70px;
+	position: absolute;
+	text-align: center;
+}
+
+@media (min-width: 980px) {
+	header nav {
+		background: transparent;
+		display: block;
+		width: auto;
+		position: initial;
+		top: auto;
+		text-align: left;
+	}
 }
 
 header nav ul {
 	list-style: none;
 	display: flex;
+	flex-direction: column;
 }
 
-header nav ul li:not(:last-child) {
-	margin-right: 20px;
+@media (min-width: 980px) {
+	header nav ul {
+		flex-direction: row;
+	}
+}
+
+header nav ul li {
+	padding-bottom: 5px;
+}
+
+@media (min-width: 980px) {
+	header nav ul li {
+		padding: 0;
+	}
+	header nav ul li:not(:last-child) {
+		margin-right: 20px;
+	}
 }
 
 header nav ul li a {
@@ -60,6 +139,13 @@ header nav ul li a {
 	font-size: 18px;
 	line-height: 27px;
 	text-transform: lowercase;
+}
+
+@media (min-width: 980px) {
+	main {
+		padding-top: 0;
+		margin-top: -60px;
+	}
 }
 
 /*# sourceMappingURL=common.css.map */

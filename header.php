@@ -22,9 +22,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 <body>
 	<?php wp_body_open(); ?>
 	<header>
-		<div class="martincv-logo">
-			<?php echo wp_kses_post( get_custom_logo() ); ?>
-			<span class="martincv-logo__dot"></span>
+		<div class="martincv-header__wrapper">
+			<div class="martincv-logo">
+				<?php echo wp_kses_post( get_custom_logo() ); ?>
+				<span class="martincv-logo__dot"></span>
+			</div>
+			<button type="button" class="martincv-mobile-nav">
+				<img src="<?php echo esc_url( MARTINCV_THEME_URL . 'assets/public/images/menu-icon.svg' ); ?>" alt="<?php esc_html_e( 'Menu', 'martincv' ); ?>">
+			</button>
 		</div>
 		<nav>
 			<?php

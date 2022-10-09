@@ -76,7 +76,8 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_6263fe1707eb1"
                 },
                 {
                     "key": "field_6263fe3c07eb3",
@@ -95,7 +96,8 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_6263fe1707eb1"
                 },
                 {
                     "key": "field_6263fe4107eb4",
@@ -119,9 +121,11 @@
                     "max_width": "",
                     "max_height": "",
                     "max_size": "",
-                    "mime_types": ""
+                    "mime_types": "",
+                    "parent_repeater": "field_6263fe1707eb1"
                 }
-            ]
+            ],
+            "rows_per_page": 20
         },
         {
             "key": "field_6263fe8407eb5",
@@ -159,7 +163,8 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_6263fe8407eb5"
                 },
                 {
                     "key": "field_6263fea407eb7",
@@ -178,9 +183,11 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "maxlength": ""
+                    "maxlength": "",
+                    "parent_repeater": "field_6263fe8407eb5"
                 }
-            ]
+            ],
+            "rows_per_page": 20
         },
         {
             "key": "field_6320884025d04",
@@ -228,8 +235,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "id",
-            "preview_size": "medium",
+            "return_format": "url",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -237,7 +243,8 @@
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": ""
+            "mime_types": "",
+            "preview_size": "medium"
         },
         {
             "key": "field_6320887325d05",
@@ -285,5 +292,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1663076715
+    "modified": 1665301825
 }

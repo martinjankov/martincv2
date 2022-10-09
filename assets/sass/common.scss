@@ -1,3 +1,5 @@
+@import './variables';
+
 @font-face {
 	font-family: 'Popins';
 	src: URL('../fonts/Poppins-Regular.ttf') format('truetype');
@@ -22,33 +24,96 @@ body, html, p {
 }
 
 header {
-	position: absolute;
-	width: calc(100% - 100px);
-	background-color: #282828;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0 50px;
-	.martincv-logo {
-		.martincv-logo__dot {
-			width: 6px;
-			height: 6px;
-			border-radius: 50%;
-			background: #2B98D0;
-			display: inline-block;
+	position: relative;
+	z-index: 1;
+	@media(min-width: $deskop_min_size) {
+		display: flex;
+		width: calc(100% - 100px);
+		background: transparent;
+		justify-content: space-between;
+		padding: 0 50px;
+	}
+
+	.martincv-header__wrapper {
+		position: absolute;
+		background: transparent;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: calc(100% - 20px);
+		padding: 10px;
+		top: 0;
+		height: 50px;
+
+		&.menu-open {
+			background: rgba($main_color, .5);
+		}
+
+		@media(min-width: $deskop_min_size) {
+			padding: 0;
+			width: auto;
+			position: initial;
+			height: auto;
+		}
+
+		.martincv-logo {
+			line-height: 0;
+			.martincv-logo__dot {
+				width: 6px;
+				height: 6px;
+				border-radius: 50%;
+				background: #2B98D0;
+				display: inline-block;
+			}
+		}
+
+		.martincv-mobile-nav {
+			line-height: 0;
+			background: none;
+			border: none;
+			cursor: pointer;
+
+			@media ( min-width: $deskop_min_size ) {
+				display: none;
+			}
 		}
 	}
 
 	nav {
-		margin-right: 25%;
+		display: none;
+		background: rgba($main_color, .5);
+		width: 100%;
+		top: 70px;
+		position: absolute;
+		text-align: center;
+
+		@media (min-width: $deskop_min_size) {
+			background: transparent;
+			display: block;
+			width: auto;
+			position: initial;
+			top: auto;
+			text-align: left;
+		}
+
 		ul {
 			list-style: none;
 			display: flex;
+			flex-direction: column;
+
+			@media(min-width: $deskop_min_size) {
+				flex-direction: row;
+			}
 
 			li {
-				&:not(:last-child) {
-					margin-right: 20px;
+				padding-bottom: 5px;
+				@media (min-width: $deskop_min_size) {
+					padding: 0;
+					&:not(:last-child) {
+						margin-right: 20px;
+					}
 				}
+
 				a {
 					text-decoration: none;
 					color: #ffffff;
@@ -58,5 +123,14 @@ header {
 				}
 			}
 		}
+	}
+}
+
+main {
+	// padding-top: 70px;
+
+	@media (min-width: 980px) {
+		padding-top: 0;
+		margin-top: -60px;
 	}
 }
