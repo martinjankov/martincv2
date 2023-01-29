@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<div class="martincv-hero-home" <?php echo wp_kses_post( 'style="background-image: url(' . get_field( 'background_image_media' ) . ')"' ); ?>>
+<section class="martincv-hero-home" <?php echo wp_kses_post( 'style="background-image: url(' . get_field( 'background_image_media' ) . ')"' ); ?>>
 	<?php if ( have_rows( 'side_buttons' ) ) : ?>
 		<?php
 		while ( have_rows( 'side_buttons' ) ) :
@@ -41,4 +41,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 		<?php endif; ?>
 	</div>
-</div>
+</section>

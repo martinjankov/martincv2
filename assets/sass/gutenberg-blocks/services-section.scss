@@ -1,0 +1,46 @@
+@import '../variables';
+
+.martincv-services {
+	background: rgba(0, 0, 0, 0.9);
+	color: #ffffff;
+	text-align: center;
+	box-sizing: border-box;
+
+	.martincv-services__list {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+
+		@media (min-width: $deskop_xs_min_size) {
+			padding: 45px 0;
+		}
+
+		@media (min-width: $deskop_sm_min_size) {
+			padding: 45px 60px;
+		}
+
+		@media (min-width: $deskop_m_min_size) {
+			padding: 45px 130px;
+		}
+
+		@media (min-width: $deskop_min_size) {
+			text-align: left;
+			flex-direction: row;
+		}
+
+		.martincv-services__item {
+			flex: 0 0 100%;
+			margin-bottom: 30px;
+
+			@media (min-width: $deskop_sm_min_size ) {
+				&:first-child {
+					flex: 0 0 50%;
+				}
+			}
+
+			@media (min-width: $deskop_xs_min_size) {
+				flex: 0 0 25%;
+			}
+		}
+	}
+}

@@ -1,0 +1,70 @@
+@import '../variables';
+
+.martincv-about {
+	background: rgba(0, 0, 0, 0.9);
+	color: #ffffff;
+	display: flex;
+	flex-direction: column;
+	padding: 30px 15px;
+
+	@media (min-width: $deskop_min_size) {
+		flex-direction: row;
+		padding: 150px 45px;
+	}
+
+	.martincv-about__left {
+		max-width: 100%;
+		display: flex;
+		justify-content: center;
+		margin-bottom: 10px;
+		position: relative;
+
+		@media (min-width: $deskop_min_size) {
+			flex: 0 0 50%;
+			justify-content: flex-end;
+			padding-right: 100px;
+			box-sizing: border-box;
+		}
+
+		img {
+			width: 90%;
+			border-radius: 30px;
+			position: relative;
+			z-index: 2;
+
+			@media (min-width: $deskop_min_size) {
+				max-width: 575px;
+			}
+
+			@media (min-width: $deskop_xs_min_size) {
+				height: 50%;
+			}
+
+			@media (min-width: $deskop_sm_min_size) {
+				height: auto;
+			}
+		}
+	}
+
+	.martincv-about__right {
+		text-align: center;
+
+		@media (min-width: $deskop_min_size) {
+			text-align: left;
+		}
+
+		.martincv-about__description {
+			p {
+				padding-bottom: 15px;
+				line-height: 30px;
+				opacity: 50%;
+
+				@media (min-width: $deskop_min_size) {
+					max-width: 600px;
+					font-size: 20px;
+					font-weight: 300;
+				}
+			}
+		}
+	}
+}
