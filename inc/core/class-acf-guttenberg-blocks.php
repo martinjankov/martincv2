@@ -75,6 +75,32 @@ class ACF_Guttenberg_Blocks {
 				'keywords'        => array( 'services' ),
 			)
 		);
+
+		acf_register_block(
+			array(
+				'name'            => 'experience-section',
+				'title'           => __( 'Experience Section', 'martincv' ),
+				'description'     => __( 'A custom block.', 'martincv' ),
+				'render_callback' => array( $this, 'render_block' ),
+				'enqueue_assets'  => array( $this, 'load_assets' ),
+				'category'        => 'formatting',
+				'icon'            => 'cogs',
+				'keywords'        => array( 'experience' ),
+			)
+		);
+
+		acf_register_block(
+			array(
+				'name'            => 'portfolio-section',
+				'title'           => __( 'Portfolio Section', 'martincv' ),
+				'description'     => __( 'A custom block.', 'martincv' ),
+				'render_callback' => array( $this, 'render_block' ),
+				'enqueue_assets'  => array( $this, 'load_assets' ),
+				'category'        => 'formatting',
+				'icon'            => 'cogs',
+				'keywords'        => array( 'portfolio' ),
+			)
+		);
 	}
 
 	/**

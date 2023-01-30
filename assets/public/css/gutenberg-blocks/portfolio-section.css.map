@@ -1,0 +1,10 @@
+{
+	"version": 3,
+	"file": "portfolio-section.css",
+	"sources": [
+		"../../../sass/gutenberg-blocks/portfolio-section.scss",
+		"../../../sass/_variables.scss"
+	],
+	"names": [],
+	"mappings": "AAEA,AAAA,mBAAmB,CAAA;CAClB,UAAU,EAAE,OAAO;CACnB,KAAK,EAAE,OAAO;CACd"
+}
