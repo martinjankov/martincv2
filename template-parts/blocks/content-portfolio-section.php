@@ -40,11 +40,11 @@ $projects   = $project_obj->get();
 		foreach ( $projects as $project ) :
 			$backgroud_img = $project['image'];
 			?>
-			<div class="martincv-portfolio__item" <?php echo $backgroud_img ? 'style="background-image: url(' . esc_url( $backgroud_img ) . ')"' : ''; ?>>
-				<div class="martincv-portfolio__item-meta <?php echo esc_attr( implode( ' ', $project['categories_slugs'] ) ); ?>">
-					<h3><a href="<?php echo esc_html( $project['web_link'] ); ?>" target="_blank"><?php echo esc_html( $project['web_link'] ); ?></a></h3>
-					<div class="martincv-portfolio__item-categories"><?php echo esc_html( $project['categories'] ); ?></h3>
-					<div class="martincv-portfolio__item-technologies"><?php echo esc_html( $project['technologies'] ); ?></h3>
+			<div class="martincv-portfolio__item <?php echo esc_attr( implode( ' ', $project['categories_slugs'] ) ); ?>" <?php echo $backgroud_img ? 'style="background-image: url(' . esc_url( $backgroud_img ) . ')"' : ''; ?>>
+				<div class="martincv-portfolio__item-meta">
+					<h3><a href="<?php echo esc_html( $project['web_link'] ); ?>" target="_blank"><?php echo esc_html( $project['title'] ); ?></a></h3>
+					<div class="martincv-portfolio__item-short-desc"><?php echo wp_kses_post( $project['short_description'] ); ?></div>
+					<div class="martincv-portfolio__item-technologies"><?php echo esc_html( implode( ', ', wp_list_pluck( $project['technologies'], 'name' ) ) ); ?></div>
 					<div class="martincv-portfolio__item-copyright"><?php echo wp_kses_post( $project['copyright'] ); ?></div>
 				</div>
 			</div>

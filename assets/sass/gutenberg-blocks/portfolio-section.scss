@@ -3,4 +3,124 @@
 .martincv-portfolio{
 	background: #202020;
 	color: #ffffff;
+	padding: 20px 0;
+
+	@media (min-width: $deskop_min_size) {
+		display: flex;
+		padding: 45px 150px;
+	}
+
+	.martincv-portfolio__categories {
+		text-align: center;
+
+		@media (min-width: $deskop_min_size) {
+			text-align: left;
+			flex: 0 0 20%;
+		}
+
+		ul {
+			list-style: none;
+			padding: 0;
+
+			li {
+				text-transform: lowercase;
+				margin-bottom: 15px;
+				cursor: pointer;
+
+				&.active, &:hover {
+					color: $secondary-color;
+				}
+			}
+		}
+	}
+
+	.martincv-portfolio__projects {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+
+		@media (min-width: $deskop_min_size) {
+			flex-direction: row;
+			flex-wrap: wrap;
+			flex: 0 0 80%;
+		}
+
+		.martincv-portfolio__item {
+			height: 450px;
+			background-position: left;
+			background-size: cover;
+			background-repeat: no-repeat;
+			position: relative;
+			cursor: pointer;
+			width: 360px;
+			margin: 0 auto;
+
+			@media (min-width: $deskop_min_size) {
+				height: 400px;
+				width: unset;
+				flex: 0 0 305px;
+				margin: unset;
+
+				&:hover {
+					.martincv-portfolio__item-meta {
+						display: flex;
+					}
+				}
+			}
+
+			.martincv-portfolio__item-meta {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				background-color: rgba(#202020, 0.8);
+				text-transform: lowercase;
+				box-sizing: border-box;
+				padding: 5px 20px;
+				display: flex;
+				justify-content: flex-end;
+				flex-direction: column;
+
+				@media (min-width: $deskop_min_size) {
+					display: none;
+					background-color: rgba($secondary-color, 0.9);
+				}
+
+				h3 {
+					a {
+						font-size: 16px;
+					}
+					text-transform: initial;
+					opacity: 0.9;
+
+					@media (min-width: $deskop_min_size) {
+						opacity: 1;
+					}
+				}
+
+				div, a {
+					font-size: 12px;
+					opacity: 0.9;
+					@media (min-width: $deskop_min_size) {
+						opacity: 1;
+					}
+				}
+
+				.martincv-portfolio__item-short-desc {
+					margin-bottom: 10px;
+					font-size: 14px;
+					text-transform: initial;
+				}
+
+				.martincv-portfolio__item-technologies {
+					margin-bottom: 5px;
+				}
+
+				a {
+					color: #ffffff;
+				}
+			}
+		}
+	}
 }

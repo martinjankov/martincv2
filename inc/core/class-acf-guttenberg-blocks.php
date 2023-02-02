@@ -134,5 +134,15 @@ class ACF_Guttenberg_Blocks {
 			array(),
 			MARTINCV_THEME_VERSION
 		);
+
+		if ( file_exists( MARTINCV_THEME_DIR . 'assets/public/js/gutenberg-blocks/' . $slug . '.js', ) ) {
+			wp_enqueue_script(
+				$slug,
+				MARTINCV_THEME_URL . 'assets/public/js/gutenberg-blocks/' . $slug . '.js',
+				array( 'jquery' ),
+				MARTINCV_THEME_VERSION,
+				true
+			);
+		}
 	}
 }
