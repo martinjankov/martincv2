@@ -101,6 +101,19 @@ class ACF_Guttenberg_Blocks {
 				'keywords'        => array( 'portfolio' ),
 			)
 		);
+
+		acf_register_block(
+			array(
+				'name'            => 'testimonials-section',
+				'title'           => __( 'Testimonials Section', 'martincv' ),
+				'description'     => __( 'A custom block.', 'martincv' ),
+				'render_callback' => array( $this, 'render_block' ),
+				'enqueue_assets'  => array( $this, 'load_assets' ),
+				'category'        => 'formatting',
+				'icon'            => 'cogs',
+				'keywords'        => array( 'portfolio' ),
+			)
+		);
 	}
 
 	/**
