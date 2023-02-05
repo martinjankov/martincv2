@@ -37,8 +37,10 @@ body::-webkit-scrollbar-thumb {
 }
 
 header {
-	position: relative;
-	z-index: 99999;
+	position: fixed;
+	z-index: 999999;
+	top: 0;
+	width: 100%;
 }
 
 @media (min-width: 980px) {
@@ -52,7 +54,7 @@ header {
 }
 
 header .martincv-header__wrapper {
-	position: absolute;
+	position: relative;
 	background: transparent;
 	display: flex;
 	justify-content: space-between;
@@ -64,7 +66,7 @@ header .martincv-header__wrapper {
 }
 
 header .martincv-header__wrapper.menu-open {
-	background: rgba(40, 40, 40, 0.5);
+	background: #191919;
 }
 
 @media (min-width: 980px) {
@@ -103,7 +105,7 @@ header .martincv-header__wrapper .martincv-mobile-nav {
 
 header nav {
 	display: none;
-	background: rgba(40, 40, 40, 0.5);
+	background: #191919;
 	width: 100%;
 	top: 70px;
 	position: absolute;

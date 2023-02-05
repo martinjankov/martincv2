@@ -1,0 +1,137 @@
+.martincv-blog {
+	background: #202020;
+	color: #ffffff;
+	padding: 45px;
+}
+
+@media (min-width: 980px) {
+	.martincv-blog {
+		padding: 45px 150px;
+	}
+}
+
+.martincv-blog h2 {
+	text-align: center;
+}
+
+@media (min-width: 980px) {
+	.martincv-blog h2 {
+		text-align: left;
+	}
+}
+
+.martincv-blog a {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.martincv-blog > a {
+	width: 100%;
+	display: block;
+	text-align: center;
+	margin-top: 15px;
+}
+
+@media (min-width: 980px) {
+	.martincv-blog > a {
+		font-size: 20px;
+		margin-top: 0;
+	}
+}
+
+.martincv-blog > a:hover {
+	color: #2B98D0;
+}
+
+@media (min-width: 980px) {
+	.martincv-blog .martincv-blog__posts {
+		display: flex;
+		gap: 50px;
+		flex-wrap: wrap;
+	}
+}
+
+.martincv-blog .martincv-blog__posts article {
+	background: #282828;
+	border-radius: 20px;
+}
+
+.martincv-blog .martincv-blog__posts article:not(:last-child) {
+	margin-bottom: 50px;
+}
+
+.martincv-blog .martincv-blog__posts article:hover h3 > a {
+	color: #2B98D0;
+}
+
+@media (min-width: 1024px) {
+	.martincv-blog .martincv-blog__posts article {
+		flex: 1 0 30%;
+		height: 680px;
+		overflow: hidden;
+	}
+}
+
+@media (min-width: 1440px) {
+	.martincv-blog .martincv-blog__posts article {
+		flex: 1 0 30%;
+		height: 650px;
+		overflow: hidden;
+	}
+}
+
+@media (min-width: 1800px) {
+	.martincv-blog .martincv-blog__posts article {
+		flex: 1 0 30%;
+		height: 575px;
+		overflow: hidden;
+	}
+}
+
+.martincv-blog .martincv-blog__posts article img {
+	width: 100%;
+	height: auto;
+	border-radius: 20px 20px 0 0;
+}
+
+@media (min-width: 980px) {
+	.martincv-blog .martincv-blog__posts article img {
+		height: 320px;
+		object-fit: cover;
+	}
+}
+
+.martincv-blog .martincv-blog__posts article .marticv-blog__meta {
+	padding: 15px 35px 35px 35px;
+}
+
+.martincv-blog .martincv-blog__posts article h3 {
+	font-size: 18px;
+	line-height: 26px;
+	margin: 0;
+	padding: 0;
+}
+
+@media (min-width: 1024px) {
+	.martincv-blog .martincv-blog__posts article h3 {
+		font-size: 18px;
+		line-height: 26px;
+	}
+}
+
+@media (min-width: 1440px) {
+	.martincv-blog .martincv-blog__posts article h3 {
+		font-size: 25px;
+		line-height: 33px;
+	}
+}
+
+.martincv-blog .martincv-blog__posts article .martincv-blog__excerpt {
+	margin-top: 20px;
+	font-weight: 275;
+	font-size: 14px;
+	line-height: 26px;
+	opacity: 0.5;
+}
+
+/*# sourceMappingURL=blog-section.css.map */

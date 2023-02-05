@@ -37,8 +37,10 @@ body::-webkit-scrollbar-thumb {
 }
 
 header {
-	position: relative;
-	z-index: 99999;
+	position: fixed;
+	z-index: 999999;
+	top: 0;
+	width: 100%;
 	@media(min-width: $deskop_min_size) {
 		display: flex;
 		width: calc(100% - 100px);
@@ -48,7 +50,7 @@ header {
 	}
 
 	.martincv-header__wrapper {
-		position: absolute;
+		position: relative;
 		background: transparent;
 		display: flex;
 		justify-content: space-between;
@@ -59,7 +61,7 @@ header {
 		height: 50px;
 
 		&.menu-open {
-			background: rgba($main_color, .5);
+			background: #191919;
 		}
 
 		@media(min-width: $deskop_min_size) {
@@ -94,7 +96,7 @@ header {
 
 	nav {
 		display: none;
-		background: rgba($main_color, .5);
+		background: #191919;
 		width: 100%;
 		top: 70px;
 		position: absolute;

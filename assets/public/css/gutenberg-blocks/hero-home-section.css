@@ -4,11 +4,17 @@
 	background-position: center;
 	color: #ffffff;
 	position: relative;
-	height: 100vh;
+	height: calc(100vh + 50px);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	position: relative;
+}
+
+@media (min-width: 980px) {
+	.martincv-hero-home {
+		top: 50px;
+	}
 }
 
 .martincv-hero-home::after {

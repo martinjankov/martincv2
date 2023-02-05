@@ -6,11 +6,14 @@
 	background-position: center;
 	color: #ffffff;
 	position: relative;
-	height: 100vh;
+	height: calc(100vh + 50px);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	position: relative;
+	@media(min-width: $deskop_min_size) {
+		top: 50px;
+	}
 
 	&::after {
 		content: '';

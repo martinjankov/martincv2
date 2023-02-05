@@ -16,7 +16,7 @@ $testimonials = MartinCV\Testimonial::get_instance()->get();
 
 ?>
 <?php if ( ! empty( $testimonials ) ) : ?>
-<section class="martincv-testimonials" id="testimonials" <?php echo $backgroud_img ? 'style="background-image: url(' . esc_url( $backgroud_img ) . ')"' : ''; ?>>
+<section class="martincv-testimonials" id="testimonial" <?php echo $backgroud_img ? 'style="background-image: url(' . esc_url( $backgroud_img ) . ')"' : ''; ?>>
 	<h2><?php esc_html_e( 'Testimonials', 'martincv' ); ?></h2>
 	<div class="martincv-testimonials__list">
 		<div class="martincv-testimonials__wrapper">
