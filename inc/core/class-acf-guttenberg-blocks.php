@@ -124,7 +124,20 @@ class ACF_Guttenberg_Blocks {
 				'enqueue_assets'  => array( $this, 'load_assets' ),
 				'category'        => 'formatting',
 				'icon'            => 'cogs',
-				'keywords'        => array( 'portfolio' ),
+				'keywords'        => array( 'blog' ),
+			)
+		);
+
+		acf_register_block(
+			array(
+				'name'            => 'contact-section',
+				'title'           => __( 'Contact Section', 'martincv' ),
+				'description'     => __( 'A custom block.', 'martincv' ),
+				'render_callback' => array( $this, 'render_block' ),
+				'enqueue_assets'  => array( $this, 'load_assets' ),
+				'category'        => 'formatting',
+				'icon'            => 'envelope',
+				'keywords'        => array( 'contact' ),
 			)
 		);
 	}

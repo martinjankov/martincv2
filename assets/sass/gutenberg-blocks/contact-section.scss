@@ -1,0 +1,165 @@
+@import '../variables';
+
+.martincv-contact {
+	background: #202020;
+	color: #ffffff;
+	padding: 45px 10px;
+
+	.martincv-contact__heading {
+		text-align: center;
+		margin-bottom: 15px;
+
+		h2 {
+			padding: 0;
+			margin: 0;
+		}
+
+		.martincv-contact__description {
+			opacity: 0.5;
+		}
+	}
+
+	.martincv-contact__form {
+		.wpcf7 form{
+			.col-md-6, .col-md-12 {
+				margin-bottom: 15px;
+			}
+			input, textarea {
+				width: 100%;
+				padding: 0 10px;
+				box-sizing: border-box;
+				border: none;
+				border-radius: 20px;
+				background: #ffffff;
+				color: #343A40;
+				font-weight: 300;
+				font-size: 18px;
+				line-height: 56px;
+
+				&:focus{
+					outline: 2px solid $secondary_color;
+				}
+
+				&::placeholder {
+					color: #343A40;
+					font-family: 'Popins', cursive;
+				}
+			}
+
+			input[type=submit] {
+				background: $secondary_color;
+				text-align: center;
+				text-transform: uppercase;
+				font-weight: 500;
+				color: #ffffff;
+				cursor: pointer;
+
+				&:hover {
+					opacity: 0.9;
+				}
+			}
+		}
+	}
+
+	.martincv-contact__links {
+		text-transform: lowercase;
+		width: 90%;
+		margin: 0 auto;
+		.martincv-contact__link {
+			margin-bottom: 20px;
+			.martincv-contact__link-label {
+				font-weight: 700;
+				font-size: 18px;
+			}
+			a {
+				color: #ffffff;
+				text-decoration: none;
+				font-size: 18px;
+			}
+		}
+	}
+
+	.martincv-contact__social {
+		width: 90%;
+		margin: 30px auto 0 auto;
+		text-align: center;
+
+		a {
+			&:not(:last-child) {
+				margin-right: 10px;
+			}
+		}
+	}
+
+	@media (min-width: $deskop_min_size) {
+		padding: 45px 150px;
+
+		.martincv-contact__area {
+			display: flex;
+			justify-content: space-between;
+			gap: 100px;
+
+			.martincv-contact__heading {
+				text-align: left;
+
+				.martincv-contact__description {
+					font-size: 22px;
+				}
+			}
+
+			.martincv-contact__form {
+				width: 100%;
+
+				.wpcf7 form{
+					.row {
+						display: flex;
+						flex-wrap: wrap;
+						gap: 20px;
+					}
+
+					.col-md-6, .col-md-12 {
+						margin-bottom: 0;
+					}
+
+					.col-md-6 {
+						flex: 1 0 49%;
+					}
+
+					.col-md-12 {
+						flex: 1 0 100%;
+					}
+
+					input, textarea {
+						font-size: 22px;
+						line-height: 60px;
+					}
+				}
+			}
+
+			.martincv-contact__links-area {
+				padding-top: 120px;
+				.martincv-contact__links {
+					width: 100%;
+				}
+				.martincv-contact__link {
+					margin-bottom: 40px;
+					.martincv-contact__link-label {
+						font-weight: 700;
+						font-size: 22px;
+					}
+					a {
+						color: #ffffff;
+						text-decoration: none;
+						font-size: 22px;
+					}
+				}
+			}
+
+			.martincv-contact__social {
+				width: 100%;
+				text-align: left;
+				margin: 0;
+			}
+		}
+	}
+}
