@@ -1,0 +1,15 @@
+@import url("./gutenberg-blocks/blog-section.css");
+main {
+	margin-top: 0;
+	background: #202020;
+	height: 100vh;
+}
+
+main h1 {
+	color: #ffffff;
+	margin: 0;
+	padding: 50px 0;
+	text-align: center;
+}
+
+/*# sourceMappingURL=archive.css.map */

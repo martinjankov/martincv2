@@ -66,7 +66,7 @@
 
 @media (min-width: 1024px) {
 	.martincv-blog .martincv-blog__posts article {
-		flex: 1 0 30%;
+		flex: 0 0 30%;
 		height: 680px;
 		overflow: hidden;
 	}
@@ -74,7 +74,6 @@
 
 @media (min-width: 1440px) {
 	.martincv-blog .martincv-blog__posts article {
-		flex: 1 0 30%;
 		height: 650px;
 		overflow: hidden;
 	}
@@ -82,7 +81,6 @@
 
 @media (min-width: 1800px) {
 	.martincv-blog .martincv-blog__posts article {
-		flex: 1 0 30%;
 		height: 575px;
 		overflow: hidden;
 	}
@@ -132,6 +130,19 @@
 	font-size: 14px;
 	line-height: 26px;
 	opacity: 0.5;
+}
+
+@media (min-width: 980px) {
+	body.blog .martincv-blog {
+		padding: 100px 150px;
+	}
+	body.blog .martincv-blog .martincv-blog__posts {
+		gap: unset;
+		justify-content: space-between;
+	}
+	body.blog .martincv-blog .martincv-blog__posts article {
+		flex: 0 0 32%;
+	}
 }
 
 /*# sourceMappingURL=blog-section.css.map */

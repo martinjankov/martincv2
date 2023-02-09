@@ -1,6 +1,6 @@
 @import '../variables';
 
-.martincv-hero-home{
+.martincv-hero{
 	background: rgba(0, 0, 0, 0.9);
 	background-size: cover;
 	background-position: center;
@@ -35,7 +35,7 @@
 		color: #ffffff;
 	}
 
-	.martin-cv-home__intro {
+	.martin-cv__intro {
 		box-sizing: border-box;
 
 		@media(min-width: $deskop_min_size) {
@@ -75,7 +75,7 @@
 			}
 		}
 
-		.martincv-hero-home__cta {
+		.martincv-hero__cta {
 			text-align: center;
 			display: flex;
 			flex-direction: column;
@@ -91,21 +91,33 @@
 				text-decoration: none;
 				font-size: 24px;
 				margin-bottom: 10px;
+				position: relative;
 
 				&:hover {
-					text-decoration: underline;
+					color: $secondary_color;
+				}
+
+				&:last-child {
+					img {
+						position: relative;
+    					top: 13px;
+					}
 				}
 
 				@media(min-width: $deskop_min_size) {
 					font-size: 23px;
 					line-height: 34px;
 					margin-bottom: 0;
+
+					&:not(:last-child) {
+						margin-right: 35px;
+					}
 				}
 			}
 		}
 	}
 
-	.martincv-hero-home__link {
+	.martincv-hero__link {
 		position: absolute;
 		top: 0;
 
@@ -166,7 +178,7 @@
 
 
 		&:first-child {
-			top: 100px;
+			top: 120px;
 			left: -15px;
 			transform: rotate(90deg);
 
@@ -199,7 +211,7 @@
 			transform: rotate(90deg);
 
 			@media(min-width: $deskop_min_size) {
-				top: 250px;
+				top: 300px;
 				right: -135px;
 			}
 		}

@@ -142,6 +142,9 @@
 		text-decoration: none;
 		font-size: 22px;
 	}
+	.martincv-contact .martincv-contact__area .martincv-contact__links-area .martincv-contact__link a:hover {
+		color: #2B98D0;
+	}
 	.martincv-contact .martincv-contact__area .martincv-contact__social {
 		width: 100%;
 		text-align: left;

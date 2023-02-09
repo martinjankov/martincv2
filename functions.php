@@ -123,5 +123,23 @@ function martincv_frontend_assets() {
 		MARTINCV_THEME_VERSION,
 		true
 	);
+
+	if ( is_archive() ) {
+		wp_enqueue_style(
+			'martincv-archive-blog',
+			MARTINCV_THEME_URL . 'assets/public/css/archive.css',
+			array(),
+			MARTINCV_THEME_VERSION
+		);
+	}
+
+	if ( is_singular( 'post' ) ) {
+		wp_enqueue_style(
+			'martincv-single-blog',
+			MARTINCV_THEME_URL . 'assets/public/css/single.css',
+			array(),
+			MARTINCV_THEME_VERSION
+		);
+	}
 }
 add_action( 'wp_enqueue_scripts', 'martincv_frontend_assets' );

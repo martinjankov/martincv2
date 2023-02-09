@@ -1,0 +1,56 @@
+@import url("./gutenberg-blocks/hero-home-section");
+.martincv-single {
+	background: #202020;
+}
+
+.martincv-single .martincv-hero::after {
+	opacity: .87;
+}
+
+.martincv-single .martincv-single__content {
+	padding: 90px 45px 45px 45px;
+	color: #ffffff;
+	opacity: 0.8;
+	font-size: 16px;
+}
+
+.martincv-single .martincv-single__content p {
+	margin-bottom: 30px;
+}
+
+.martincv-single .martincv-single__content h2 {
+	font-size: 28px;
+	padding: 0;
+	margin: 0 0 5px 0;
+}
+
+.martincv-single .martincv-single__content h3 {
+	font-size: 24px;
+	padding: 0;
+	margin: 0 0 5px 0;
+}
+
+@media (min-width: 1024px) {
+	.martincv-single .martincv-single__content {
+		width: 693px;
+		margin: 0 auto;
+		font-size: 20px;
+	}
+	.martincv-single .martincv-single__content h2 {
+		font-size: 32px;
+	}
+	.martincv-single .martincv-single__content h3 {
+		font-size: 28px;
+	}
+}
+
+.martincv-single .martincv-single__content a {
+	color: #2B98D0;
+	text-decoration: none;
+}
+
+.martincv-single .martincv-single__content a:hover {
+	text-decoration: underline;
+}
+
+/*# sourceMappingURL=single.css.map */

@@ -41,6 +41,7 @@ header {
 	z-index: 999999;
 	top: 0;
 	width: 100%;
+
 	@media(min-width: $deskop_min_size) {
 		display: flex;
 		width: calc(100% - 100px);
@@ -154,14 +155,35 @@ footer {
 	line-height: 54px;
 	height: 55px;
 	width: 100%;
-	text-align: center;
 	color: #ffffff;
-	padding: 0;
+	padding: 0 50px;
 	margin: 0;
+	display: flex;
+	justify-content: space-between;
+	box-sizing: border-box;
+
+	a {
+		color: $secondary_color;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 }
 
 main {
-	// padding-top: 70px;
+	background: #202020;
+	color: #ffffff;
+
+	a {
+		color: $secondary_color;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 
 	@media (min-width: 980px) {
 		padding-top: 0;
@@ -180,8 +202,22 @@ main {
 		padding: 0;
 		margin: 0 0 15px 0;
 
-		@media (min-width: 980px) {
+		@media (min-width: $deskop_min_size) {
 			font-size: 50px;
+		}
+	}
+}
+
+
+body:not(.home):not(.single-post) {
+	header {
+		background: #191919;
+	}
+
+	main {
+		@media (min-width: $deskop_min_size) {
+			padding-top: 0;
+			margin-top: 0;
 		}
 	}
 }

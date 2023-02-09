@@ -5,23 +5,24 @@
 			$("header nav").slideToggle();
 		});
 
-		const heroHeight = $(".martincv-hero-home").outerHeight();
+		const heroHeight = $(".martincv-hero").outerHeight();
 
-		$(window).on("scroll", function () {
-			console.log(document.width);
-			if (window.outerWidth < 540) {
-				if (scrollY > 10) {
-					$("body > header").css({ background: "#191919" });
+		if ($("body.home").length || $("body.single-post").length) {
+			$(window).on("scroll", function () {
+				if (window.outerWidth < 540) {
+					if (scrollY > 10) {
+						$("body > header").css({ background: "#191919" });
+					} else {
+						$("body > header").css({ background: "transparent" });
+					}
 				} else {
-					$("body > header").css({ background: "transparent" });
+					if (scrollY > heroHeight) {
+						$("body > header").css({ background: "#191919" });
+					} else {
+						$("body > header").css({ background: "transparent" });
+					}
 				}
-			} else {
-				if (scrollY > heroHeight) {
-					$("body > header").css({ background: "#191919" });
-				} else {
-					$("body > header").css({ background: "transparent" });
-				}
-			}
-		});
+			});
+		}
 	});
 })(jQuery);

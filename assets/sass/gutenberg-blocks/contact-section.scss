@@ -151,6 +151,10 @@
 						color: #ffffff;
 						text-decoration: none;
 						font-size: 22px;
+
+						&:hover {
+							color: $secondary_color;
+						}
 					}
 				}
 			}

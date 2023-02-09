@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "archive.css",
+	"sources": [
+		"../../sass/archive.scss"
+	],
+	"names": [],
+	"mappings": "AAYC,OAAO,CAAC,0CAAI;AAZb,AAAA,IAAI,CAAC;CACJ,UAAU,EAAE,CAAC;CACb,UAAU,EAAE,OAAO;CACnB,MAAM,EAAE,KAAK;CAUb;;AAbD,AAKC,IALG,CAKH,EAAE,CAAC;CACF,KAAK,EAAE,OAAO;CACd,MAAM,EAAE,CAAC;CACT,OAAO,EAAE,MAAM;CACf,UAAU,EAAE,MAAM;CAClB"
+}

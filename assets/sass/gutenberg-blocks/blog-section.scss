@@ -60,19 +60,17 @@
 			}
 
 			@media (min-width: $deskop_xs_min_size) {
-				flex: 1 0 30%;
+				flex: 0 0 30%;
 				height: 680px;
 				overflow: hidden;
 			}
 
 			@media (min-width: $deskop_m_min_size) {
-				flex: 1 0 30%;
 				height: 650px;
 				overflow: hidden;
 			}
 
 			@media (min-width: $deskop_lg_min_size) {
-				flex: 1 0 30%;
 				height: 575px;
 				overflow: hidden;
 			}
@@ -115,6 +113,21 @@
 				font-size: 14px;
 				line-height: 26px;
 				opacity: 0.5;
+			}
+		}
+	}
+}
+
+@media (min-width: $deskop_min_size) {
+	body.blog .martincv-blog {
+		padding: 100px 150px;
+
+		.martincv-blog__posts {
+			gap: unset;
+			justify-content: space-between;
+
+			article {
+				flex: 0 0 32%;
 			}
 		}
 	}
