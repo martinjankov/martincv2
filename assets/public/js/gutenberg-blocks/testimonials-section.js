@@ -22,43 +22,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	updateSlides();
 
-	leftButton.addEventListener("click", () => {
-		currentSlideIndex =
-			(currentSlideIndex + testimonials.length - 1) % testimonials.length;
-		updateSlides();
-		clearInterval(interval);
-	});
+	if (leftButton) {
+		leftButton.addEventListener("click", () => {
+			currentSlideIndex =
+				(currentSlideIndex + testimonials.length - 1) % testimonials.length;
+			updateSlides();
+			clearInterval(interval);
+		});
+	}
 
-	rightButton.addEventListener("click", () => {
-		currentSlideIndex = (currentSlideIndex + 1) % testimonials.length;
-		updateSlides();
-		clearInterval(interval);
-	});
+	if (rightButton) {
+		rightButton.addEventListener("click", () => {
+			currentSlideIndex = (currentSlideIndex + 1) % testimonials.length;
+			updateSlides();
+			clearInterval(interval);
+		});
+	}
 
 	const startX = 0;
 	let currentX = 0;
 	let isSwiping = false;
 
-	slider.addEventListener("touchstart", (e) => {
-		startX = e.touches[0].pageX;
-		isSwiping = true;
-	});
+	if (slider) {
+		slider.addEventListener("touchstart", (e) => {
+			startX = e.touches[0].pageX;
+			isSwiping = true;
+		});
 
-	slider.addEventListener("touchmove", (e) => {
-		if (!isSwiping) return;
-		currentX = e.touches[0].pageX - startX;
-	});
+		slider.addEventListener("touchmove", (e) => {
+			if (!isSwiping) return;
+			currentX = e.touches[0].pageX - startX;
+		});
 
-	slider.addEventListener("touchend", (e) => {
-		isSwiping = false;
-		if (currentX < -50) {
-			currentSlideIndex = (currentSlideIndex + 1) % testimonials.length;
-		} else if (currentX > 50) {
-			currentSlideIndex =
-				(currentSlideIndex + testimonials.length - 1) % testimonials.length;
-		}
-		updateSlides();
-	});
+		slider.addEventListener("touchend", (e) => {
+			isSwiping = false;
+			if (currentX < -50) {
+				currentSlideIndex = (currentSlideIndex + 1) % testimonials.length;
+			} else if (currentX > 50) {
+				currentSlideIndex =
+					(currentSlideIndex + testimonials.length - 1) % testimonials.length;
+			}
+			updateSlides();
+		});
+	}
 
 	interval = setInterval(() => {
 		currentSlideIndex = (currentSlideIndex + 1) % testimonials.length;

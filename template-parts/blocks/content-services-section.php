@@ -23,7 +23,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 			the_row();
 			?>
 			<div class="martincv-services__item">
-				<img src="<?php echo esc_url( get_sub_field( 'image' ) ); ?>" alt="<?php echo esc_attr( get_sub_field( 'name' ) ); ?>">
+				<img
+					src="<?php echo esc_url( get_sub_field( 'image' ) ); ?>"
+					alt="<?php echo esc_attr( get_sub_field( 'name' ) ); ?>"
+					<?php echo get_sub_field( 'width' ) ? 'width="' . esc_attr( get_sub_field( 'width' ) ) . '"' : ''; ?>
+					<?php echo get_sub_field( 'height' ) ? 'height="' . esc_attr( get_sub_field( 'height' ) ) . '"' : ''; ?>
+					>
 			</div>
 		<?php endwhile; ?>
 	</div>

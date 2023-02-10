@@ -3,7 +3,7 @@
 .martincv-single {
 	background: #202020;
 
-	@import url('./gutenberg-blocks/hero-home-section');
+	@import './gutenberg-blocks/hero-home-section.css';
 
 	.martincv-hero::after {
 		opacity: .87;

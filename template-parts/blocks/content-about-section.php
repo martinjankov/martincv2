@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <section class="martincv-about" id="about">
 	<?php if ( get_field( 'portfolio_photo' ) ) : ?>
 	<div class="martincv-about__left">
-		<img src="<?php echo esc_url( get_field( 'portfolio_photo' ) ); ?>" alt="<?php echo esc_attr( 'Martin' ); ?>">
+		<img src="<?php echo esc_url( get_field( 'portfolio_photo' ) ); ?>" alt="<?php echo esc_attr( 'Martin' ); ?>" width="517" height="517">
 	</div>
 	<?php endif; ?>
 	<div class="martincv-about__right">

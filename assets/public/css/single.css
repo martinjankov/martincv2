@@ -1,4 +1,4 @@
-@import url("./gutenberg-blocks/hero-home-section");
+@import url(./gutenberg-blocks/hero-home-section.css);
 .martincv-single {
 	background: #202020;
 }

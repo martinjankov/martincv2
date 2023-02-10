@@ -19,11 +19,19 @@
 		margin-bottom: 10px;
 		position: relative;
 
+		picture.sp-no-webp.lazyloaded {
+			text-align: center;
+		}
+
 		@media (min-width: $deskop_min_size) {
 			flex: 0 0 50%;
 			justify-content: flex-end;
 			padding-right: 100px;
 			box-sizing: border-box;
+
+			picture.sp-no-webp.lazyloaded {
+				text-align: unset;
+			}
 		}
 
 		img {
@@ -31,6 +39,7 @@
 			border-radius: 30px;
 			position: relative;
 			z-index: 2;
+			height: auto;
 
 			@media (min-width: $deskop_min_size) {
 				max-width: 575px;
