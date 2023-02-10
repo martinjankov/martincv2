@@ -38,9 +38,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php endif; ?>
 			<?php if ( get_field( 'show_social_buttons' ) ) : ?>
 				<div class="martincv-contact__social">
-					<a href="https://www.facebook.com/martincvagency" target="_blank"><img src="<?php echo esc_url( MARTINCV_THEME_URL . 'assets/public/images/facebook-icon.svg' ); ?>" alt="Facebook MartinCV"></a>
-					<a href="https://twitter.com/MartinCVAgency" target="_blank"><img src="<?php echo esc_url( MARTINCV_THEME_URL . 'assets/public/images/twitter-icon.svg' ); ?>" alt="Twitter MartinCV"></a>
-					<a href="https://www.linkedin.com/in/martinjankov/" target="_blank"><img src="<?php echo esc_url( MARTINCV_THEME_URL . 'assets/public/images/linkedin-icon.svg' ); ?>" alt="LinkedIn MartinCV"></a>
+					<a href="https://www.facebook.com/martincvagency" target="_blank"><img src="<?php echo esc_url( MARTINCV_THEME_URL . 'assets/public/images/facebook-icon.svg' ); ?>" alt="Facebook MartinCV" width="9" height="17"></a>
+					<a href="https://twitter.com/MartinCVAgency" target="_blank"><img src="<?php echo esc_url( MARTINCV_THEME_URL . 'assets/public/images/twitter-icon.svg' ); ?>" alt="Twittr MartinCV" width="21" height="17"></a>
+					<a href="https://www.linkedin.com/in/martinjankov/" target="_blank"><img src="<?php echo esc_url( MARTINCV_THEME_URL . 'assets/public/images/linkedin-icon.svg' ); ?>" alt="LinkedIn MartinCV" width="17" height="16"></a>
 				</div>
 			<?php endif; ?>
 		</div>

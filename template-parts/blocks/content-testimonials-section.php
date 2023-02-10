@@ -28,8 +28,8 @@ $testimonials = MartinCV\Testimonial::get_instance()->get();
 			<?php endforeach; ?>
 		</div>
 		<div class="martincv-testimonials__controls">
-			<button type="button" class="martincv-testimonials--slider__left"><img src="<?php echo esc_url( MARTINCV_THEME_URL ) . 'assets/public/images/arrow-left.svg'; ?>" alt="&lt;"></button>
-			<button type="button" class="martincv-testimonials--slider__right"><img src="<?php echo esc_url( MARTINCV_THEME_URL ) . 'assets/public/images/arrow-right.svg'; ?>" alt="&gt;"></button>
+			<button type="button" class="martincv-testimonials--slider__left"><img src="<?php echo esc_url( MARTINCV_THEME_URL ) . 'assets/public/images/arrow-left.svg'; ?>" alt="&lt;" width="24" height="37"></button>
+			<button type="button" class="martincv-testimonials--slider__right"><img src="<?php echo esc_url( MARTINCV_THEME_URL ) . 'assets/public/images/arrow-right.svg'; ?>" alt="&gt;" width="24" height="37"></button>
 		</div>
 	</div>
 </section>

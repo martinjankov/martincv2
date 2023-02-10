@@ -18,13 +18,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/public/images/favicon.png">
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115121806-1"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-XFD2VJ05V3"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
 
-		gtag('config', 'UA-115121806-1', { 'anonymize_ip': true });
+		gtag('config', 'G-XFD2VJ05V3');
 	</script>
 	<?php wp_head(); ?>
 </head>
@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<span class="martincv-logo__dot"></span>
 			</div>
 			<button type="button" class="martincv-mobile-nav">
-				<img src="<?php echo esc_url( MARTINCV_THEME_URL . 'assets/public/images/menu-icon.svg' ); ?>" alt="<?php esc_html_e( 'Menu', 'martincv' ); ?>">
+				<img src="<?php echo esc_url( MARTINCV_THEME_URL . 'assets/public/images/menu-icon.svg' ); ?>" alt="<?php esc_html_e( 'Menu', 'martincv' ); ?>" width="30" height="30">
 			</button>
 		</div>
 		<nav>
