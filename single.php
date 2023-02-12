@@ -22,6 +22,7 @@ while ( have_posts() ) :
 	<div class="martincv-single__content">
 		<?php the_content(); ?>
 	</div>
+	<?php get_template_part( 'template-parts/blocks/content', 'blog-section' ); ?>
 	<?php
 endwhile;
 ?>
