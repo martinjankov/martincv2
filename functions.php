@@ -19,7 +19,7 @@ if ( ! defined( 'MARTINCV_THEME_URL' ) ) {
 }
 
 if ( ! defined( 'MARTINCV_THEME_VERSION' ) ) {
-	define( 'MARTINCV_THEME_VERSION', '1.0.0' );
+	define( 'MARTINCV_THEME_VERSION', 2 );
 }
 
 if ( ! function_exists( 'wpdd' ) ) {

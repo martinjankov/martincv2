@@ -140,6 +140,19 @@ class ACF_Guttenberg_Blocks {
 				'keywords'        => array( 'contact' ),
 			)
 		);
+
+		acf_register_block(
+			array(
+				'name'            => 'process-steps',
+				'title'           => __( 'Process Steps', 'martincv' ),
+				'description'     => __( 'A custom block.', 'martincv' ),
+				'render_callback' => array( $this, 'render_block' ),
+				'enqueue_assets'  => array( $this, 'load_assets' ),
+				'category'        => 'formatting',
+				'icon'            => 'envelope',
+				'keywords'        => array( 'process' ),
+			)
+		);
 	}
 
 	/**

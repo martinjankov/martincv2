@@ -66,7 +66,7 @@
 	.martincv-portfolio .martincv-portfolio__projects .martincv-portfolio__item {
 		height: 400px;
 		width: unset;
-		flex: 0 0 305px;
+		flex: 0 0 18rem;
 		margin: unset;
 	}
 	.martincv-portfolio .martincv-portfolio__projects .martincv-portfolio__item:hover .martincv-portfolio__item-meta {

@@ -1,0 +1,50 @@
+.martincv-process-steps {
+	background: #282828;
+	text-align: center;
+	padding: 45px 0;
+}
+
+@media (min-width: 980px) {
+	.martincv-process-steps .martincv-process__list {
+		margin-top: 100px;
+		display: flex;
+		justify-content: space-evenly;
+	}
+}
+
+.martincv-process-steps .martincv-process__list .martincv-process__step:first-child {
+	margin: 60px 0;
+}
+
+.martincv-process-steps .martincv-process__list .martincv-process__step:not(:first-child) {
+	margin-bottom: 60px;
+}
+
+@media (min-width: 980px) {
+	.martincv-process-steps .martincv-process__list .martincv-process__step:first-child, .martincv-process-steps .martincv-process__list .martincv-process__step:not(:first-child) {
+		margin: 0;
+		margin-bottom: 0;
+	}
+}
+
+.martincv-process-steps .martincv-process__list .martincv-process__step h3 {
+	font-weight: 400;
+	font-size: 23px;
+	margin: 10px 0 5px 0;
+	padding: 0;
+}
+
+.martincv-process-steps .martincv-process__list .martincv-process__step .process-step__description {
+	width: 250px;
+	margin: 0 auto;
+	opacity: .5;
+	font-weight: 100;
+}
+
+@media (min-width: 980px) {
+	.martincv-process-steps .martincv-process__list .martincv-process__step .process-step__description {
+		width: 300px;
+	}
+}
+
+/*# sourceMappingURL=process-steps.css.map */
