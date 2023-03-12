@@ -110,6 +110,10 @@
 			.martincv-contact__form {
 				width: 100%;
 
+				p {
+					margin-bottom: 0 !important;
+				}
+
 				.wpcf7 form{
 					.row {
 						display: flex;

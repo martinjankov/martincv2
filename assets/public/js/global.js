@@ -5,9 +5,8 @@
 			$("header nav").slideToggle();
 		});
 
-		const heroHeight = $(".martincv-hero").outerHeight();
-
-		if ($("body.home").length || $("body.single-post").length) {
+		if ($(".martincv-hero").length) {
+			const heroHeight = $(".martincv-hero").outerHeight();
 			$(window).on("scroll", function () {
 				if (window.outerWidth < 540) {
 					if (scrollY > 10) {

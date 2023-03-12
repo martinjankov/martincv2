@@ -15,8 +15,26 @@
 	font-size: 16px;
 }
 
+.martincv-single .martincv-single__content figcaption.wp-element-caption {
+	font-size: 12px;
+	text-align: center;
+}
+
 .martincv-single .martincv-single__content p {
 	margin-bottom: 30px;
+}
+
+.martincv-single .martincv-single__content .wp-block-code code {
+	background: #282828;
+	padding: 10px 30px;
+	border-radius: 10px;
+	font-size: 14px;
+}
+
+.martincv-single .martincv-single__content .wp-block-embed iframe {
+	max-width: 100%;
+	width: 100%;
+	height: 420px;
 }
 
 .martincv-single .martincv-single__content h2 {

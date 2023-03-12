@@ -106,6 +106,9 @@
 	.martincv-contact .martincv-contact__area .martincv-contact__form {
 		width: 100%;
 	}
+	.martincv-contact .martincv-contact__area .martincv-contact__form p {
+		margin-bottom: 0 !important;
+	}
 	.martincv-contact .martincv-contact__area .martincv-contact__form .wpcf7 form .row {
 		display: flex;
 		flex-wrap: wrap;

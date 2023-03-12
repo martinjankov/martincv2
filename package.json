@@ -10,7 +10,7 @@
   ],
   "homepage": "https://www.martincv.com",
   "devDependencies": {
-    "node-sass": "^8.0.0"
+    "node-sass": "^4.14.1"
   },
   "rtlcssConfig": {
     "options": {

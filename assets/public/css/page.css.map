@@ -1,0 +1,10 @@
+{
+	"version": 3,
+	"file": "page.css",
+	"sources": [
+		"../../sass/page.scss",
+		"../../sass/_variables.scss"
+	],
+	"names": [],
+	"mappings": "AAEA,AACC,cADa,CACb,CAAC,CAAC;CACD,aAAa,EAAE,IAAI;CACnB;;AAHF,AAKC,cALa,CAKb,iBAAiB,CAAC;CACjB,MAAM,EAAE,CAAC;CACT,OAAO,EAAE,IAAI;CAKb;;AAHA,MAAM,EAAE,SAAS,EAAE,KAAK;CAT1B,AAKC,cALa,CAKb,iBAAiB,CAAC;EAKhB,OAAO,EAAE,MAAM;EAEhB"
+}

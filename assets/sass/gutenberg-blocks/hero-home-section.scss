@@ -11,6 +11,7 @@
 	flex-direction: column;
 	justify-content: center;
 	position: relative;
+
 	@media(min-width: $deskop_min_size) {
 		top: 50px;
 	}
@@ -215,6 +216,14 @@
 				top: 300px;
 				right: -135px;
 			}
+		}
+	}
+}
+
+@media(min-width: $deskop_min_size) {
+	body.blog {
+		.martincv-hero {
+			top: 0;
 		}
 	}
 }

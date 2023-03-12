@@ -232,15 +232,15 @@ main section h2 {
 	}
 }
 
-body:not(.home):not(.single-post) header {
-	background: #191919;
-}
-
 @media (min-width: 980px) {
 	body:not(.home):not(.single-post) main {
 		padding-top: 0;
 		margin-top: 0;
 	}
+}
+
+#wpadminbar {
+	z-index: 9999999;
 }
 
 /*# sourceMappingURL=common.css.map */

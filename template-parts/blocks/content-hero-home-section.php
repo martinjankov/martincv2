@@ -27,7 +27,7 @@ $background_image = is_singular( 'post' ) ? get_the_post_thumbnail_url( get_the_
 					<div class="martincv-hero__social">
 						<a href="https://www.facebook.com/martincvagency" target="_blank"><img src="<?php echo esc_url( MARTINCV_THEME_URL . 'assets/public/images/facebook-icon-white.svg' ); ?>" alt="Facebook MartinCV" width="11" height="21"></a>
 						<a href="https://twitter.com/MartinCVAgency" target="_blank"><img src="<?php echo esc_url( MARTINCV_THEME_URL . 'assets/public/images/twitter-icon-white.svg' ); ?>" alt="Twitter MartinCV" width="22" height="18"></a>
-						<a href="https://www.linkedin.com/in/martinjankov/" target="_blank"><img src="<?php echo esc_url( MARTINCV_THEME_URL . 'assets/public/images/linkedin-icon-white.svg' ); ?>" alt="LinkedIn MartinCV" width="17" height="17"></a>
+						<a href="https://www.linkedin.com/company/martincv/" target="_blank"><img src="<?php echo esc_url( MARTINCV_THEME_URL . 'assets/public/images/linkedin-icon-white.svg' ); ?>" alt="LinkedIn MartinCV" width="17" height="17"></a>
 					</div>
 				<?php endif; ?>
 				<a href="<?php the_sub_field( 'link' ); ?>"><?php the_sub_field( 'label' ); ?></a>

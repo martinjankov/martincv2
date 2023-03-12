@@ -16,8 +16,26 @@
 		opacity: 0.8;
 		font-size: 16px;
 
+		figcaption.wp-element-caption {
+			font-size: 12px;
+			text-align: center;
+		}
+
 		p {
 			margin-bottom: 30px;
+		}
+
+		.wp-block-code code {
+			background: #282828;
+			padding: 10px 30px;
+			border-radius: 10px;
+			font-size: 14px;
+		}
+
+		.wp-block-embed iframe {
+			max-width: 100%;
+			width: 100%;
+			height: 420px;
 		}
 
 		h2 {

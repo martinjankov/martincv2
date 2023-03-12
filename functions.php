@@ -19,7 +19,7 @@ if ( ! defined( 'MARTINCV_THEME_URL' ) ) {
 }
 
 if ( ! defined( 'MARTINCV_THEME_VERSION' ) ) {
-	define( 'MARTINCV_THEME_VERSION', 2 );
+	define( 'MARTINCV_THEME_VERSION', 3 );
 }
 
 if ( ! function_exists( 'wpdd' ) ) {
@@ -137,6 +137,15 @@ function martincv_frontend_assets() {
 		wp_enqueue_style(
 			'martincv-single-blog',
 			MARTINCV_THEME_URL . 'assets/public/css/single.css',
+			array(),
+			MARTINCV_THEME_VERSION
+		);
+	}
+
+	if ( is_singular( 'page' ) ) {
+		wp_enqueue_style(
+			'martincv-single-page',
+			MARTINCV_THEME_URL . 'assets/public/css/page.css',
 			array(),
 			MARTINCV_THEME_VERSION
 		);

@@ -1,0 +1,16 @@
+@import './variables';
+
+#martincv-page {
+	p {
+		margin-bottom: 30px;
+	}
+
+	.wp-block-columns {
+		margin: 0;
+		padding: 30px;
+
+		@media (min-width: $deskop_min_size) {
+			padding: 30px 0;
+		}
+	}
+}

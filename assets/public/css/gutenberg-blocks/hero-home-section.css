@@ -243,4 +243,10 @@
 	}
 }
 
+@media (min-width: 980px) {
+	body.blog .martincv-hero {
+		top: 0;
+	}
+}
+
 /*# sourceMappingURL=hero-home-section.css.map */
