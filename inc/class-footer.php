@@ -56,9 +56,10 @@ class Footer {
 	public function render_contact_links(): void {
 		$email        = \MartinCV\Site_Options::get_email();
 		$codeable     = \MartinCV\Site_Options::get_codeable_url();
+		$upwork       = \MartinCV\Site_Options::get_upwork_url();
 		$consultation = \MartinCV\Site_Options::get_consultation_url();
 
-		if ( ! $email && ! $codeable && ! $consultation ) {
+		if ( ! $email && ! $codeable && ! $upwork && ! $consultation ) {
 			return;
 		}
 		?>
@@ -80,6 +81,16 @@ class Footer {
 						<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
 					</svg>
 					<span><?php esc_html_e( 'Codeable Profile', 'martincv' ); ?></span>
+				</a>
+			<?php endif; ?>
+			<?php if ( $upwork ) : ?>
+				<a href="<?php echo esc_url( $upwork ); ?>" class="footer-links__item" target="_blank" rel="noopener noreferrer">
+					<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+						<path d="M15 3h6v6"></path>
+						<path d="M10 14 21 3"></path>
+						<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+					</svg>
+					<span><?php esc_html_e( 'Upwork Profile', 'martincv' ); ?></span>
 				</a>
 			<?php endif; ?>
 			<?php if ( $consultation ) : ?>

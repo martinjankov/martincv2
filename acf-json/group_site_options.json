@@ -67,6 +67,12 @@
 			"type": "url"
 		},
 		{
+			"key": "field_site_options_upwork_url",
+			"label": "Upwork Profile URL",
+			"name": "upwork_url",
+			"type": "url"
+		},
+		{
 			"key": "field_site_options_consultation_url",
 			"label": "Consultation Booking URL",
 			"name": "consultation_url",

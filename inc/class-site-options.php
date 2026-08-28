@@ -143,6 +143,15 @@ class Site_Options {
 	}
 
 	/**
+	 * Get Upwork profile URL.
+	 *
+	 * @return string
+	 */
+	public static function get_upwork_url(): string {
+		return (string) get_field( 'upwork_url', 'option' );
+	}
+
+	/**
 	 * Get consultation booking URL.
 	 *
 	 * @return string
