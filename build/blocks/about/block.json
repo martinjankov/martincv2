@@ -1,0 +1,33 @@
+{
+  "name": "acf/about",
+  "title": "About",
+  "description": "About section with intro text, value cards and technical expertise panel.",
+  "category": "text",
+  "icon": "id",
+  "acf": {
+    "renderTemplate": "template.php"
+  },
+  "mode": "preview",
+  "supports": {
+    "mode": true,
+    "anchor": true,
+    "align": [
+      "full",
+      "wide"
+    ],
+    "color": {
+      "text": false,
+      "background": false
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "style": [
+    "file:./style-index.css"
+  ],
+  "script": [
+    "file:./index.js"
+  ]
+}

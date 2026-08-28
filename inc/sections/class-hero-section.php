@@ -19,11 +19,11 @@ class Hero_Section {
 	use \MartinCV\Traits\Singleton;
 
 	/**
-	 * Background image URL
+	 * Availability pill text
 	 *
 	 * @var string
 	 */
-	protected string $bg_url = '';
+	protected string $availability_text = '';
 
 	/**
 	 * Heading text
@@ -33,25 +33,95 @@ class Hero_Section {
 	protected string $heading = '';
 
 	/**
-	 * Subheading text
+	 * Heading gradient part
 	 *
 	 * @var string
 	 */
-	protected string $subheading = '';
+	protected string $heading_highlight = '';
 
 	/**
-	 * Button label
+	 * Description text
 	 *
 	 * @var string
 	 */
-	protected string $button_label = '';
+	protected string $description = '';
 
 	/**
-	 * Button link
+	 * Primary button text
 	 *
 	 * @var string
 	 */
-	protected string $button_link = '';
+	protected string $primary_btn_text = '';
+
+	/**
+	 * Primary button link
+	 *
+	 * @var string
+	 */
+	protected string $primary_btn_link = '';
+
+	/**
+	 * Show resume button
+	 *
+	 * @var bool
+	 */
+	protected bool $show_resume = false;
+
+	/**
+	 * Book a call text
+	 *
+	 * @var string
+	 */
+	protected string $book_call_text = '';
+
+	/**
+	 * Book a call link
+	 *
+	 * @var string
+	 */
+	protected string $book_call_link = '';
+
+	/**
+	 * Stats rows
+	 *
+	 * @var array
+	 */
+	protected array $stats = array();
+
+	/**
+	 * Portrait image (ACF array)
+	 *
+	 * @var array
+	 */
+	protected array $portrait = array();
+
+	/**
+	 * Based in text
+	 *
+	 * @var string
+	 */
+	protected string $based_in = '';
+
+	/**
+	 * Floating badge text
+	 *
+	 * @var string
+	 */
+	protected string $badge_text = '';
+
+	/**
+	 * Floating badge link
+	 *
+	 * @var string
+	 */
+	protected string $badge_link = '';
+
+	/**
+	 * Skills marquee rows
+	 *
+	 * @var array
+	 */
+	protected array $skills = array();
 
 	/**
 	 * Is the section initialized
@@ -71,27 +141,32 @@ class Hero_Section {
 			return;
 		}
 
-		$bg_image = get_field( 'background_image' );
-
-		if ( $bg_image ) {
-			$this->bg_url = is_array( $bg_image ) ? $bg_image['url'] : wp_get_attachment_url( $bg_image );
-		}
-
-		$this->heading      = (string) get_field( 'heading' );
-		$this->subheading   = (string) get_field( 'subheading' );
-		$this->button_label = (string) get_field( 'button_label' );
-		$this->button_link  = (string) get_field( 'button_link' );
+		$this->availability_text = (string) get_field( 'availability_text' );
+		$this->heading           = (string) get_field( 'heading' );
+		$this->heading_highlight = (string) get_field( 'heading_highlight' );
+		$this->description       = (string) get_field( 'description' );
+		$this->primary_btn_text  = (string) get_field( 'primary_btn_text' );
+		$this->primary_btn_link  = (string) get_field( 'primary_btn_link' );
+		$this->show_resume       = (bool) get_field( 'show_resume' );
+		$this->book_call_text    = (string) get_field( 'book_call_text' );
+		$this->book_call_link    = (string) get_field( 'book_call_link' );
+		$this->stats             = (array) get_field( 'stats' );
+		$this->portrait          = (array) get_field( 'portrait' );
+		$this->based_in          = (string) get_field( 'based_in' );
+		$this->badge_text        = (string) get_field( 'badge_text' );
+		$this->badge_link        = (string) get_field( 'badge_link' );
+		$this->skills            = (array) get_field( 'skills' );
 
 		$this->is_initialized = true;
 	}
 
 	/**
-	 * Get background image URL
+	 * Get availability pill text
 	 *
 	 * @return string
 	 */
-	public function get_bg_url(): string {
-		return $this->bg_url;
+	public function get_availability_text(): string {
+		return $this->availability_text;
 	}
 
 	/**
@@ -104,29 +179,128 @@ class Hero_Section {
 	}
 
 	/**
-	 * Get subheading
+	 * Get heading gradient part
 	 *
 	 * @return string
 	 */
-	public function get_subheading(): string {
-		return $this->subheading;
+	public function get_heading_highlight(): string {
+		return $this->heading_highlight;
 	}
 
 	/**
-	 * Get button label
+	 * Get description
 	 *
 	 * @return string
 	 */
-	public function get_button_label(): string {
-		return $this->button_label;
+	public function get_description(): string {
+		return $this->description;
 	}
 
 	/**
-	 * Get button link
+	 * Get primary button text
 	 *
 	 * @return string
 	 */
-	public function get_button_link(): string {
-		return $this->button_link ?: '#';
+	public function get_primary_btn_text(): string {
+		return $this->primary_btn_text;
+	}
+
+	/**
+	 * Get primary button link
+	 *
+	 * @return string
+	 */
+	public function get_primary_btn_link(): string {
+		return $this->primary_btn_link ?: '#';
+	}
+
+	/**
+	 * Should the resume button show
+	 *
+	 * @return bool
+	 */
+	public function show_resume(): bool {
+		return $this->show_resume;
+	}
+
+	/**
+	 * Get book a call text
+	 *
+	 * @return string
+	 */
+	public function get_book_call_text(): string {
+		return $this->book_call_text;
+	}
+
+	/**
+	 * Get book a call link
+	 *
+	 * @return string
+	 */
+	public function get_book_call_link(): string {
+		return $this->book_call_link ?: '#';
+	}
+
+	/**
+	 * Get stats rows
+	 *
+	 * @return array
+	 */
+	public function get_stats(): array {
+		return $this->stats;
+	}
+
+	/**
+	 * Get portrait URL
+	 *
+	 * @return string
+	 */
+	public function get_portrait_url(): string {
+		return (string) ( $this->portrait['url'] ?? '' );
+	}
+
+	/**
+	 * Get portrait alt text
+	 *
+	 * @return string
+	 */
+	public function get_portrait_alt(): string {
+		return (string) ( $this->portrait['alt'] ?? '' );
+	}
+
+	/**
+	 * Get based in text
+	 *
+	 * @return string
+	 */
+	public function get_based_in(): string {
+		return $this->based_in;
+	}
+
+	/**
+	 * Get floating badge text
+	 *
+	 * @return string
+	 */
+	public function get_badge_text(): string {
+		return $this->badge_text;
+	}
+
+	/**
+	 * Get floating badge link
+	 *
+	 * @return string
+	 */
+	public function get_badge_link(): string {
+		return $this->badge_link ?: '#';
+	}
+
+	/**
+	 * Get skills marquee rows
+	 *
+	 * @return array
+	 */
+	public function get_skills(): array {
+		return $this->skills;
 	}
 }

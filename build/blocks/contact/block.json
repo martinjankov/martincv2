@@ -1,0 +1,33 @@
+{
+  "name": "acf/contact",
+  "title": "Contact",
+  "description": "Contact section with contact cards, why-work-with-me list and a form.",
+  "category": "text",
+  "icon": "email",
+  "acf": {
+    "renderTemplate": "template.php"
+  },
+  "mode": "preview",
+  "supports": {
+    "mode": true,
+    "anchor": true,
+    "align": [
+      "full",
+      "wide"
+    ],
+    "color": {
+      "text": false,
+      "background": false
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "style": [
+    "file:./style-index.css"
+  ],
+  "script": [
+    "file:./index.js"
+  ]
+}

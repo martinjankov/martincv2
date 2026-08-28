@@ -1,0 +1,26 @@
+{
+	"name": "acf/services",
+	"title": "Services",
+	"description": "Services grid with icon cards, tags and CTA banner.",
+	"category": "text",
+	"icon": "screenoptions",
+	"acf": {
+		"renderTemplate": "template.php"
+	},
+	"mode": "preview",
+	"supports": {
+		"mode": true,
+		"anchor": true,
+		"align": ["full", "wide"],
+		"color": {
+			"text": false,
+			"background": false
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"style": ["file:./style-index.css"],
+	"script": ["file:./index.js"]
+}

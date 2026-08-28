@@ -1,0 +1,128 @@
+{
+	"key": "group_testimonials_block",
+	"title": "Testimonials Block",
+	"fields": [
+		{
+			"key": "field_testimonials_eyebrow",
+			"label": "Eyebrow",
+			"name": "eyebrow",
+			"type": "text",
+			"default_value": "Testimonials"
+		},
+		{
+			"key": "field_testimonials_title",
+			"label": "Title",
+			"name": "title",
+			"type": "text",
+			"default_value": "What Clients Say"
+		},
+		{
+			"key": "field_testimonials_description",
+			"label": "Description",
+			"name": "description",
+			"type": "textarea",
+			"rows": 2,
+			"new_lines": ""
+		},
+		{
+			"key": "field_testimonials_items",
+			"label": "Testimonials",
+			"name": "testimonials",
+			"type": "repeater",
+			"layout": "block",
+			"button_label": "Add Testimonial",
+			"sub_fields": [
+				{
+					"key": "field_testimonials_item_quote",
+					"label": "Quote",
+					"name": "quote",
+					"type": "textarea",
+					"rows": 3,
+					"new_lines": ""
+				},
+				{
+					"key": "field_testimonials_item_name",
+					"label": "Name",
+					"name": "name",
+					"type": "text"
+				},
+				{
+					"key": "field_testimonials_item_role",
+					"label": "Role / Company",
+					"name": "role",
+					"type": "text"
+				}
+			]
+		},
+		{
+			"key": "field_testimonials_stats",
+			"label": "Stats",
+			"name": "stats",
+			"type": "repeater",
+			"layout": "table",
+			"button_label": "Add Stat",
+			"sub_fields": [
+				{
+					"key": "field_testimonials_stat_value",
+					"label": "Value",
+					"name": "value",
+					"type": "text",
+					"placeholder": "98%"
+				},
+				{
+					"key": "field_testimonials_stat_label",
+					"label": "Label",
+					"name": "label",
+					"type": "text",
+					"placeholder": "Client Satisfaction"
+				}
+			]
+		},
+		{
+			"key": "field_testimonials_cta_title",
+			"label": "CTA Title",
+			"name": "cta_title",
+			"type": "text",
+			"default_value": "Ready to Join Them?"
+		},
+		{
+			"key": "field_testimonials_cta_text",
+			"label": "CTA Text",
+			"name": "cta_text",
+			"type": "textarea",
+			"rows": 2,
+			"new_lines": ""
+		},
+		{
+			"key": "field_testimonials_cta_btn_text",
+			"label": "CTA Button Text",
+			"name": "cta_btn_text",
+			"type": "text",
+			"default_value": "Start Your Project"
+		},
+		{
+			"key": "field_testimonials_cta_btn_link",
+			"label": "CTA Button Link",
+			"name": "cta_btn_link",
+			"type": "text",
+			"default_value": "#contact"
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "block",
+				"operator": "==",
+				"value": "acf/testimonials"
+			}
+		]
+	],
+	"menu_order": 3,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"active": true,
+	"show_in_rest": 0,
+	"modified": 1756425700
+}

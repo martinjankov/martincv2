@@ -1,0 +1,154 @@
+{
+	"key": "group_about_block",
+	"title": "About Block",
+	"fields": [
+		{
+			"key": "field_about_eyebrow",
+			"label": "Eyebrow",
+			"name": "eyebrow",
+			"type": "text",
+			"default_value": "About"
+		},
+		{
+			"key": "field_about_title",
+			"label": "Title",
+			"name": "title",
+			"type": "text",
+			"default_value": "A decade of building for the web"
+		},
+		{
+			"key": "field_about_content",
+			"label": "Content",
+			"name": "content",
+			"type": "wysiwyg",
+			"tabs": "visual",
+			"toolbar": "basic",
+			"media_upload": 0
+		},
+		{
+			"key": "field_about_values",
+			"label": "Value Cards",
+			"name": "values",
+			"type": "repeater",
+			"layout": "block",
+			"button_label": "Add Value",
+			"sub_fields": [
+				{
+					"key": "field_about_value_icon",
+					"label": "Icon",
+					"name": "icon",
+					"type": "select",
+					"choices": {
+						"star": "Star",
+						"zap": "Zap",
+						"users": "Users",
+						"code": "Code",
+						"shield": "Shield",
+						"search": "Search"
+					},
+					"default_value": "star"
+				},
+				{
+					"key": "field_about_value_title",
+					"label": "Title",
+					"name": "title",
+					"type": "text"
+				},
+				{
+					"key": "field_about_value_description",
+					"label": "Description",
+					"name": "description",
+					"type": "textarea",
+					"rows": 2,
+					"new_lines": ""
+				}
+			]
+		},
+		{
+			"key": "field_about_expertise_title",
+			"label": "Expertise Card Title",
+			"name": "expertise_title",
+			"type": "text",
+			"default_value": "Technical expertise"
+		},
+		{
+			"key": "field_about_expertise_subtitle",
+			"label": "Expertise Card Subtitle",
+			"name": "expertise_subtitle",
+			"type": "text",
+			"default_value": "The stack I reach for every day."
+		},
+		{
+			"key": "field_about_skills",
+			"label": "Expertise Skills",
+			"name": "skills",
+			"type": "repeater",
+			"layout": "table",
+			"button_label": "Add Skill",
+			"sub_fields": [
+				{
+					"key": "field_about_skill_icon",
+					"label": "Icon",
+					"name": "icon",
+					"type": "select",
+					"choices": {
+						"code": "Code",
+						"globe": "Globe",
+						"layers": "Layers",
+						"server": "Server",
+						"database": "Database",
+						"palette": "Palette",
+						"zap": "Zap",
+						"shield": "Shield",
+						"search": "Search"
+					},
+					"default_value": "code"
+				},
+				{
+					"key": "field_about_skill_label",
+					"label": "Label",
+					"name": "label",
+					"type": "text"
+				}
+			]
+		},
+		{
+			"key": "field_about_cta_note",
+			"label": "CTA Note",
+			"name": "cta_note",
+			"type": "text",
+			"default_value": "Ready to bring your vision to life?"
+		},
+		{
+			"key": "field_about_cta_text",
+			"label": "CTA Button Text",
+			"name": "cta_text",
+			"type": "text",
+			"default_value": "Let's work together"
+		},
+		{
+			"key": "field_about_cta_link",
+			"label": "CTA Button Link",
+			"name": "cta_link",
+			"type": "text",
+			"default_value": "#contact"
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "block",
+				"operator": "==",
+				"value": "acf/about"
+			}
+		]
+	],
+	"menu_order": 1,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"active": true,
+	"show_in_rest": 0,
+	"modified": 1756425700
+}

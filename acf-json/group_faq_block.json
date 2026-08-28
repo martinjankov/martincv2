@@ -1,0 +1,84 @@
+{
+	"key": "group_faq_block",
+	"title": "FAQ Block",
+	"fields": [
+		{
+			"key": "field_faq_eyebrow",
+			"label": "Eyebrow",
+			"name": "eyebrow",
+			"type": "text",
+			"default_value": "FAQ"
+		},
+		{
+			"key": "field_faq_title",
+			"label": "Title",
+			"name": "title",
+			"type": "text",
+			"default_value": "Questions, answered"
+		},
+		{
+			"key": "field_faq_description",
+			"label": "Description",
+			"name": "description",
+			"type": "textarea",
+			"rows": 2,
+			"new_lines": ""
+		},
+		{
+			"key": "field_faq_cta_text",
+			"label": "CTA Text",
+			"name": "cta_text",
+			"type": "text",
+			"default_value": "Ask a question"
+		},
+		{
+			"key": "field_faq_cta_link",
+			"label": "CTA Link",
+			"name": "cta_link",
+			"type": "text",
+			"default_value": "#contact"
+		},
+		{
+			"key": "field_faq_items",
+			"label": "FAQs",
+			"name": "faqs",
+			"type": "repeater",
+			"layout": "block",
+			"button_label": "Add FAQ",
+			"sub_fields": [
+				{
+					"key": "field_faq_item_question",
+					"label": "Question",
+					"name": "question",
+					"type": "text"
+				},
+				{
+					"key": "field_faq_item_answer",
+					"label": "Answer",
+					"name": "answer",
+					"type": "wysiwyg",
+					"tabs": "visual",
+					"toolbar": "basic",
+					"media_upload": 0
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "block",
+				"operator": "==",
+				"value": "acf/faq"
+			}
+		]
+	],
+	"menu_order": 4,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"active": true,
+	"show_in_rest": 0,
+	"modified": 1756425700
+}

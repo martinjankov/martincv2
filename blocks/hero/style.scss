@@ -2,67 +2,265 @@
 
 .hero-block {
 	position: relative;
-	display: flex;
-	align-items: center;
-	min-height: 70vh;
 	overflow: hidden;
+	background: hsl(var(--background));
+	padding-top: 8rem;
+	padding-bottom: 0;
 
-	&__bg {
-		position: absolute;
-		inset: 0;
-		background-size: cover;
-		background-position: center;
-		z-index: 0;
+	@media (min-width: variables.$breakpoints--tablet) {
+		padding-top: 10rem;
 	}
 
-	&__overlay {
+	&__bg-grid {
 		position: absolute;
 		inset: 0;
-		background: rgba(0, 0, 0, 0.35);
-		z-index: 1;
+		opacity: .35;
+	}
+
+	&__bg-radial {
+		position: absolute;
+		inset: 0;
+		background: radial-gradient(60% 50% at 50% 0%, hsl(var(--primary) / .10), transparent 70%);
+	}
+
+	&__bg-blob {
+		position: absolute;
+		top: -6rem;
+		right: 0;
+		height: 20rem;
+		width: 20rem;
+		border-radius: 9999px;
+		background: hsl(var(--primary) / .1);
+		filter: blur(64px);
+	}
+
+	&__container {
+		position: relative;
+	}
+
+	&__grid {
+		display: grid;
+		gap: 3rem;
+		align-items: center;
+
+		@media (min-width: variables.$breakpoints--small-desktop) {
+			grid-template-columns: repeat(12, minmax(0, 1fr));
+			gap: 2.5rem;
+		}
 	}
 
 	&__content {
-		position: relative;
-		z-index: 2;
-		width: 100%;
-		max-width: variables.$container-6xl;
-		margin: 0 auto;
-		padding: 96px 16px;
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		align-items: flex-start;
 
-		@media (min-width: variables.$breakpoints--tablet) {
-			padding: 128px 32px;
+		@media (min-width: variables.$breakpoints--small-desktop) {
+			grid-column: span 7 / span 7;
+		}
+	}
+
+	&__pulse {
+		position: relative;
+		display: flex;
+		height: .5rem;
+		width: .5rem;
+
+		&-ping {
+			position: absolute;
+			display: inline-flex;
+			height: 100%;
+			width: 100%;
+			border-radius: 9999px;
+			background: hsl(var(--primary));
+			opacity: .7;
+			animation: hero-ping 1s cubic-bezier(0, 0, .2, 1) infinite;
+		}
+
+		&-dot {
+			position: relative;
+			display: inline-flex;
+			height: .5rem;
+			width: .5rem;
+			border-radius: 9999px;
+			background: hsl(var(--primary));
 		}
 	}
 
 	&__heading {
-		margin: 0 0 16px;
-		font-size: var(--wp--preset--font-size--heading-1);
-		color: var(--wp--preset--color--white);
+		margin: 0;
+		line-height: .95;
+		color: hsl(var(--foreground));
 	}
 
-	&__subheading {
-		margin: 0 0 32px;
-		max-width: 640px;
-		font-size: var(--wp--preset--font-size--lg);
-		color: var(--wp--preset--color--white);
-		opacity: 0.9;
+	&__desc {
+		margin: 0;
+		max-width: 36rem;
+		font-size: 1.125rem;
+		line-height: 1.625;
+		color: hsl(var(--muted-foreground));
 	}
 
-	&__btn {
+	&__buttons {
+		display: flex;
+		flex-wrap: wrap;
+		gap: .75rem;
+	}
+
+	&__btn-icon {
 		display: inline-flex;
+		margin-left: .5rem;
+		transition: transform .3s cubic-bezier(.4, 0, .2, 1);
+
+		&--left {
+			margin-left: 0;
+			margin-right: .5rem;
+		}
+	}
+
+	.btn-hero:hover &__btn-icon {
+		transform: translate(.125rem, -.125rem);
+	}
+
+	&__stats {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 1.5rem;
+		border-top: 1px solid hsl(var(--border));
+		padding-top: 2rem;
+		max-width: 32rem;
+		width: 100%;
+	}
+
+	&__stat-value {
+		font-size: 1.875rem;
+		font-weight: 700;
+		letter-spacing: -.025em;
+		color: hsl(var(--foreground));
+
+		@media (min-width: variables.$breakpoints--tablet) {
+			font-size: 2.25rem;
+		}
+	}
+
+	&__stat-label {
+		margin-top: .25rem;
+		font-size: .75rem;
+		text-transform: uppercase;
+		letter-spacing: .05em;
+		color: hsl(var(--muted-foreground));
+	}
+
+	&__media {
+		position: relative;
+
+		@media (min-width: variables.$breakpoints--small-desktop) {
+			grid-column: span 5 / span 5;
+		}
+	}
+
+	&__media-inner {
+		position: relative;
+		margin: 0 auto;
+		max-width: 24rem;
+	}
+
+	&__photo {
+		overflow: hidden;
+		border-radius: 1.75rem;
+		border: 1px solid hsl(var(--border));
+		background: hsl(var(--card));
+		box-shadow: var(--shadow-elegant);
+
+		img {
+			aspect-ratio: 4 / 5;
+			width: 100%;
+			object-fit: cover;
+			display: block;
+		}
+	}
+
+	&__location {
+		position: absolute;
+		bottom: -1.25rem;
+		left: -1.25rem;
+		border-radius: 1rem;
+		border: 1px solid hsl(var(--border));
+		background: hsl(var(--card) / .95);
+		padding: 1rem 1.25rem;
+		box-shadow: var(--shadow-card);
+		-webkit-backdrop-filter: blur(8px);
+		backdrop-filter: blur(8px);
+
+		&-label {
+			margin: 0;
+			font-size: .75rem;
+			text-transform: uppercase;
+			letter-spacing: .1em;
+			color: hsl(var(--muted-foreground));
+		}
+
+		&-text {
+			margin: 0;
+			font-size: .875rem;
+			font-weight: 600;
+			color: hsl(var(--foreground));
+		}
+	}
+
+	&__badge {
+		position: absolute;
+		top: -1rem;
+		right: -.75rem;
+		display: flex;
 		align-items: center;
-		gap: 8px;
-		padding: 14px 32px;
-		background: var(--wp--preset--color--primary);
-		color: var(--wp--preset--color--white);
-		border-radius: 8px;
+		gap: .5rem;
+		border-radius: 9999px;
+		border: 1px solid hsl(var(--border));
+		background: hsl(var(--card));
+		padding: .5rem 1rem;
+		font-size: .75rem;
 		font-weight: 600;
+		color: hsl(var(--foreground));
 		text-decoration: none;
-		transition: opacity 0.2s ease;
+		box-shadow: var(--shadow-card);
+		transition: transform .3s cubic-bezier(.4, 0, .2, 1);
 
 		&:hover {
-			opacity: 0.9;
+			transform: translateY(-.125rem);
 		}
+	}
+
+	&__marquee {
+		position: relative;
+		margin-top: 5rem;
+		overflow: hidden;
+		border-top: 1px solid hsl(var(--border));
+		border-bottom: 1px solid hsl(var(--border));
+		background: hsl(var(--card) / .5);
+		padding: 1.25rem 0;
+
+		.marquee-track {
+			display: flex;
+			width: max-content;
+			gap: 3rem;
+			white-space: nowrap;
+		}
+	}
+
+	&__marquee-item {
+		font-size: .875rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: .2em;
+		color: hsl(var(--muted-foreground));
+	}
+}
+
+@keyframes hero-ping {
+	75%,
+	to {
+		transform: scale(2);
+		opacity: 0;
 	}
 }

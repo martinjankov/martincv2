@@ -1,0 +1,146 @@
+{
+	"key": "group_services_block",
+	"title": "Services Block",
+	"fields": [
+		{
+			"key": "field_services_eyebrow",
+			"label": "Eyebrow",
+			"name": "eyebrow",
+			"type": "text",
+			"default_value": "Services"
+		},
+		{
+			"key": "field_services_title",
+			"label": "Title",
+			"name": "title",
+			"type": "text",
+			"default_value": "What I do"
+		},
+		{
+			"key": "field_services_description",
+			"label": "Description",
+			"name": "description",
+			"type": "textarea",
+			"rows": 2,
+			"new_lines": ""
+		},
+		{
+			"key": "field_services_top_cta_text",
+			"label": "Top CTA Text",
+			"name": "top_cta_text",
+			"type": "text",
+			"default_value": "Discuss your project"
+		},
+		{
+			"key": "field_services_top_cta_link",
+			"label": "Top CTA Link",
+			"name": "top_cta_link",
+			"type": "text",
+			"default_value": "#contact"
+		},
+		{
+			"key": "field_services_items",
+			"label": "Services",
+			"name": "services",
+			"type": "repeater",
+			"layout": "block",
+			"button_label": "Add Service",
+			"sub_fields": [
+				{
+					"key": "field_services_item_icon",
+					"label": "Icon",
+					"name": "icon",
+					"type": "select",
+					"choices": {
+						"code": "Code",
+						"palette": "Palette",
+						"zap": "Zap",
+						"shield": "Shield",
+						"server": "Server",
+						"search": "Search",
+						"globe": "Globe",
+						"layers": "Layers",
+						"database": "Database"
+					},
+					"default_value": "code"
+				},
+				{
+					"key": "field_services_item_title",
+					"label": "Title",
+					"name": "title",
+					"type": "text"
+				},
+				{
+					"key": "field_services_item_description",
+					"label": "Description",
+					"name": "description",
+					"type": "textarea",
+					"rows": 2,
+					"new_lines": ""
+				},
+				{
+					"key": "field_services_item_tags",
+					"label": "Tags",
+					"name": "tags",
+					"type": "textarea",
+					"rows": 4,
+					"new_lines": "",
+					"instructions": "One tag per line."
+				},
+				{
+					"key": "field_services_item_link",
+					"label": "Learn More Link",
+					"name": "link",
+					"type": "text",
+					"placeholder": "/services/custom-web-development"
+				}
+			]
+		},
+		{
+			"key": "field_services_bottom_title",
+			"label": "Bottom CTA Title",
+			"name": "bottom_title",
+			"type": "text",
+			"default_value": "Need something custom?"
+		},
+		{
+			"key": "field_services_bottom_text",
+			"label": "Bottom CTA Text",
+			"name": "bottom_text",
+			"type": "textarea",
+			"rows": 2,
+			"new_lines": ""
+		},
+		{
+			"key": "field_services_bottom_btn_text",
+			"label": "Bottom CTA Button Text",
+			"name": "bottom_btn_text",
+			"type": "text",
+			"default_value": "Start your project"
+		},
+		{
+			"key": "field_services_bottom_btn_link",
+			"label": "Bottom CTA Button Link",
+			"name": "bottom_btn_link",
+			"type": "text",
+			"default_value": "#contact"
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "block",
+				"operator": "==",
+				"value": "acf/services"
+			}
+		]
+	],
+	"menu_order": 2,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"active": true,
+	"show_in_rest": 0,
+	"modified": 1756425700
+}

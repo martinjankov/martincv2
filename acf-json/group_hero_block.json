@@ -3,43 +3,139 @@
 	"title": "Hero Block",
 	"fields": [
 		{
+			"key": "field_hero_availability_text",
+			"label": "Availability Pill Text",
+			"name": "availability_text",
+			"type": "text",
+			"default_value": "Available for new projects"
+		},
+		{
 			"key": "field_hero_heading",
 			"label": "Heading",
 			"name": "heading",
 			"type": "text",
 			"required": 1,
-			"placeholder": "e.g. Hi, I'm Martin"
+			"default_value": "Web experiences,"
 		},
 		{
-			"key": "field_hero_subheading",
-			"label": "Subheading",
-			"name": "subheading",
+			"key": "field_hero_heading_highlight",
+			"label": "Heading (Gradient Part)",
+			"name": "heading_highlight",
+			"type": "text",
+			"default_value": "engineered to last."
+		},
+		{
+			"key": "field_hero_description",
+			"label": "Description",
+			"name": "description",
 			"type": "textarea",
 			"rows": 3,
 			"new_lines": ""
 		},
 		{
-			"key": "field_hero_button_label",
-			"label": "Button Label",
-			"name": "button_label",
+			"key": "field_hero_primary_btn_text",
+			"label": "Primary Button Text",
+			"name": "primary_btn_text",
 			"type": "text",
-			"placeholder": "e.g. Get in touch"
+			"default_value": "Start a project"
 		},
 		{
-			"key": "field_hero_button_link",
-			"label": "Button Link",
-			"name": "button_link",
-			"type": "url",
-			"placeholder": "https://"
+			"key": "field_hero_primary_btn_link",
+			"label": "Primary Button Link",
+			"name": "primary_btn_link",
+			"type": "text",
+			"default_value": "#contact"
 		},
 		{
-			"key": "field_hero_background_image",
-			"label": "Background Image",
-			"name": "background_image",
+			"key": "field_hero_show_resume",
+			"label": "Show Resume Button",
+			"name": "show_resume",
+			"type": "true_false",
+			"ui": 1,
+			"default_value": 1,
+			"instructions": "Uses the Resume file from Site Options."
+		},
+		{
+			"key": "field_hero_book_call_text",
+			"label": "Book a Call Text",
+			"name": "book_call_text",
+			"type": "text",
+			"default_value": "Book a call"
+		},
+		{
+			"key": "field_hero_book_call_link",
+			"label": "Book a Call Link",
+			"name": "book_call_link",
+			"type": "url"
+		},
+		{
+			"key": "field_hero_stats",
+			"label": "Stats",
+			"name": "stats",
+			"type": "repeater",
+			"layout": "table",
+			"button_label": "Add Stat",
+			"sub_fields": [
+				{
+					"key": "field_hero_stat_value",
+					"label": "Value",
+					"name": "value",
+					"type": "text",
+					"placeholder": "10+"
+				},
+				{
+					"key": "field_hero_stat_label",
+					"label": "Label",
+					"name": "label",
+					"type": "text",
+					"placeholder": "Years experience"
+				}
+			]
+		},
+		{
+			"key": "field_hero_portrait",
+			"label": "Portrait Image",
+			"name": "portrait",
 			"type": "image",
 			"return_format": "array",
 			"library": "all",
 			"preview_size": "medium"
+		},
+		{
+			"key": "field_hero_based_in",
+			"label": "Based In Text",
+			"name": "based_in",
+			"type": "text",
+			"placeholder": "Skopje · Working worldwide"
+		},
+		{
+			"key": "field_hero_badge_text",
+			"label": "Floating Badge Text",
+			"name": "badge_text",
+			"type": "text",
+			"default_value": "Hire me on Codeable"
+		},
+		{
+			"key": "field_hero_badge_link",
+			"label": "Floating Badge Link",
+			"name": "badge_link",
+			"type": "url"
+		},
+		{
+			"key": "field_hero_skills",
+			"label": "Skills Marquee",
+			"name": "skills",
+			"type": "repeater",
+			"layout": "table",
+			"button_label": "Add Skill",
+			"sub_fields": [
+				{
+					"key": "field_hero_skill_name",
+					"label": "Name",
+					"name": "name",
+					"type": "text"
+				}
+			]
 		}
 	],
 	"location": [
@@ -58,5 +154,5 @@
 	"instruction_placement": "label",
 	"active": true,
 	"show_in_rest": 0,
-	"modified": 1756339200
+	"modified": 1756425700
 }

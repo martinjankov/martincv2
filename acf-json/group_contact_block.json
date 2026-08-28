@@ -1,0 +1,105 @@
+{
+	"key": "group_contact_block",
+	"title": "Contact Block",
+	"fields": [
+		{
+			"key": "field_contact_eyebrow",
+			"label": "Eyebrow",
+			"name": "eyebrow",
+			"type": "text",
+			"default_value": "Contact"
+		},
+		{
+			"key": "field_contact_title",
+			"label": "Title",
+			"name": "title",
+			"type": "text",
+			"default_value": "Let's Work Together"
+		},
+		{
+			"key": "field_contact_description",
+			"label": "Description",
+			"name": "description",
+			"type": "textarea",
+			"rows": 2,
+			"new_lines": ""
+		},
+		{
+			"key": "field_contact_intro_title",
+			"label": "Intro Title",
+			"name": "intro_title",
+			"type": "text",
+			"default_value": "Get In Touch"
+		},
+		{
+			"key": "field_contact_intro_text",
+			"label": "Intro Text",
+			"name": "intro_text",
+			"type": "textarea",
+			"rows": 3,
+			"new_lines": ""
+		},
+		{
+			"key": "field_contact_why_title",
+			"label": "Why Card Title",
+			"name": "why_title",
+			"type": "text",
+			"default_value": "Why Work With Me?"
+		},
+		{
+			"key": "field_contact_why_items",
+			"label": "Why Card Items",
+			"name": "why_items",
+			"type": "repeater",
+			"layout": "table",
+			"button_label": "Add Item",
+			"sub_fields": [
+				{
+					"key": "field_contact_why_item_text",
+					"label": "Text",
+					"name": "text",
+					"type": "text"
+				}
+			]
+		},
+		{
+			"key": "field_contact_form_title",
+			"label": "Form Title",
+			"name": "form_title",
+			"type": "text",
+			"default_value": "Send a Message"
+		},
+		{
+			"key": "field_contact_form_shortcode",
+			"label": "Form Shortcode",
+			"name": "form_shortcode",
+			"type": "text",
+			"placeholder": "[contact-form-7 id=\"...\"]",
+			"instructions": "Contact Form 7 or any other form plugin shortcode."
+		},
+		{
+			"key": "field_contact_form_note",
+			"label": "Form Note",
+			"name": "form_note",
+			"type": "text",
+			"default_value": "I typically respond within 24 hours"
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "block",
+				"operator": "==",
+				"value": "acf/contact"
+			}
+		]
+	],
+	"menu_order": 5,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"active": true,
+	"show_in_rest": 0,
+	"modified": 1756425700
+}
