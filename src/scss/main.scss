@@ -85,8 +85,119 @@ h3 {
 .wp-page-main {
 	padding-top: 7rem;
 
-	&:has(> .hero-block:first-child) {
+	&:has(> .hero-block:first-child),
+	&:has(> .blog-archive:first-child) {
 		padding-top: 0;
+	}
+}
+
+// Centered page intro built from native blocks (e.g. the Process page).
+// Mirrors the reference: max-w-3xl mx-auto px-4 text-center.
+.page-hero {
+	position: relative;
+	max-width: 48rem;
+	margin: 0 auto;
+	padding: 1rem 1rem 2rem;
+	text-align: center;
+
+	h1 {
+		margin: 1rem 0 0;
+		color: hsl(var(--foreground));
+	}
+}
+
+.page-hero__intro {
+	margin: 1.5rem 0 0;
+	font-size: 1.25rem;
+	line-height: 1.625;
+	color: hsl(var(--muted-foreground));
+}
+
+.text-primary {
+	color: hsl(var(--primary));
+}
+
+// Dot navigation rendered by MobileSlider.ts under mobile carousels.
+.mobile-slider__dots {
+	display: none;
+
+	@media (max-width: 767px) {
+		display: flex;
+		justify-content: center;
+		gap: .5rem;
+		margin-top: 1.25rem;
+	}
+}
+
+.mobile-slider__dot {
+	width: .5rem;
+	height: .5rem;
+	padding: 0;
+	border: 0;
+	border-radius: 9999px;
+	background: hsl(var(--muted-foreground) / .3);
+	cursor: pointer;
+	transition: background-color .2s cubic-bezier(.4, 0, .2, 1), transform .2s cubic-bezier(.4, 0, .2, 1);
+
+	&.is-active {
+		background: hsl(var(--primary));
+		transform: scale(1.25);
+	}
+}
+
+// Legal pages (Privacy Policy, Terms of Service) — narrow prose column.
+.legal-page {
+	max-width: 48rem;
+	margin: 0 auto;
+	padding: 1rem 1rem 5rem;
+	line-height: 1.625;
+	color: hsl(var(--muted-foreground));
+
+	h2 {
+		margin: 2.5rem 0 1rem;
+		font-size: 1.5rem;
+		line-height: 2rem;
+		font-weight: 700;
+		letter-spacing: -.01em;
+		color: hsl(var(--foreground));
+	}
+
+	p {
+		margin: 0 0 1.25rem;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0 0 1.25rem;
+		padding: 0;
+
+		li {
+			position: relative;
+			padding-left: 1.375rem;
+			margin-bottom: .5rem;
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: .25rem;
+				top: .6em;
+				width: .375rem;
+				height: .375rem;
+				border-radius: 9999px;
+				background: hsl(var(--primary) / .7);
+			}
+		}
+	}
+
+	a {
+		color: hsl(var(--primary));
+		text-decoration: underline;
+		text-decoration-color: hsl(var(--primary) / .4);
+		text-underline-offset: 4px;
+
+		&:hover {
+			text-decoration-color: hsl(var(--primary));
+		}
 	}
 }
 

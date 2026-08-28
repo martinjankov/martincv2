@@ -1,0 +1,134 @@
+{
+	"key": "group_process_block",
+	"title": "Process Block",
+	"fields": [
+		{
+			"key": "field_process_eyebrow",
+			"label": "Eyebrow",
+			"name": "eyebrow",
+			"type": "text",
+			"default_value": "How I Work"
+		},
+		{
+			"key": "field_process_title",
+			"label": "Title",
+			"name": "title",
+			"type": "text",
+			"default_value": "My workflow"
+		},
+		{
+			"key": "field_process_description",
+			"label": "Description",
+			"name": "description",
+			"type": "textarea",
+			"rows": 2,
+			"new_lines": ""
+		},
+		{
+			"key": "field_process_steps",
+			"label": "Steps",
+			"name": "steps",
+			"type": "repeater",
+			"layout": "block",
+			"button_label": "Add Step",
+			"sub_fields": [
+				{
+					"key": "field_process_step_icon",
+					"label": "Icon",
+					"name": "icon",
+					"type": "select",
+					"choices": {
+						"lightbulb": "Lightbulb",
+						"map": "Map",
+						"rocket": "Rocket",
+						"life-buoy": "Life Buoy",
+						"code": "Code",
+						"zap": "Zap",
+						"shield": "Shield",
+						"search": "Search",
+						"users": "Users",
+						"star": "Star"
+					},
+					"default_value": "lightbulb"
+				},
+				{
+					"key": "field_process_step_title",
+					"label": "Title",
+					"name": "title",
+					"type": "text"
+				},
+				{
+					"key": "field_process_step_description",
+					"label": "Description",
+					"name": "description",
+					"type": "textarea",
+					"rows": 3,
+					"new_lines": ""
+				},
+				{
+					"key": "field_process_step_bullets",
+					"label": "Bullets",
+					"name": "bullets",
+					"type": "repeater",
+					"layout": "table",
+					"button_label": "Add Bullet",
+					"sub_fields": [
+						{
+							"key": "field_process_step_bullet_text",
+							"label": "Text",
+							"name": "text",
+							"type": "text"
+						}
+					]
+				}
+			]
+		},
+		{
+			"key": "field_process_cta_title",
+			"label": "CTA Title",
+			"name": "cta_title",
+			"type": "text",
+			"default_value": "Let's start with Discover"
+		},
+		{
+			"key": "field_process_cta_text",
+			"label": "CTA Text",
+			"name": "cta_text",
+			"type": "textarea",
+			"rows": 2,
+			"new_lines": ""
+		},
+		{
+			"key": "field_process_cta_button_text",
+			"label": "CTA Button Text",
+			"name": "cta_button_text",
+			"type": "text",
+			"default_value": "Book a conversation"
+		},
+		{
+			"key": "field_process_cta_button_link",
+			"label": "CTA Button Link",
+			"name": "cta_button_link",
+			"type": "text",
+			"default_value": "#contact"
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "block",
+				"operator": "==",
+				"value": "acf/process"
+			}
+		]
+	],
+	"menu_order": 7,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0
+}

@@ -84,7 +84,7 @@ $wrapper_attrs = get_block_wrapper_attributes(
 							<span class="contact-block__card-icon"><?php Utility::icon( 'calendar', 24 ); ?></span>
 							<span class="contact-block__card-body">
 								<span class="contact-block__card-title"><?php esc_html_e( 'Consultation', 'martincv' ); ?></span>
-								<span class="contact-block__card-value"><?php esc_html_e( 'Book a Call', 'martincv' ); ?></span>
+								<span class="contact-block__card-value"><?php esc_html_e( 'Book a Consultation', 'martincv' ); ?></span>
 								<span class="contact-block__card-note"><?php esc_html_e( 'Schedule a free consultation', 'martincv' ); ?></span>
 							</span>
 							<span class="contact-block__card-arrow"><?php Utility::icon( 'external-link', 16 ); ?></span>

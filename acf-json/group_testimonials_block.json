@@ -25,34 +25,13 @@
 			"new_lines": ""
 		},
 		{
-			"key": "field_testimonials_items",
+			"key": "field_testimonials_source_note",
 			"label": "Testimonials",
-			"name": "testimonials",
-			"type": "repeater",
-			"layout": "block",
-			"button_label": "Add Testimonial",
-			"sub_fields": [
-				{
-					"key": "field_testimonials_item_quote",
-					"label": "Quote",
-					"name": "quote",
-					"type": "textarea",
-					"rows": 3,
-					"new_lines": ""
-				},
-				{
-					"key": "field_testimonials_item_name",
-					"label": "Name",
-					"name": "name",
-					"type": "text"
-				},
-				{
-					"key": "field_testimonials_item_role",
-					"label": "Role / Company",
-					"name": "role",
-					"type": "text"
-				}
-			]
+			"name": "",
+			"type": "message",
+			"message": "Testimonials are pulled automatically from the Testimonials post type (newest first, ordered by menu order). Edit them under Testimonials in the admin menu.",
+			"new_lines": "wpautop",
+			"esc_html": 0
 		},
 		{
 			"key": "field_testimonials_stats",

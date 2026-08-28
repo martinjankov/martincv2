@@ -2,7 +2,11 @@
 
 .faq-block {
 	position: relative;
-	padding: 6rem 0;
+	padding: 3rem 0;
+
+	@media (min-width: variables.$breakpoints--tablet) {
+		padding: 6rem 0;
+	}
 	background: hsl(var(--background));
 
 	&__grid {
@@ -38,6 +42,12 @@
 	&__cta {
 		margin-top: 2rem;
 		width: fit-content;
+
+		// Full width on phones only.
+		@media (max-width: 767px) {
+			width: 100%;
+			justify-content: center;
+		}
 	}
 
 	&__cta-icon {

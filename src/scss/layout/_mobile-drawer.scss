@@ -1,33 +1,41 @@
 @use '../abstracts/variables';
 
-// Mobile navigation drawer. Navigation.ts toggles .header-nav--open on #header-nav
-// and .mobile-nav-open on <body>.
+// Mobile navigation: a card sheet dropping down below the floating header.
+// Navigation.ts toggles .header-nav--open on #header-nav and .mobile-nav-open on <body>.
 .header-nav {
 	@media (max-width: (variables.$breakpoints--small-desktop - 1px)) {
 		position: fixed;
-		top: 0;
-		right: 0;
-		bottom: 0;
+		top: 5.75rem;
+		left: 1rem;
+		right: 1rem;
 		z-index: 49;
-		width: min(20rem, 85vw);
-		padding: 6.5rem 1.5rem 2rem;
 		background: hsl(var(--card));
-		border-left: 1px solid hsl(var(--border));
+		border: 1px solid hsl(var(--border));
+		border-radius: 1rem;
 		box-shadow: var(--shadow-elegant);
-		transform: translateX(100%);
-		transition: transform .3s cubic-bezier(.4, 0, .2, 1);
+		padding: .75rem;
+		max-height: calc(100vh - 7rem);
+		max-height: calc(100dvh - 7rem);
 		overflow-y: auto;
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(-.5rem);
+		transition: opacity .25s cubic-bezier(.4, 0, .2, 1), transform .25s cubic-bezier(.4, 0, .2, 1), visibility .25s;
 
 		.header-menu {
 			flex-direction: column;
 			align-items: stretch;
-			gap: .25rem;
+			gap: .125rem;
 
 			a {
 				display: block;
 				border-radius: var(--radius);
 				padding: .75rem 1rem;
 				font-size: 1rem;
+			}
+
+			.submenu-toggle-wrap {
+				display: block;
 			}
 
 			.sub-menu {
@@ -39,11 +47,61 @@
 				background: none;
 				border: 0;
 				box-shadow: none;
+
+				&::before {
+					display: none;
+				}
 			}
 		}
 
 		&--open {
-			transform: translateX(0);
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(0);
+		}
+	}
+}
+
+// Keep the sheet clear of the WP admin bar when logged in.
+.admin-bar .header-nav {
+	@media (max-width: 782px) {
+		top: calc(5.75rem + 46px);
+	}
+
+	@media (min-width: 783px) and (max-width: (variables.$breakpoints--small-desktop - 1px)) {
+		top: calc(5.75rem + 32px);
+	}
+}
+
+// Resume + Let's Talk inside the mobile sheet; desktop shows them in the bar.
+.header-nav__actions {
+	display: none;
+
+	@media (max-width: (variables.$breakpoints--small-desktop - 1px)) {
+		display: block;
+		margin-top: .5rem;
+		padding: 1rem .25rem .25rem;
+		border-top: 1px solid hsl(var(--border));
+
+		.header-actions {
+			display: flex;
+			flex-direction: column;
+			align-items: stretch;
+			gap: .75rem;
+		}
+
+		.header-resume {
+			justify-content: center;
+			border: 1px solid hsl(var(--border));
+			background: hsl(var(--card));
+			padding: .75rem 1rem;
+			color: hsl(var(--foreground));
+		}
+
+		.header-cta {
+			justify-content: center;
+			padding: .75rem 1.25rem;
+			text-align: center;
 		}
 	}
 }

@@ -28,6 +28,37 @@
 		color: hsl(var(--foreground));
 	}
 
+	// Navigation.ts wraps parent links and injects a chevron + accordion button.
+	.submenu-toggle-wrap {
+		display: flex;
+		align-items: center;
+	}
+
+	// The accordion button is redundant everywhere: desktop opens on hover and
+	// the mobile drawer keeps submenus expanded — one chevron is enough.
+	.submenu-toggle {
+		display: none;
+	}
+
+	.menu-item-has-children > .submenu-toggle-wrap > a {
+		display: inline-flex;
+		align-items: center;
+		gap: .375rem;
+	}
+
+	.menu-chevron {
+		display: none;
+		align-items: center;
+
+		svg {
+			display: block;
+		}
+
+		@media (min-width: variables.$breakpoints--small-desktop) {
+			display: inline-flex;
+		}
+	}
+
 	.sub-menu {
 		display: none;
 		position: absolute;
@@ -40,6 +71,17 @@
 		border-radius: var(--radius);
 		box-shadow: var(--shadow-elegant);
 
+		// Invisible bridge over the gap between the link and the panel,
+		// so the dropdown survives the mouse travelling into it.
+		&::before {
+			content: '';
+			position: absolute;
+			top: -.75rem;
+			left: 0;
+			right: 0;
+			height: .75rem;
+		}
+
 		a {
 			display: block;
 			border-radius: calc(var(--radius) - 4px);
@@ -50,6 +92,7 @@
 		position: relative;
 
 		&:hover > .sub-menu,
+		&:focus-within > .sub-menu,
 		&.open > .sub-menu {
 			display: block;
 		}

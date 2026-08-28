@@ -1,7 +1,11 @@
 @use "../../src/scss/abstracts/variables";
 
 .testimonials-block {
-	padding: 5rem 0;
+	padding: 3rem 0;
+
+	@media (min-width: variables.$breakpoints--tablet) {
+		padding: 5rem 0;
+	}
 	background: var(--gradient-subtle);
 
 	&__header {
@@ -28,6 +32,19 @@
 
 	&__viewport {
 		overflow: hidden;
+
+		// Mobile: native swipe with scroll-snap (dots rendered by MobileSlider.ts);
+		// the arrow-driven transform carousel only runs on desktop.
+		@media (max-width: 767px) {
+			overflow-x: auto;
+			scroll-snap-type: x mandatory;
+			-webkit-overflow-scrolling: touch;
+			scrollbar-width: none;
+
+			&::-webkit-scrollbar {
+				display: none;
+			}
+		}
 	}
 
 	&__track {
@@ -40,6 +57,10 @@
 		flex: 0 0 100%;
 		min-width: 0;
 		padding-left: 1rem;
+
+		@media (max-width: 767px) {
+			scroll-snap-align: center;
+		}
 
 		@media (min-width: variables.$breakpoints--tablet) {
 			flex-basis: 50%;
@@ -156,11 +177,13 @@
 	&__stats {
 		margin-top: 4rem;
 		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
 		gap: 2rem;
 		text-align: center;
 
-		@media (min-width: variables.$breakpoints--tablet) {
-			grid-template-columns: repeat(3, minmax(0, 1fr));
+		@media (max-width: 767px) {
+			margin-top: 2.5rem;
+			gap: 1rem;
 		}
 	}
 
@@ -170,10 +193,21 @@
 		font-weight: 700;
 		color: hsl(var(--primary));
 		margin-bottom: .5rem;
+
+		@media (max-width: 767px) {
+			font-size: 1.5rem;
+			line-height: 2rem;
+			margin-bottom: .25rem;
+		}
 	}
 
 	&__stat-label {
 		color: hsl(var(--muted-foreground));
+
+		@media (max-width: 767px) {
+			font-size: .75rem;
+			line-height: 1.25;
+		}
 	}
 
 	&__cta {

@@ -1,0 +1,177 @@
+@use "../../src/scss/abstracts/variables";
+
+.process-block {
+	position: relative;
+	padding: 3rem 0;
+
+	@media (min-width: variables.$breakpoints--tablet) {
+		padding: 5rem 0 6rem;
+	}
+	background: hsl(var(--background));
+
+	&__header {
+		max-width: 48rem;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	&__title {
+		margin: 1rem 0 0;
+		color: hsl(var(--foreground));
+	}
+
+	&__desc {
+		margin: 1.5rem 0 0;
+		font-size: 1.125rem;
+		line-height: 1.625;
+		color: hsl(var(--muted-foreground));
+	}
+
+	&__steps {
+		list-style: none;
+		margin: 4rem 0 0;
+		padding: 0;
+		display: grid;
+		gap: 2.5rem;
+
+		@media (min-width: variables.$breakpoints--tablet) {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		@media (min-width: variables.$breakpoints--small-desktop) {
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+			gap: 2rem;
+		}
+	}
+
+	&__step {
+		position: relative;
+	}
+
+	&__step-visual {
+		position: relative;
+		margin-bottom: 2rem;
+
+		// Connector line between step icons on the 4-up layout.
+		@media (min-width: variables.$breakpoints--small-desktop) {
+			&::after {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 4.25rem;
+				right: -2.75rem;
+				height: 2px;
+				background: hsl(var(--border));
+			}
+		}
+	}
+
+	&__step:last-child &__step-visual::after {
+		display: none;
+	}
+
+	&__step-icon {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 3.25rem;
+		height: 3.25rem;
+		border-radius: .75rem;
+		border: 1px solid hsl(var(--border) / .7);
+		background: hsl(var(--card));
+		box-shadow: var(--shadow-card);
+		color: hsl(var(--primary));
+	}
+
+	&__step-number {
+		position: absolute;
+		top: -.5rem;
+		right: -.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 1.375rem;
+		height: 1.375rem;
+		border-radius: 9999px;
+		background: hsl(var(--primary));
+		color: hsl(var(--primary-foreground));
+		font-size: .6875rem;
+		font-weight: 700;
+	}
+
+	&__step-title {
+		margin: 0 0 1rem;
+		font-size: 1.25rem;
+		line-height: 1.75rem;
+		font-weight: 600;
+		color: hsl(var(--foreground));
+	}
+
+	&__step-desc {
+		margin: 0 0 1.25rem;
+		font-size: 1rem;
+		line-height: 1.625;
+		color: hsl(var(--muted-foreground));
+	}
+
+	&__step-bullets {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: grid;
+		gap: .75rem;
+
+		li {
+			position: relative;
+			padding-left: 1.125rem;
+			font-size: .875rem;
+			line-height: 1.5;
+			color: hsl(var(--muted-foreground));
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: .5em;
+				width: .375rem;
+				height: .375rem;
+				border-radius: 9999px;
+				background: hsl(var(--primary));
+			}
+		}
+	}
+
+	&__cta {
+		margin-top: 5rem;
+		border-radius: 1rem;
+		border: 1px solid hsl(var(--border) / .7);
+		background-color: hsl(var(--card));
+		box-shadow: var(--shadow-card);
+		padding: 3rem 2rem;
+		text-align: center;
+	}
+
+	&__cta-title {
+		margin: 0;
+		font-size: 1.5rem;
+		line-height: 2rem;
+		font-weight: 700;
+		letter-spacing: -.01em;
+		color: hsl(var(--foreground));
+	}
+
+	&__cta-text {
+		margin: 1rem auto 2rem;
+		max-width: 34rem;
+		font-size: 1rem;
+		line-height: 1.625;
+		color: hsl(var(--muted-foreground));
+	}
+
+	&__cta-btn {
+		display: inline-flex;
+		gap: .5rem;
+		text-decoration: none;
+	}
+}

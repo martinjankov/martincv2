@@ -18,11 +18,12 @@ if ( file_exists( MARTINCV_THEME_DIR . 'inc/core/autoloader.php' ) ) {
 MartinCV\Core\Theme::get_instance();
 MartinCV\Core\Register_Blocks::get_instance();
 MartinCV\Site_Options::get_instance();
+MartinCV\Enqueue_Assets::get_instance();
 MartinCV\Header::get_instance();
 MartinCV\Footer::get_instance();
 MartinCV\Yoast_Schema::get_instance();
 
 // Admin-only classes (admin-ajax requests also satisfy is_admin()).
 if ( is_admin() ) {
-	// Future admin classes go here.
+	MartinCV\AJAX\Blog_Posts::get_instance();
 }

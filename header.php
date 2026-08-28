@@ -32,6 +32,9 @@ $martincv_header = MartinCV\Header::get_instance();
 			</div>
 			<nav class="header-nav" id="header-nav" aria-label="<?php esc_attr_e( 'Primary Navigation', 'martincv' ); ?>">
 				<?php $martincv_header->render_desktop_nav(); ?>
+				<div class="header-nav__actions">
+					<?php $martincv_header->render_actions(); ?>
+				</div>
 			</nav>
 			<?php $martincv_header->render_actions(); ?>
 			<?php $martincv_header->render_burger(); ?>

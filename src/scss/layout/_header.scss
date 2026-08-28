@@ -10,6 +10,15 @@
 	padding: 1rem 1rem 0;
 }
 
+// Keep the fixed header clear of the WP admin bar when logged in.
+.admin-bar .site-header {
+	top: 32px;
+
+	@media screen and (max-width: 782px) {
+		top: 46px;
+	}
+}
+
 // Transparent and flat at the top of the page; becomes the blurred
 // floating pill once the page is scrolled (.site-header--scrolled).
 .site-header__pill {

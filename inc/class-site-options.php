@@ -27,6 +27,49 @@ class Site_Options {
 	 */
 	public function initialize(): void {
 		add_action( 'acf/init', array( $this, 'register_options_page' ) );
+
+		// Replace the {years} token with the computed years of experience
+		// in any formatted ACF text value (options, blocks, repeaters).
+		add_filter( 'acf/format_value/type=text', array( $this, 'replace_years_token' ) );
+		add_filter( 'acf/format_value/type=textarea', array( $this, 'replace_years_token' ) );
+		add_filter( 'acf/format_value/type=wysiwyg', array( $this, 'replace_years_token' ) );
+	}
+
+	/**
+	 * Replace the {years} token with the computed years of experience.
+	 *
+	 * @param mixed $value Formatted field value.
+	 * @return mixed
+	 */
+	public function replace_years_token( $value ) {
+		if ( is_string( $value ) && false !== strpos( $value, '{years}' ) ) {
+			$value = str_replace( '{years}', (string) self::get_years_experience(), $value );
+		}
+
+		return $value;
+	}
+
+	/**
+	 * Get full years of experience since the career start date option.
+	 *
+	 * Month-aware: the number only bumps once the anniversary month passes.
+	 *
+	 * @return int
+	 */
+	public static function get_years_experience(): int {
+		$start = (string) get_field( 'career_start', 'option', false );
+
+		if ( ! $start ) {
+			$start = '2014-06-01';
+		}
+
+		$start_date = date_create( $start, wp_timezone() );
+
+		if ( ! $start_date ) {
+			return 0;
+		}
+
+		return max( 0, (int) $start_date->diff( date_create( 'now', wp_timezone() ) )->y );
 	}
 
 	/**
@@ -340,5 +383,31 @@ class Site_Options {
 		}
 
 		return '';
+	}
+	/**
+	 * Get blog archive title (non-gradient part).
+	 *
+	 * @return string
+	 */
+	public static function get_blog_title(): string {
+		return (string) get_field( 'blog_title', 'option' );
+	}
+
+	/**
+	 * Get blog archive title gradient part.
+	 *
+	 * @return string
+	 */
+	public static function get_blog_title_highlight(): string {
+		return (string) get_field( 'blog_title_highlight', 'option' );
+	}
+
+	/**
+	 * Get blog archive intro text.
+	 *
+	 * @return string
+	 */
+	public static function get_blog_intro(): string {
+		return (string) get_field( 'blog_intro', 'option' );
 	}
 }

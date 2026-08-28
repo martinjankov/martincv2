@@ -2,7 +2,11 @@
 
 .about-block {
 	position: relative;
-	padding: 4rem 0;
+	padding: 3rem 0;
+
+	@media (min-width: variables.$breakpoints--tablet) {
+		padding: 4rem 0;
+	}
 	background: hsl(var(--background));
 
 	&__header {

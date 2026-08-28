@@ -1,7 +1,11 @@
 @use "../../src/scss/abstracts/variables";
 
 .contact-block {
-	padding: 5rem 0;
+	padding: 3rem 0;
+
+	@media (min-width: variables.$breakpoints--tablet) {
+		padding: 5rem 0;
+	}
 	background: hsl(var(--background));
 
 	&__header {
@@ -174,6 +178,41 @@
 		&-missing {
 			margin: 0;
 			color: hsl(var(--muted-foreground));
+		}
+
+		// Form layout: name/email side by side, everything else full width.
+		.contact-form__grid {
+			display: grid;
+			gap: 1.25rem;
+
+			@media (min-width: 640px) {
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+			}
+		}
+
+		.contact-form__field {
+			grid-column: 1 / -1;
+
+			p {
+				margin: 0;
+			}
+
+			&--half {
+				@media (min-width: 640px) {
+					grid-column: auto;
+				}
+			}
+		}
+
+		.wpcf7-form-control-wrap {
+			display: block;
+		}
+
+		.wpcf7-response-output {
+			margin: 1.5rem 0 0;
+			padding: .75rem 1rem;
+			border-radius: var(--radius);
+			font-size: .875rem;
 		}
 
 		// Generic form field styling (Contact Form 7 / plain forms).

@@ -1,276 +1,323 @@
 {
-	"key": "group_site_options",
-	"title": "Site Options",
-	"fields": [
-		{
-			"key": "field_site_options_header_tab",
-			"label": "Header",
-			"name": "",
-			"type": "tab",
-			"placement": "top"
-		},
-		{
-			"key": "field_site_options_header_cta_label",
-			"label": "Header CTA Label",
-			"name": "header_cta_label",
-			"type": "text",
-			"placeholder": "Let's Talk"
-		},
-		{
-			"key": "field_site_options_header_cta_link",
-			"label": "Header CTA Link",
-			"name": "header_cta_link",
-			"type": "text",
-			"placeholder": "#contact",
-			"instructions": "URL or anchor (e.g. #contact)."
-		},
-		{
-			"key": "field_site_options_resume_file",
-			"label": "Resume File",
-			"name": "resume_file",
-			"type": "file",
-			"return_format": "url",
-			"library": "all",
-			"instructions": "The Resume button is hidden when empty."
-		},
-		{
-			"key": "field_site_options_contact_tab",
-			"label": "Contact Info",
-			"name": "",
-			"type": "tab",
-			"placement": "top"
-		},
-		{
-			"key": "field_site_options_phone",
-			"label": "Phone",
-			"name": "phone",
-			"type": "text",
-			"placeholder": "+389 ..."
-		},
-		{
-			"key": "field_site_options_email",
-			"label": "Email",
-			"name": "email",
-			"type": "email"
-		},
-		{
-			"key": "field_site_options_location",
-			"label": "Location",
-			"name": "location",
-			"type": "text",
-			"placeholder": "City, Country"
-		},
-		{
-			"key": "field_site_options_codeable_url",
-			"label": "Codeable Profile URL",
-			"name": "codeable_url",
-			"type": "url"
-		},
-		{
-			"key": "field_site_options_upwork_url",
-			"label": "Upwork Profile URL",
-			"name": "upwork_url",
-			"type": "url"
-		},
-		{
-			"key": "field_site_options_consultation_url",
-			"label": "Consultation Booking URL",
-			"name": "consultation_url",
-			"type": "url"
-		},
-		{
-			"key": "field_site_options_social_tab",
-			"label": "Social",
-			"name": "",
-			"type": "tab",
-			"placement": "top"
-		},
-		{
-			"key": "field_site_options_linkedin_url",
-			"label": "LinkedIn URL",
-			"name": "linkedin_url",
-			"type": "url"
-		},
-		{
-			"key": "field_site_options_github_url",
-			"label": "GitHub URL",
-			"name": "github_url",
-			"type": "url"
-		},
-		{
-			"key": "field_site_options_x_url",
-			"label": "X (Twitter) URL",
-			"name": "x_url",
-			"type": "url"
-		},
-		{
-			"key": "field_site_options_facebook_url",
-			"label": "Facebook URL",
-			"name": "facebook_url",
-			"type": "url"
-		},
-		{
-			"key": "field_site_options_instagram_url",
-			"label": "Instagram URL",
-			"name": "instagram_url",
-			"type": "url"
-		},
-		{
-			"key": "field_site_options_youtube_url",
-			"label": "YouTube URL",
-			"name": "youtube_url",
-			"type": "url"
-		},
-		{
-			"key": "field_site_options_services_tab",
-			"label": "Services Page",
-			"name": "",
-			"type": "tab",
-			"placement": "top"
-		},
-		{
-			"key": "field_site_options_services_title",
-			"label": "Services Archive Title",
-			"name": "services_title",
-			"type": "text",
-			"default_value": "End-to-end web development"
-		},
-		{
-			"key": "field_site_options_services_intro",
-			"label": "Services Archive Intro",
-			"name": "services_intro",
-			"type": "textarea",
-			"rows": 3,
-			"new_lines": ""
-		},
-		{
-			"key": "field_site_options_services_cta_title",
-			"label": "Services CTA Title",
-			"name": "services_cta_title",
-			"type": "text",
-			"default_value": "Not sure what you need?"
-		},
-		{
-			"key": "field_site_options_services_cta_text",
-			"label": "Services CTA Text",
-			"name": "services_cta_text",
-			"type": "textarea",
-			"rows": 2,
-			"new_lines": ""
-		},
-		{
-			"key": "field_site_options_services_cta_btn_text",
-			"label": "Services CTA Button Text",
-			"name": "services_cta_btn_text",
-			"type": "text",
-			"default_value": "Book a free consultation"
-		},
-		{
-			"key": "field_site_options_services_cta_btn_link",
-			"label": "Services CTA Button Link",
-			"name": "services_cta_btn_link",
-			"type": "text",
-			"default_value": "/#contact"
-		},
-		{
-			"key": "field_site_options_projects_tab",
-			"label": "Projects Page",
-			"name": "",
-			"type": "tab",
-			"placement": "top"
-		},
-		{
-			"key": "field_site_options_projects_title",
-			"label": "Projects Archive Title",
-			"name": "projects_title",
-			"type": "text",
-			"default_value": "Projects &"
-		},
-		{
-			"key": "field_site_options_projects_title_highlight",
-			"label": "Projects Archive Title (Gradient Part)",
-			"name": "projects_title_highlight",
-			"type": "text",
-			"default_value": "case studies"
-		},
-		{
-			"key": "field_site_options_projects_intro",
-			"label": "Projects Archive Intro",
-			"name": "projects_intro",
-			"type": "textarea",
-			"rows": 3,
-			"new_lines": ""
-		},
-		{
-			"key": "field_site_options_projects_cta_title",
-			"label": "Projects CTA Title",
-			"name": "projects_cta_title",
-			"type": "text",
-			"default_value": "Have a project in mind?"
-		},
-		{
-			"key": "field_site_options_projects_cta_text",
-			"label": "Projects CTA Text",
-			"name": "projects_cta_text",
-			"type": "textarea",
-			"rows": 2,
-			"new_lines": ""
-		},
-		{
-			"key": "field_site_options_projects_cta_btn_text",
-			"label": "Projects CTA Button Text",
-			"name": "projects_cta_btn_text",
-			"type": "text",
-			"default_value": "Start a conversation"
-		},
-		{
-			"key": "field_site_options_projects_cta_btn_link",
-			"label": "Projects CTA Button Link",
-			"name": "projects_cta_btn_link",
-			"type": "text",
-			"default_value": "/#contact"
-		},
-		{
-			"key": "field_site_options_footer_tab",
-			"label": "Footer",
-			"name": "",
-			"type": "tab",
-			"placement": "top"
-		},
-		{
-			"key": "field_site_options_footer_logo",
-			"label": "Footer Logo",
-			"name": "footer_logo",
-			"type": "image",
-			"return_format": "url",
-			"library": "all",
-			"preview_size": "medium",
-			"instructions": "Optional. The footer shows the gradient site name when empty."
-		},
-		{
-			"key": "field_site_options_footer_about",
-			"label": "Footer About Text",
-			"name": "footer_about",
-			"type": "textarea",
-			"rows": 3,
-			"new_lines": ""
-		}
-	],
-	"location": [
-		[
-			{
-				"param": "options_page",
-				"operator": "==",
-				"value": "site-options"
-			}
-		]
-	],
-	"menu_order": 0,
-	"position": "normal",
-	"style": "default",
-	"label_placement": "top",
-	"instruction_placement": "label",
-	"active": true,
-	"show_in_rest": 0,
-	"modified": 1756425600
+    "key": "group_site_options",
+    "title": "Site Options",
+    "fields": [
+        {
+            "key": "field_site_options_general_tab",
+            "label": "General",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_site_options_career_start",
+            "label": "Career Start Date",
+            "name": "career_start",
+            "type": "date_picker",
+            "display_format": "F Y",
+            "return_format": "Y-m-d",
+            "first_day": 1,
+            "instructions": "Used to calculate the years of experience. Write {years} in any text field and it will be replaced with the computed number (e.g. \"{years}+ years of experience\")."
+        },
+        {
+            "key": "field_site_options_header_tab",
+            "label": "Header",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_site_options_header_cta_label",
+            "label": "Header CTA Label",
+            "name": "header_cta_label",
+            "type": "text",
+            "placeholder": "Let's Talk"
+        },
+        {
+            "key": "field_site_options_header_cta_link",
+            "label": "Header CTA Link",
+            "name": "header_cta_link",
+            "type": "text",
+            "placeholder": "#contact",
+            "instructions": "URL or anchor (e.g. #contact)."
+        },
+        {
+            "key": "field_site_options_resume_file",
+            "label": "Resume File",
+            "name": "resume_file",
+            "type": "file",
+            "return_format": "url",
+            "library": "all",
+            "instructions": "The Resume button is hidden when empty."
+        },
+        {
+            "key": "field_site_options_contact_tab",
+            "label": "Contact Info",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_site_options_phone",
+            "label": "Phone",
+            "name": "phone",
+            "type": "text",
+            "placeholder": "+389 ..."
+        },
+        {
+            "key": "field_site_options_email",
+            "label": "Email",
+            "name": "email",
+            "type": "email"
+        },
+        {
+            "key": "field_site_options_location",
+            "label": "Location",
+            "name": "location",
+            "type": "text",
+            "placeholder": "City, Country"
+        },
+        {
+            "key": "field_site_options_codeable_url",
+            "label": "Codeable Profile URL",
+            "name": "codeable_url",
+            "type": "url"
+        },
+        {
+            "key": "field_site_options_upwork_url",
+            "label": "Upwork Profile URL",
+            "name": "upwork_url",
+            "type": "url"
+        },
+        {
+            "key": "field_site_options_consultation_url",
+            "label": "Consultation Booking URL",
+            "name": "consultation_url",
+            "type": "url"
+        },
+        {
+            "key": "field_site_options_social_tab",
+            "label": "Social",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_site_options_linkedin_url",
+            "label": "LinkedIn URL",
+            "name": "linkedin_url",
+            "type": "url"
+        },
+        {
+            "key": "field_site_options_github_url",
+            "label": "GitHub URL",
+            "name": "github_url",
+            "type": "url"
+        },
+        {
+            "key": "field_site_options_x_url",
+            "label": "X (Twitter) URL",
+            "name": "x_url",
+            "type": "url"
+        },
+        {
+            "key": "field_site_options_facebook_url",
+            "label": "Facebook URL",
+            "name": "facebook_url",
+            "type": "url"
+        },
+        {
+            "key": "field_site_options_instagram_url",
+            "label": "Instagram URL",
+            "name": "instagram_url",
+            "type": "url"
+        },
+        {
+            "key": "field_site_options_youtube_url",
+            "label": "YouTube URL",
+            "name": "youtube_url",
+            "type": "url"
+        },
+        {
+            "key": "field_site_options_services_tab",
+            "label": "Services Page",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_site_options_services_title",
+            "label": "Services Archive Title",
+            "name": "services_title",
+            "type": "text",
+            "default_value": "End-to-end web development"
+        },
+        {
+            "key": "field_site_options_services_intro",
+            "label": "Services Archive Intro",
+            "name": "services_intro",
+            "type": "textarea",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_site_options_services_cta_title",
+            "label": "Services CTA Title",
+            "name": "services_cta_title",
+            "type": "text",
+            "default_value": "Not sure what you need?"
+        },
+        {
+            "key": "field_site_options_services_cta_text",
+            "label": "Services CTA Text",
+            "name": "services_cta_text",
+            "type": "textarea",
+            "rows": 2,
+            "new_lines": ""
+        },
+        {
+            "key": "field_site_options_services_cta_btn_text",
+            "label": "Services CTA Button Text",
+            "name": "services_cta_btn_text",
+            "type": "text",
+            "default_value": "Book a free consultation"
+        },
+        {
+            "key": "field_site_options_services_cta_btn_link",
+            "label": "Services CTA Button Link",
+            "name": "services_cta_btn_link",
+            "type": "text",
+            "default_value": "/#contact"
+        },
+        {
+            "key": "field_site_options_projects_tab",
+            "label": "Projects Page",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_site_options_projects_title",
+            "label": "Projects Archive Title",
+            "name": "projects_title",
+            "type": "text",
+            "default_value": "Projects &"
+        },
+        {
+            "key": "field_site_options_projects_title_highlight",
+            "label": "Projects Archive Title (Gradient Part)",
+            "name": "projects_title_highlight",
+            "type": "text",
+            "default_value": "case studies"
+        },
+        {
+            "key": "field_site_options_projects_intro",
+            "label": "Projects Archive Intro",
+            "name": "projects_intro",
+            "type": "textarea",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_site_options_projects_cta_title",
+            "label": "Projects CTA Title",
+            "name": "projects_cta_title",
+            "type": "text",
+            "default_value": "Have a project in mind?"
+        },
+        {
+            "key": "field_site_options_projects_cta_text",
+            "label": "Projects CTA Text",
+            "name": "projects_cta_text",
+            "type": "textarea",
+            "rows": 2,
+            "new_lines": ""
+        },
+        {
+            "key": "field_site_options_projects_cta_btn_text",
+            "label": "Projects CTA Button Text",
+            "name": "projects_cta_btn_text",
+            "type": "text",
+            "default_value": "Start a conversation"
+        },
+        {
+            "key": "field_site_options_projects_cta_btn_link",
+            "label": "Projects CTA Button Link",
+            "name": "projects_cta_btn_link",
+            "type": "text",
+            "default_value": "/#contact"
+        },
+        {
+            "key": "field_site_options_blog_tab",
+            "label": "Blog Page",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_site_options_blog_title",
+            "label": "Blog Archive Title",
+            "name": "blog_title",
+            "type": "text",
+            "default_value": "Blog & Articles"
+        },
+        {
+            "key": "field_site_options_blog_title_highlight",
+            "label": "Blog Archive Title (Extra Part)",
+            "name": "blog_title_highlight",
+            "type": "text",
+            "default_value": ""
+        },
+        {
+            "key": "field_site_options_blog_intro",
+            "label": "Blog Archive Intro",
+            "name": "blog_intro",
+            "type": "textarea",
+            "rows": 3,
+            "new_lines": "",
+            "default_value": "Sharing knowledge about web development, WordPress, and modern technologies to help developers and businesses succeed online."
+        },
+        {
+            "key": "field_site_options_footer_tab",
+            "label": "Footer",
+            "name": "",
+            "type": "tab",
+            "placement": "top"
+        },
+        {
+            "key": "field_site_options_footer_logo",
+            "label": "Footer Logo",
+            "name": "footer_logo",
+            "type": "image",
+            "return_format": "url",
+            "library": "all",
+            "preview_size": "medium",
+            "instructions": "Optional. The footer shows the gradient site name when empty."
+        },
+        {
+            "key": "field_site_options_footer_about",
+            "label": "Footer About Text",
+            "name": "footer_about",
+            "type": "textarea",
+            "rows": 3,
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "site-options"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 0,
+    "modified": 1756425602
 }

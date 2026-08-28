@@ -1,39 +1,530 @@
 @use './abstracts/variables';
 
 .single-post {
-	padding: 64px 0;
+	padding: 1rem 0 6rem;
+
+	// Reference article layout uses max-w-3xl.
+	&__container {
+		max-width: 48rem;
+	}
+
+	&__back {
+		display: inline-flex;
+		align-items: center;
+		gap: .5rem;
+		font-size: .875rem;
+		line-height: 1.25rem;
+		font-weight: 500;
+		color: hsl(var(--primary));
+		text-decoration: none;
+		transition: color .15s cubic-bezier(.4, 0, .2, 1);
+
+		&:hover {
+			color: hsl(var(--accent));
+		}
+	}
 
 	&__header {
-		margin-bottom: 32px;
+		margin-top: 2rem;
 	}
 
 	&__meta {
 		display: flex;
-		gap: 16px;
-		font-size: 0.875rem;
-		color: var(--wp--preset--color--muted);
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 1rem;
+		font-size: .875rem;
+		line-height: 1.25rem;
+		color: hsl(var(--muted-foreground));
 	}
 
-	&__thumb img {
-		border-radius: 12px;
-		margin-bottom: 32px;
+	&__meta-item {
+		display: inline-flex;
+		align-items: center;
+		gap: .375rem;
+
+		svg {
+			color: hsl(var(--primary));
+		}
 	}
 
+	// Reference: text-4xl font-bold text-primary.
+	&__title {
+		margin: 1rem 0 0;
+		font-size: 2.25rem;
+		line-height: 2.5rem;
+		font-weight: 700;
+		letter-spacing: -.03em;
+		color: hsl(var(--primary));
+	}
+
+	&__author {
+		margin-top: 1.5rem;
+		display: inline-flex;
+		align-items: center;
+		gap: .5rem;
+		font-size: .875rem;
+		line-height: 1.25rem;
+		color: hsl(var(--muted-foreground));
+	}
+
+	// Reference: w-full h-64 md:h-80 object-cover rounded-2xl shadow-elegant.
+	&__thumb {
+		margin-top: 2rem;
+
+		img {
+			display: block;
+			width: 100%;
+			height: 16rem;
+			object-fit: cover;
+			border-radius: 1rem;
+			border: 1px solid hsl(var(--border) / .5);
+			box-shadow: var(--shadow-elegant);
+
+			@media (min-width: 768px) {
+				height: 20rem;
+			}
+		}
+
+		span {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 16rem;
+			border-radius: 1rem;
+			background: var(--gradient-hero);
+			color: hsl(var(--primary-foreground));
+			font-size: .875rem;
+			box-shadow: var(--shadow-elegant);
+
+			@media (min-width: 768px) {
+				height: 20rem;
+			}
+		}
+	}
+
+	&__body {
+		margin-top: 2rem;
+		border-radius: 1rem;
+		border: 1px solid hsl(var(--border) / .7);
+		background-color: hsl(var(--card));
+		box-shadow: var(--shadow-card);
+		padding: 1.5rem;
+
+		@media (min-width: variables.$breakpoints--tablet) {
+			padding: 2.5rem;
+		}
+	}
+
+	// Gutenberg content, matching the reference .article-content 1:1.
 	&__content {
-		max-width: 770px;
-	}
+		font-size: 1.125rem;
+		line-height: 1.625;
+		color: hsl(var(--muted-foreground));
 
-	&__nav {
-		display: flex;
-		justify-content: space-between;
-		gap: 16px;
-		margin-top: 48px;
-		padding-top: 24px;
-		border-top: 1px solid var(--wp--preset--color--light);
+		> :first-child {
+			margin-top: 0;
+		}
+
+		h2 {
+			margin: 3rem 0 1rem;
+			border-bottom: 1px solid hsl(var(--border) / .6);
+			padding-bottom: .75rem;
+			font-size: 1.5rem;
+			line-height: 2rem;
+			font-weight: 700;
+			letter-spacing: -.01em;
+			color: hsl(var(--foreground));
+
+			@media (min-width: 768px) {
+				font-size: 1.875rem;
+				line-height: 2.25rem;
+			}
+		}
+
+		h3 {
+			margin: 2rem 0 .75rem;
+			font-size: 1.25rem;
+			line-height: 1.75rem;
+			font-weight: 600;
+			color: hsl(var(--foreground));
+
+			@media (min-width: 768px) {
+				font-size: 1.5rem;
+				line-height: 2rem;
+			}
+		}
+
+		p {
+			margin: 0 0 1.5rem;
+			line-height: 1.625;
+		}
 
 		a {
-			color: var(--wp--preset--color--primary);
-			text-decoration: none;
+			font-weight: 500;
+			color: hsl(var(--primary));
+			text-decoration-line: underline;
+			text-decoration-color: hsl(var(--primary) / .4);
+			text-underline-offset: 4px;
+			transition: color .2s cubic-bezier(.4, 0, .2, 1), text-decoration-color .2s cubic-bezier(.4, 0, .2, 1);
+
+			&:hover {
+				text-decoration-color: hsl(var(--primary));
+			}
 		}
+
+		strong {
+			font-weight: 600;
+			color: hsl(var(--foreground));
+		}
+
+		// Unordered lists — blue dot markers.
+		ul {
+			margin: 1.5rem 0;
+			padding-left: 0;
+			list-style-type: none;
+
+			> li ~ li {
+				margin-top: .75rem;
+			}
+
+			li {
+				position: relative;
+				padding-left: 1.75rem;
+				line-height: 1.625;
+
+				&::before {
+					content: '';
+					position: absolute;
+					left: .25rem;
+					top: .65em;
+					height: .5rem;
+					width: .5rem;
+					border-radius: 9999px;
+					background-color: hsl(var(--primary) / .7);
+				}
+			}
+		}
+
+		// Ordered lists — numbered blue circles.
+		ol {
+			margin: 1.5rem 0;
+			padding-left: 0;
+			list-style-type: none;
+			counter-reset: article-ol;
+
+			> li ~ li {
+				margin-top: .75rem;
+			}
+
+			li {
+				position: relative;
+				padding-left: 2.5rem;
+				line-height: 1.625;
+				counter-increment: article-ol;
+
+				&::before {
+					content: counter(article-ol);
+					position: absolute;
+					left: 0;
+					top: .125rem;
+					display: flex;
+					height: 1.5rem;
+					width: 1.5rem;
+					align-items: center;
+					justify-content: center;
+					border-radius: 9999px;
+					background-color: hsl(var(--primary) / .1);
+					font-size: .875rem;
+					line-height: 1.25rem;
+					font-weight: 700;
+					color: hsl(var(--primary));
+				}
+			}
+		}
+
+		// Quotes.
+		blockquote {
+			margin: 2rem 0;
+			border-top-right-radius: .75rem;
+			border-bottom-right-radius: .75rem;
+			border-left: 4px solid hsl(var(--primary) / .5);
+			background-color: hsl(var(--primary) / .05);
+			padding: .25rem 0 .25rem 1.5rem;
+			font-style: italic;
+			color: hsl(var(--foreground) / .8);
+
+			p {
+				margin-bottom: 0;
+				padding: .75rem 1rem .75rem 0;
+			}
+
+			cite {
+				display: block;
+				margin-top: .5rem;
+				font-style: normal;
+				font-size: .875rem;
+			}
+		}
+
+		// Inline code.
+		code {
+			border-radius: calc(var(--radius) - 2px);
+			border: 1px solid hsl(var(--border) / .6);
+			background-color: hsl(var(--muted));
+			padding: .125rem .375rem;
+			font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+			font-size: .875em;
+			color: hsl(var(--foreground));
+		}
+
+		// Code blocks.
+		pre,
+		.wp-block-code {
+			margin: 2rem 0;
+			overflow-x: auto;
+			border-radius: .75rem;
+			background-color: hsl(var(--foreground));
+			padding: 1.25rem;
+			font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+			font-size: .875rem;
+			line-height: 1.625;
+			color: hsl(var(--background));
+			box-shadow: var(--shadow-card);
+
+			code {
+				border: 0;
+				background-color: transparent;
+				padding: 0;
+				font-size: inherit;
+				color: inherit;
+			}
+		}
+
+		// Images and captions.
+		figure {
+			margin: 2.5rem 0;
+		}
+
+		figure img,
+		> img {
+			width: 100%;
+			height: auto;
+			border-radius: .75rem;
+			border: 1px solid hsl(var(--border) / .5);
+			box-shadow: var(--shadow-elegant);
+		}
+
+		figcaption,
+		.wp-element-caption {
+			margin-top: .75rem;
+			text-align: center;
+			font-size: .875rem;
+			line-height: 1.25rem;
+			font-style: italic;
+			color: hsl(var(--muted-foreground));
+		}
+
+		hr,
+		.wp-block-separator {
+			margin: 2.5rem 0;
+			border: 0;
+			border-top: 1px solid hsl(var(--border) / .6);
+		}
+
+		// Embeds.
+		iframe {
+			max-width: 100%;
+		}
+
+		.wp-block-embed {
+			margin: 2rem 0;
+
+			iframe {
+				width: 100%;
+				height: 420px;
+				border-radius: .75rem;
+			}
+		}
+
+		// Tables.
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin: 0 0 1.5rem;
+			font-size: .9375rem;
+
+			th,
+			td {
+				padding: .625rem .875rem;
+				border: 1px solid hsl(var(--border));
+				text-align: left;
+			}
+
+			th {
+				background: hsl(var(--muted) / .5);
+				color: hsl(var(--foreground));
+			}
+		}
+	}
+
+	// Share row at the bottom of the article card.
+	&__share {
+		margin-top: 2.5rem;
+		padding-top: 1.5rem;
+		border-top: 1px solid hsl(var(--border));
+	}
+
+	&__share-label {
+		display: inline-flex;
+		align-items: center;
+		gap: .5rem;
+		font-size: .75rem;
+		line-height: 1rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: .15em;
+		color: hsl(var(--muted-foreground));
+	}
+
+	&__share-buttons {
+		margin-top: 1rem;
+		display: flex;
+		flex-wrap: wrap;
+		gap: .75rem;
+	}
+
+	&__share-button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 2.5rem;
+		height: 2.5rem;
+		border-radius: 9999px;
+		border: 0;
+		background: hsl(var(--muted) / .6);
+		color: hsl(var(--muted-foreground));
+		cursor: pointer;
+		transition: var(--transition-smooth);
+
+		&:hover {
+			background: hsl(var(--primary) / .12);
+			color: hsl(var(--primary));
+			transform: translateY(-.125rem);
+		}
+	}
+
+	// Copy-link button swaps the link icon for a check when copied.
+	.single-post__share-icon--link,
+	.single-post__share-icon--check {
+		display: inline-flex;
+	}
+
+	.single-post__share-icon--check {
+		display: none;
+	}
+
+	&__share-button.is-copied {
+		background: hsl(var(--primary) / .12);
+		color: hsl(var(--primary));
+
+		.single-post__share-icon--link {
+			display: none;
+		}
+
+		.single-post__share-icon--check {
+			display: inline-flex;
+		}
+	}
+
+	// Previous / next article cards.
+	&__nav {
+		margin-top: 2rem;
+		display: grid;
+		gap: 1.5rem;
+
+		@media (min-width: 640px) {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	&__nav-card {
+		display: block;
+		border-radius: 1rem;
+		border: 1px solid hsl(var(--border) / .7);
+		background-color: hsl(var(--card));
+		box-shadow: var(--shadow-card);
+		padding: 1.5rem 1.75rem;
+		text-decoration: none;
+		transition: var(--transition-smooth);
+
+		&:hover {
+			border-color: hsl(var(--primary) / .25);
+			box-shadow: var(--shadow-elegant);
+			transform: translateY(-.125rem);
+		}
+
+		// A lone next-card sits in the right column.
+		&--next:only-child {
+			@media (min-width: 640px) {
+				grid-column: 2;
+			}
+		}
+	}
+
+	&__nav-label {
+		display: block;
+		font-size: .6875rem;
+		line-height: 1rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: .15em;
+		color: hsl(var(--muted-foreground));
+	}
+
+	&__nav-title {
+		display: block;
+		margin: .625rem 0 .875rem;
+		font-size: 1.0625rem;
+		line-height: 1.4;
+		font-weight: 700;
+		color: hsl(var(--foreground));
+	}
+
+	&__nav-more {
+		display: inline-flex;
+		align-items: center;
+		gap: .375rem;
+		font-size: .875rem;
+		line-height: 1.25rem;
+		font-weight: 500;
+		color: hsl(var(--primary));
+	}
+
+	// "Enjoyed this article?" CTA card.
+	&__cta {
+		margin-top: 3rem;
+		border-radius: 1rem;
+		border: 1px solid hsl(var(--border) / .7);
+		background-color: hsl(var(--card));
+		box-shadow: var(--shadow-card);
+		padding: 2.5rem 2rem;
+		text-align: center;
+	}
+
+	&__cta-title {
+		margin: 0;
+		font-size: 1.5rem;
+		line-height: 2rem;
+		font-weight: 700;
+		color: hsl(var(--foreground));
+	}
+
+	&__cta-text {
+		margin: .75rem auto 1.5rem;
+		max-width: 32rem;
+		font-size: .9375rem;
+		line-height: 1.6;
+		color: hsl(var(--muted-foreground));
 	}
 }

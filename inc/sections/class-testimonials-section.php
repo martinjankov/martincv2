@@ -102,7 +102,7 @@ class Testimonials_Section {
 		$this->eyebrow      = (string) get_field( 'eyebrow' );
 		$this->title        = (string) get_field( 'title' );
 		$this->description  = (string) get_field( 'description' );
-		$this->testimonials = \MartinCV\Utility::rows( get_field( 'testimonials' ) );
+		$this->testimonials = $this->get_testimonial_posts();
 		$this->stats        = \MartinCV\Utility::rows( get_field( 'stats' ) );
 		$this->cta_title    = (string) get_field( 'cta_title' );
 		$this->cta_text     = (string) get_field( 'cta_text' );
@@ -110,6 +110,38 @@ class Testimonials_Section {
 		$this->cta_btn_link = (string) get_field( 'cta_btn_link' );
 
 		$this->is_initialized = true;
+	}
+
+	/**
+	 * Load testimonials from the testimonial post type.
+	 *
+	 * Title is the client name, the "review" field holds the quote.
+	 *
+	 * @return array
+	 */
+	private function get_testimonial_posts(): array {
+		$posts = get_posts(
+			array(
+				'post_type'      => 'testimonial',
+				'posts_per_page' => -1,
+				'orderby'        => array(
+					'menu_order' => 'ASC',
+					'date'       => 'DESC',
+				),
+			)
+		);
+
+		$testimonials = array();
+
+		foreach ( $posts as $post ) {
+			$testimonials[] = array(
+				'name'  => $post->post_title,
+				'quote' => trim( wp_strip_all_tags( (string) get_post_meta( $post->ID, 'review', true ) ) ),
+				'role'  => (string) get_post_meta( $post->ID, 'role', true ),
+			);
+		}
+
+		return $testimonials;
 	}
 
 	/**
