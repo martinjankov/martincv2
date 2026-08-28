@@ -1,0 +1,46 @@
+@use '../abstracts/variables';
+
+// Structural skeleton — visual design comes with the new designs.
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	background: var(--wp--preset--color--white);
+	transition: box-shadow 0.2s ease;
+
+	&--scrolled {
+		box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+	}
+}
+
+.header-inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+	width: 100%;
+	max-width: variables.$martincv-container-width;
+	margin: 0 auto;
+	padding: 16px;
+
+	@media (min-width: variables.$breakpoints--tablet) {
+		padding: 16px 32px;
+	}
+}
+
+.header-logo {
+	display: flex;
+	align-items: center;
+
+	img {
+		max-height: 48px;
+		width: auto;
+	}
+
+	.site-name {
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: var(--wp--preset--color--dark);
+		text-decoration: none;
+	}
+}

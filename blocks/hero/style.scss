@@ -1,0 +1,68 @@
+@use "../../src/scss/abstracts/variables";
+
+.hero-block {
+	position: relative;
+	display: flex;
+	align-items: center;
+	min-height: 70vh;
+	overflow: hidden;
+
+	&__bg {
+		position: absolute;
+		inset: 0;
+		background-size: cover;
+		background-position: center;
+		z-index: 0;
+	}
+
+	&__overlay {
+		position: absolute;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.35);
+		z-index: 1;
+	}
+
+	&__content {
+		position: relative;
+		z-index: 2;
+		width: 100%;
+		max-width: variables.$martincv-container-width;
+		margin: 0 auto;
+		padding: 96px 16px;
+
+		@media (min-width: variables.$breakpoints--tablet) {
+			padding: 128px 32px;
+		}
+	}
+
+	&__heading {
+		margin: 0 0 16px;
+		font-size: var(--wp--preset--font-size--heading-1);
+		color: var(--wp--preset--color--white);
+	}
+
+	&__subheading {
+		margin: 0 0 32px;
+		max-width: 640px;
+		font-size: var(--wp--preset--font-size--lg);
+		color: var(--wp--preset--color--white);
+		opacity: 0.9;
+	}
+
+	&__btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		padding: 14px 32px;
+		background: var(--wp--preset--color--primary);
+		color: var(--wp--preset--color--white);
+		border-radius: 8px;
+		font-weight: 600;
+		text-decoration: none;
+		transition: opacity 0.2s ease;
+
+		&:hover {
+			opacity: 0.9;
+		}
+	}
+}

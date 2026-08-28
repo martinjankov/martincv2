@@ -1,0 +1,39 @@
+@use './abstracts/variables';
+
+.single-post {
+	padding: 64px 0;
+
+	&__header {
+		margin-bottom: 32px;
+	}
+
+	&__meta {
+		display: flex;
+		gap: 16px;
+		font-size: 0.875rem;
+		color: var(--wp--preset--color--muted);
+	}
+
+	&__thumb img {
+		border-radius: 12px;
+		margin-bottom: 32px;
+	}
+
+	&__content {
+		max-width: 770px;
+	}
+
+	&__nav {
+		display: flex;
+		justify-content: space-between;
+		gap: 16px;
+		margin-top: 48px;
+		padding-top: 24px;
+		border-top: 1px solid var(--wp--preset--color--light);
+
+		a {
+			color: var(--wp--preset--color--primary);
+			text-decoration: none;
+		}
+	}
+}

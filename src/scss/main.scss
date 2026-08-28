@@ -1,0 +1,124 @@
+@use './base/reset';
+@use './abstracts/mixins';
+@use './abstracts/variables';
+@use './layout/header';
+@use './layout/navigation';
+@use './layout/burger';
+@use './layout/mobile-drawer';
+@use './layout/footer';
+
+.martincv-container {
+	width: 100%;
+	max-width: variables.$martincv-container-width;
+	margin: 0 auto;
+	padding-left: 16px;
+	padding-right: 16px;
+
+	@media (min-width: variables.$breakpoints--tablet) {
+		padding-left: 32px;
+		padding-right: 32px;
+	}
+
+	@media (min-width: variables.$breakpoints--desktop) {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+}
+
+body {
+	background-color: var(--wp--preset--color--white);
+
+	// Flex-based WordPress block alignments
+	.aligncenter {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-left: auto !important;
+		margin-right: auto !important;
+		text-align: center;
+	}
+
+	.alignleft {
+		display: flex;
+		justify-content: flex-start;
+		float: left;
+		margin-right: 1.5em;
+	}
+
+	.alignright {
+		@media all and (min-width: variables.$breakpoints--tablet) {
+			display: flex;
+			justify-content: flex-end;
+			float: right;
+			margin-left: 1.5em;
+		}
+	}
+
+	.alignwide {
+		display: flex;
+		width: 100vw;
+		max-width: 1200px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.alignfull {
+		display: flex;
+		width: 100vw;
+		max-width: 100vw;
+		margin-left: calc(50% - 50vw);
+		margin-right: calc(50% - 50vw);
+	}
+
+	@media (max-width: variables.$breakpoints--tablet) {
+		.alignwide,
+		.alignfull {
+			max-width: 100vw;
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+
+	.hide {
+		display: none !important;
+	}
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.error-404 {
+	padding: 96px 0;
+	text-align: center;
+
+	&__code {
+		font-size: 6rem;
+		font-weight: 800;
+		margin: 0;
+		color: var(--wp--preset--color--primary);
+	}
+
+	&__title {
+		margin: 8px 0 16px;
+	}
+
+	&__btn {
+		display: inline-block;
+		margin-top: 24px;
+		padding: 12px 28px;
+		background: var(--wp--preset--color--primary);
+		color: var(--wp--preset--color--white);
+		border-radius: 8px;
+		text-decoration: none;
+	}
+}

@@ -1,0 +1,24 @@
+{
+  "name": "martincv-theme",
+  "version": "1.0.0",
+  "description": "Custom WordPress theme for MartinCV",
+  "main": "index.js",
+  "scripts": {
+    "start:theme": "wp-scripts start src/*.js --output-path=build/theme",
+    "build:theme": "wp-scripts build src/*.js --output-path=build/theme",
+    "start:blocks": "wp-scripts start --webpack-src-dir=blocks --webpack-copy-php --output-path=build/blocks",
+    "build:blocks": "wp-scripts build --webpack-src-dir=blocks --webpack-copy-php --output-path=build/blocks",
+    "start": "npm-run-all --parallel start:theme start:blocks",
+    "build": "npm-run-all --parallel build:theme build:blocks"
+  },
+  "keywords": [],
+  "author": "MartinCV",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@wordpress/scripts": "^27.7.0",
+    "copy-webpack-plugin": "^12.0.2",
+    "npm-run-all": "^4.1.5",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.3"
+  }
+}

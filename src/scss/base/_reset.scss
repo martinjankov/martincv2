@@ -1,0 +1,28 @@
+@use '../abstracts/variables';
+
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}
+ul, ol {
+ list-style: none;
+}
+img, picture {
+  max-width: 100%;
+  display: block;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}

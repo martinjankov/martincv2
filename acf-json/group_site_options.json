@@ -1,0 +1,106 @@
+{
+	"key": "group_site_options",
+	"title": "Site Options",
+	"fields": [
+		{
+			"key": "field_site_options_contact_tab",
+			"label": "Contact Info",
+			"name": "",
+			"type": "tab",
+			"placement": "top"
+		},
+		{
+			"key": "field_site_options_phone",
+			"label": "Phone",
+			"name": "phone",
+			"type": "text",
+			"placeholder": "+389 ..."
+		},
+		{
+			"key": "field_site_options_email",
+			"label": "Email",
+			"name": "email",
+			"type": "email"
+		},
+		{
+			"key": "field_site_options_location",
+			"label": "Location",
+			"name": "location",
+			"type": "text",
+			"placeholder": "City, Country"
+		},
+		{
+			"key": "field_site_options_social_tab",
+			"label": "Social",
+			"name": "",
+			"type": "tab",
+			"placement": "top"
+		},
+		{
+			"key": "field_site_options_facebook_url",
+			"label": "Facebook URL",
+			"name": "facebook_url",
+			"type": "url"
+		},
+		{
+			"key": "field_site_options_instagram_url",
+			"label": "Instagram URL",
+			"name": "instagram_url",
+			"type": "url"
+		},
+		{
+			"key": "field_site_options_linkedin_url",
+			"label": "LinkedIn URL",
+			"name": "linkedin_url",
+			"type": "url"
+		},
+		{
+			"key": "field_site_options_youtube_url",
+			"label": "YouTube URL",
+			"name": "youtube_url",
+			"type": "url"
+		},
+		{
+			"key": "field_site_options_footer_tab",
+			"label": "Footer",
+			"name": "",
+			"type": "tab",
+			"placement": "top"
+		},
+		{
+			"key": "field_site_options_footer_logo",
+			"label": "Footer Logo",
+			"name": "footer_logo",
+			"type": "image",
+			"return_format": "url",
+			"library": "all",
+			"preview_size": "medium",
+			"instructions": "Optional. Falls back to the site custom logo when empty."
+		},
+		{
+			"key": "field_site_options_footer_about",
+			"label": "Footer About Text",
+			"name": "footer_about",
+			"type": "textarea",
+			"rows": 3,
+			"new_lines": ""
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "options_page",
+				"operator": "==",
+				"value": "site-options"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"active": true,
+	"show_in_rest": 0,
+	"modified": 1756339200
+}
