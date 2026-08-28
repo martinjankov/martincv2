@@ -80,8 +80,14 @@ h3 {
 }
 
 // Generic pages: keep content clear of the fixed floating header.
+// Pages that open with the hero block bleed to the very top instead —
+// the hero carries its own header offset and the header floats over it.
 .wp-page-main {
 	padding-top: 7rem;
+
+	&:has(> .hero-block:first-child) {
+		padding-top: 0;
+	}
 }
 
 body {
