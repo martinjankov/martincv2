@@ -64,7 +64,7 @@ $wrapper_attrs = get_block_wrapper_attributes(
 						</a>
 					<?php endif; ?>
 					<?php if ( $section->show_resume() && $resume_url ) : ?>
-						<a href="<?php echo esc_url( $resume_url ); ?>" class="btn-secondary" target="_blank" rel="noopener noreferrer">
+						<a href="<?php echo esc_url( $resume_url ); ?>" class="btn-secondary" download>
 							<span class="hero-block__btn-icon hero-block__btn-icon--left"><?php Utility::icon( 'download', 17 ); ?></span>
 							<?php esc_html_e( 'Resume', 'martincv' ); ?>
 						</a>
