@@ -56,6 +56,13 @@ class Yoast_Schema {
 			}
 		}
 
+		if ( is_post_type_archive( 'project' ) ) {
+			$item_list = $this->get_projects_item_list();
+			if ( $item_list ) {
+				$graph[] = $item_list;
+			}
+		}
+
 		if ( is_singular( 'service' ) ) {
 			$graph[] = $this->get_single_service_schema();
 		}
@@ -221,6 +228,45 @@ class Yoast_Schema {
 	}
 
 	/**
+	 * ItemList of project case studies for sitelinks.
+	 *
+	 * @return array|null
+	 */
+	private function get_projects_item_list(): ?array {
+		$projects = get_posts(
+			array(
+				'post_type'      => 'project',
+				'posts_per_page' => -1,
+				'orderby'        => array(
+					'menu_order' => 'ASC',
+					'date'       => 'DESC',
+				),
+			)
+		);
+
+		if ( ! $projects ) {
+			return null;
+		}
+
+		$items = array();
+		foreach ( $projects as $index => $project ) {
+			$items[] = array(
+				'@type'    => 'ListItem',
+				'position' => $index + 1,
+				'url'      => get_permalink( $project ),
+				'name'     => get_the_title( $project ),
+			);
+		}
+
+		return array(
+			'@type'           => 'ItemList',
+			'@id'             => home_url( '/#projects-list' ),
+			'name'            => __( 'Projects & Case Studies', 'martincv' ),
+			'itemListElement' => $items,
+		);
+	}
+
+	/**
 	 * Service schema for a single service page.
 	 *
 	 * @return array
@@ -270,6 +316,19 @@ class Yoast_Schema {
 
 		if ( has_post_thumbnail() ) {
 			$schema['image'] = (string) get_the_post_thumbnail_url( null, 'large' );
+		}
+
+		$tech = array_filter( array_map( 'trim', preg_split( '/\r\n|\r|\n/', (string) get_field( 'tech' ) ) ) );
+		if ( $tech ) {
+			$schema['keywords'] = implode( ', ', $tech );
+		}
+
+		$client = (string) get_field( 'client' );
+		if ( $client ) {
+			$schema['about'] = array(
+				'@type' => 'Organization',
+				'name'  => $client,
+			);
 		}
 
 		return $schema;
