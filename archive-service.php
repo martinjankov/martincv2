@@ -27,7 +27,8 @@ $martincv_services = new WP_Query(
 	)
 );
 ?>
-<main class="wp-page-main services-archive">
+<main class="wp-page-main">
+	<section class="services-archive">
 	<div class="martincv-container">
 		<header class="services-archive__header">
 			<p class="eyebrow"><?php esc_html_e( 'Services', 'martincv' ); ?></p>
@@ -83,6 +84,7 @@ $martincv_services = new WP_Query(
 			</div>
 		<?php endif; ?>
 	</div>
+	</section>
 </main>
 <?php
 get_footer();

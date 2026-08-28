@@ -77,7 +77,8 @@ $martincv_filter_terms = get_terms(
 	)
 );
 ?>
-<main class="wp-page-main projects-archive">
+<main class="wp-page-main">
+	<section class="projects-archive">
 	<div class="projects-archive__bg bg-dot-pattern" aria-hidden="true"></div>
 	<div class="martincv-container martincv-container--wide projects-archive__container">
 		<div class="projects-archive__header">
@@ -210,6 +211,7 @@ $martincv_filter_terms = get_terms(
 			</div>
 		<?php endif; ?>
 	</div>
+	</section>
 </main>
 <?php
 get_footer();
