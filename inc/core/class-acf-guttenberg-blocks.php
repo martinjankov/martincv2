@@ -25,6 +25,7 @@ class ACF_Guttenberg_Blocks {
 	 */
 	private function initialize() {
 		add_action( 'acf/init', array( $this, 'register_blocks' ) );
+		add_filter( 'should_load_separate_core_block_assets', '__return_true' );
 	}
 
 	/**
