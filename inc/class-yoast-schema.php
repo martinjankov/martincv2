@@ -221,7 +221,7 @@ class Yoast_Schema {
 
 		return array(
 			'@type'           => 'ItemList',
-			'@id'             => home_url( '/#services-list' ),
+			'@id'             => get_post_type_archive_link( 'service' ) . '#services-list',
 			'name'            => __( 'Services', 'martincv' ),
 			'itemListElement' => $items,
 		);
@@ -260,7 +260,7 @@ class Yoast_Schema {
 
 		return array(
 			'@type'           => 'ItemList',
-			'@id'             => home_url( '/#projects-list' ),
+			'@id'             => get_post_type_archive_link( 'project' ) . '#projects-list',
 			'name'            => __( 'Projects & Case Studies', 'martincv' ),
 			'itemListElement' => $items,
 		);
