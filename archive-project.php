@@ -107,7 +107,7 @@ $martincv_filter_terms = get_terms(
 			<?php
 			if ( $martincv_featured ) :
 				$martincv_terms = martincv_project_terms( $martincv_featured->ID );
-				$martincv_stats = (array) get_field( 'stats', $martincv_featured->ID );
+				$martincv_stats = Utility::rows( get_field( 'stats', $martincv_featured->ID ) );
 				?>
 				<a class="projects-archive__featured-link" href="<?php echo esc_url( get_permalink( $martincv_featured ) ); ?>" data-categories="<?php echo esc_attr( $martincv_terms['slugs'] ); ?>">
 					<article class="card-elegant projects-archive__featured">

@@ -111,7 +111,7 @@ class Services_Section {
 		$this->description     = (string) get_field( 'description' );
 		$this->top_cta_text    = (string) get_field( 'top_cta_text' );
 		$this->top_cta_link    = (string) get_field( 'top_cta_link' );
-		$this->services        = (array) get_field( 'services' );
+		$this->services        = \MartinCV\Utility::rows( get_field( 'services' ) );
 		$this->bottom_title    = (string) get_field( 'bottom_title' );
 		$this->bottom_text     = (string) get_field( 'bottom_text' );
 		$this->bottom_btn_text = (string) get_field( 'bottom_btn_text' );

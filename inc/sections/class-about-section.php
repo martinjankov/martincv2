@@ -109,10 +109,10 @@ class About_Section {
 		$this->eyebrow            = (string) get_field( 'eyebrow' );
 		$this->title              = (string) get_field( 'title' );
 		$this->content            = (string) get_field( 'content' );
-		$this->values             = (array) get_field( 'values' );
+		$this->values             = \MartinCV\Utility::rows( get_field( 'values' ) );
 		$this->expertise_title    = (string) get_field( 'expertise_title' );
 		$this->expertise_subtitle = (string) get_field( 'expertise_subtitle' );
-		$this->skills             = (array) get_field( 'skills' );
+		$this->skills             = \MartinCV\Utility::rows( get_field( 'skills' ) );
 		$this->cta_note           = (string) get_field( 'cta_note' );
 		$this->cta_text           = (string) get_field( 'cta_text' );
 		$this->cta_link           = (string) get_field( 'cta_link' );

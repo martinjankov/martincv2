@@ -83,7 +83,7 @@ class FAQ_Section {
 		$this->description = (string) get_field( 'description' );
 		$this->cta_text    = (string) get_field( 'cta_text' );
 		$this->cta_link    = (string) get_field( 'cta_link' );
-		$this->faqs        = (array) get_field( 'faqs' );
+		$this->faqs        = \MartinCV\Utility::rows( get_field( 'faqs' ) );
 
 		$this->is_initialized = true;
 	}

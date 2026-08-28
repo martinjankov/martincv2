@@ -112,7 +112,7 @@ class Contact_Section {
 		$this->intro_title    = (string) get_field( 'intro_title' );
 		$this->intro_text     = (string) get_field( 'intro_text' );
 		$this->why_title      = (string) get_field( 'why_title' );
-		$this->why_items      = (array) get_field( 'why_items' );
+		$this->why_items      = \MartinCV\Utility::rows( get_field( 'why_items' ) );
 		$this->form_title     = (string) get_field( 'form_title' );
 		$this->form_shortcode = (string) get_field( 'form_shortcode' );
 		$this->form_note      = (string) get_field( 'form_note' );

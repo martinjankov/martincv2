@@ -36,6 +36,17 @@ class Utility {
 	}
 
 	/**
+	 * Normalize an ACF repeater/array value: empty repeaters return false
+	 * from get_field(), and (array) false is array( false ) — not empty.
+	 *
+	 * @param mixed $value Raw get_field() value.
+	 * @return array
+	 */
+	public static function rows( $value ): array {
+		return is_array( $value ) ? $value : array();
+	}
+
+	/**
 	 * Echo an inline Lucide SVG icon by name, escaped via kses_svg.
 	 *
 	 * @param string $name Icon name.

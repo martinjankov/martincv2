@@ -102,8 +102,8 @@ class Testimonials_Section {
 		$this->eyebrow      = (string) get_field( 'eyebrow' );
 		$this->title        = (string) get_field( 'title' );
 		$this->description  = (string) get_field( 'description' );
-		$this->testimonials = (array) get_field( 'testimonials' );
-		$this->stats        = (array) get_field( 'stats' );
+		$this->testimonials = \MartinCV\Utility::rows( get_field( 'testimonials' ) );
+		$this->stats        = \MartinCV\Utility::rows( get_field( 'stats' ) );
 		$this->cta_title    = (string) get_field( 'cta_title' );
 		$this->cta_text     = (string) get_field( 'cta_text' );
 		$this->cta_btn_text = (string) get_field( 'cta_btn_text' );

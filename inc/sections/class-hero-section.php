@@ -150,12 +150,12 @@ class Hero_Section {
 		$this->show_resume       = (bool) get_field( 'show_resume' );
 		$this->book_call_text    = (string) get_field( 'book_call_text' );
 		$this->book_call_link    = (string) get_field( 'book_call_link' );
-		$this->stats             = (array) get_field( 'stats' );
-		$this->portrait          = (array) get_field( 'portrait' );
+		$this->stats             = \MartinCV\Utility::rows( get_field( 'stats' ) );
+		$this->portrait          = \MartinCV\Utility::rows( get_field( 'portrait' ) );
 		$this->based_in          = (string) get_field( 'based_in' );
 		$this->badge_text        = (string) get_field( 'badge_text' );
 		$this->badge_link        = (string) get_field( 'badge_link' );
-		$this->skills            = (array) get_field( 'skills' );
+		$this->skills            = \MartinCV\Utility::rows( get_field( 'skills' ) );
 
 		$this->is_initialized = true;
 	}

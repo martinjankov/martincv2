@@ -18,10 +18,10 @@ while ( have_posts() ) :
 	the_post();
 
 	$martincv_tags  = array_filter( array_map( 'trim', preg_split( '/\r\n|\r|\n/', (string) get_field( 'tags' ) ) ) );
-	$martincv_who   = (array) get_field( 'who_items' );
-	$martincv_gets  = (array) get_field( 'benefits' );
-	$martincv_steps = (array) get_field( 'steps' );
-	$martincv_faqs  = (array) get_field( 'faqs' );
+	$martincv_who   = Utility::rows( get_field( 'who_items' ) );
+	$martincv_gets  = Utility::rows( get_field( 'benefits' ) );
+	$martincv_steps = Utility::rows( get_field( 'steps' ) );
+	$martincv_faqs  = Utility::rows( get_field( 'faqs' ) );
 
 	$martincv_others = new WP_Query(
 		array(

@@ -20,8 +20,8 @@ while ( have_posts() ) :
 	$martincv_terms    = get_the_terms( get_the_ID(), 'project_category' );
 	$martincv_category = ( $martincv_terms && ! is_wp_error( $martincv_terms ) ) ? $martincv_terms[0]->name : '';
 	$martincv_tech     = array_filter( array_map( 'trim', preg_split( '/\r\n|\r|\n/', (string) get_field( 'tech' ) ) ) );
-	$martincv_stats    = (array) get_field( 'stats' );
-	$martincv_approach = (array) get_field( 'approach' );
+	$martincv_stats    = Utility::rows( get_field( 'stats' ) );
+	$martincv_approach = Utility::rows( get_field( 'approach' ) );
 
 	// Next case study: following project by menu order, wrapping to the first.
 	$martincv_all  = get_posts(
