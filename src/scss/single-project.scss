@@ -1,0 +1,231 @@
+@use './abstracts/variables';
+
+.single-project {
+	position: relative;
+	padding-top: 1rem;
+	padding-bottom: 6rem;
+
+	&__bg {
+		pointer-events: none;
+		position: absolute;
+		inset: 0;
+		opacity: .6;
+	}
+
+	// Reference uses max-w-4xl for the case-study layout.
+	&__container {
+		position: relative;
+		max-width: 56rem;
+	}
+
+	&__back {
+		display: inline-flex;
+		align-items: center;
+		gap: .5rem;
+		font-size: .875rem;
+		line-height: 1.25rem;
+		font-weight: 500;
+		color: hsl(var(--muted-foreground));
+		text-decoration: none;
+		transition: color .15s cubic-bezier(.4, 0, .2, 1);
+
+		&:hover {
+			color: hsl(var(--primary));
+		}
+	}
+
+	&__header {
+		margin-top: 2rem;
+	}
+
+	&__meta {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: .75rem;
+		font-size: .875rem;
+		line-height: 1.25rem;
+		color: hsl(var(--muted-foreground));
+	}
+
+	&__pill--primary {
+		border-color: hsl(var(--primary) / .3);
+		background: hsl(var(--primary) / .1);
+		color: hsl(var(--primary));
+	}
+
+	&__title {
+		margin: 1.25rem 0 0;
+		color: hsl(var(--foreground));
+	}
+
+	&__intro {
+		margin: 1.5rem 0 0;
+		font-size: 1.25rem;
+		line-height: 1.625;
+		color: hsl(var(--muted-foreground));
+	}
+
+	&__facts {
+		margin-top: 2.5rem;
+		display: grid;
+		gap: 1.5rem;
+
+		@media (min-width: 640px) {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+	}
+
+	&__fact-value {
+		margin-top: .5rem;
+		font-weight: 600;
+		color: hsl(var(--foreground));
+	}
+
+	&__section {
+		margin-top: 3.5rem;
+	}
+
+	&__section-title {
+		margin: 0;
+		font-size: 1.5rem;
+		line-height: 2rem;
+		font-weight: 700;
+		letter-spacing: -.02em;
+		color: hsl(var(--foreground));
+	}
+
+	&__challenge {
+		margin: 1rem 0 0;
+		font-size: 1.125rem;
+		line-height: 1.625;
+		color: hsl(var(--muted-foreground));
+	}
+
+	&__approach {
+		margin-top: 1.5rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	&__step-inner {
+		display: flex;
+		align-items: flex-start;
+		gap: 1rem;
+	}
+
+	&__step-number {
+		display: grid;
+		place-items: center;
+		flex-shrink: 0;
+		height: 2.25rem;
+		width: 2.25rem;
+		border-radius: .75rem;
+		background: hsl(var(--primary) / .1);
+		font-size: .875rem;
+		line-height: 1.25rem;
+		font-weight: 700;
+		color: hsl(var(--primary));
+	}
+
+	&__step-title {
+		margin: 0;
+		font-size: 1.125rem;
+		line-height: 1.75rem;
+		font-weight: 600;
+		letter-spacing: -.01em;
+		color: hsl(var(--foreground));
+	}
+
+	&__step-desc {
+		margin: .5rem 0 0;
+		line-height: 1.625;
+		color: hsl(var(--muted-foreground));
+	}
+
+	&__stats {
+		margin-top: 1.5rem;
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1rem;
+
+		@media (min-width: variables.$breakpoints--small-desktop) {
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+		}
+	}
+
+	&__tech {
+		margin-top: 1.25rem;
+		display: flex;
+		flex-wrap: wrap;
+		gap: .5rem;
+	}
+
+	&__quote {
+		margin: 3.5rem 0 0;
+
+		&-icon {
+			display: inline-flex;
+			color: hsl(var(--primary) / .4);
+		}
+
+		&-text {
+			margin: 1rem 0 0;
+			font-size: 1.125rem;
+			line-height: 1.625;
+			color: hsl(var(--foreground));
+		}
+
+		&-footer {
+			margin-top: 1.25rem;
+			font-size: .875rem;
+			line-height: 1.25rem;
+			color: hsl(var(--muted-foreground));
+		}
+
+		&-author {
+			font-weight: 600;
+			color: hsl(var(--foreground));
+		}
+	}
+
+	&__next {
+		margin-top: 4rem;
+		border-top: 1px solid hsl(var(--border) / .6);
+		padding-top: 2rem;
+
+		&-link {
+			margin-top: .75rem;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 1.5rem;
+			text-decoration: none;
+		}
+
+		&-title {
+			font-size: 1.25rem;
+			line-height: 1.75rem;
+			font-weight: 700;
+			letter-spacing: -.01em;
+			color: hsl(var(--foreground));
+			transition: color .15s cubic-bezier(.4, 0, .2, 1);
+		}
+
+		&-link:hover &-title {
+			color: hsl(var(--primary));
+		}
+
+		&-arrow {
+			display: inline-flex;
+			flex-shrink: 0;
+			color: hsl(var(--primary));
+			transition: transform .3s cubic-bezier(.4, 0, .2, 1);
+		}
+
+		&-link:hover &-arrow {
+			transform: translateX(.25rem);
+		}
+	}
+}

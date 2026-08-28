@@ -248,6 +248,71 @@ class Site_Options {
 	}
 
 	/**
+	 * Get projects archive title.
+	 *
+	 * @return string
+	 */
+	public static function get_projects_title(): string {
+		return (string) get_field( 'projects_title', 'option' );
+	}
+
+	/**
+	 * Get projects archive title gradient part.
+	 *
+	 * @return string
+	 */
+	public static function get_projects_title_highlight(): string {
+		return (string) get_field( 'projects_title_highlight', 'option' );
+	}
+
+	/**
+	 * Get projects archive intro text.
+	 *
+	 * @return string
+	 */
+	public static function get_projects_intro(): string {
+		return (string) get_field( 'projects_intro', 'option' );
+	}
+
+	/**
+	 * Get projects archive CTA title.
+	 *
+	 * @return string
+	 */
+	public static function get_projects_cta_title(): string {
+		return (string) get_field( 'projects_cta_title', 'option' );
+	}
+
+	/**
+	 * Get projects archive CTA text.
+	 *
+	 * @return string
+	 */
+	public static function get_projects_cta_text(): string {
+		return (string) get_field( 'projects_cta_text', 'option' );
+	}
+
+	/**
+	 * Get projects archive CTA button text.
+	 *
+	 * @return string
+	 */
+	public static function get_projects_cta_btn_text(): string {
+		return (string) get_field( 'projects_cta_btn_text', 'option' );
+	}
+
+	/**
+	 * Get projects archive CTA button link.
+	 *
+	 * @return string
+	 */
+	public static function get_projects_cta_btn_link(): string {
+		$link = (string) get_field( 'projects_cta_btn_link', 'option' );
+
+		return $link ? $link : '/#contact';
+	}
+
+	/**
 	 * Get footer about text.
 	 *
 	 * @return string

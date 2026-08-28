@@ -120,6 +120,20 @@ function martincv_scripts_and_styles() {
 		wp_enqueue_script( 'wp-theme-archive-service', MARTINCV_THEME_URL . 'build/theme/archive-service.js', $assets_info['dependencies'], $assets_info['version'], true );
 	}
 
+	if ( is_post_type_archive( 'project' ) && file_exists( MARTINCV_THEME_DIR . 'build/theme/archive-project.asset.php' ) ) {
+		$assets_info = include MARTINCV_THEME_DIR . 'build/theme/archive-project.asset.php';
+
+		wp_enqueue_style( 'wp-theme-archive-project', MARTINCV_THEME_URL . 'build/theme/archive-project.css', array(), $assets_info['version'] );
+		wp_enqueue_script( 'wp-theme-archive-project', MARTINCV_THEME_URL . 'build/theme/archive-project.js', $assets_info['dependencies'], $assets_info['version'], true );
+	}
+
+	if ( is_singular( 'project' ) && file_exists( MARTINCV_THEME_DIR . 'build/theme/single-project.asset.php' ) ) {
+		$assets_info = include MARTINCV_THEME_DIR . 'build/theme/single-project.asset.php';
+
+		wp_enqueue_style( 'wp-theme-single-project', MARTINCV_THEME_URL . 'build/theme/single-project.css', array(), $assets_info['version'] );
+		wp_enqueue_script( 'wp-theme-single-project', MARTINCV_THEME_URL . 'build/theme/single-project.js', $assets_info['dependencies'], $assets_info['version'], true );
+	}
+
 	if ( is_singular( 'service' ) && file_exists( MARTINCV_THEME_DIR . 'build/theme/single-service.asset.php' ) ) {
 		$assets_info = include MARTINCV_THEME_DIR . 'build/theme/single-service.asset.php';
 

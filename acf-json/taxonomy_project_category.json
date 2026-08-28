@@ -1,0 +1,57 @@
+{
+	"key": "taxonomy_project_category",
+	"title": "Project Categories",
+	"taxonomy": "project_category",
+	"active": true,
+	"object_type": [
+		"project"
+	],
+	"description": "Categories used for the projects archive filter (E-commerce, Web App, WordPress, Performance...).",
+	"public": true,
+	"hierarchical": false,
+	"show_ui": true,
+	"show_in_menu": true,
+	"show_in_nav_menus": false,
+	"show_in_rest": true,
+	"show_admin_column": true,
+	"show_tagcloud": false,
+	"rest_base": "",
+	"rest_namespace": "wp/v2",
+	"rest_controller_class": "",
+	"query_var": true,
+	"sort": false,
+	"rewrite": {
+		"slug": "project-category",
+		"with_front": false,
+		"hierarchical": false
+	},
+	"default_term": {
+		"name": "",
+		"slug": "",
+		"description": ""
+	},
+	"singular_label": "Project Category",
+	"plural_label": "Project Categories",
+	"labels": {
+		"name": "Project Categories",
+		"singular_name": "Project Category",
+		"menu_name": "Categories",
+		"all_items": "All Project Categories",
+		"edit_item": "Edit Project Category",
+		"view_item": "View Project Category",
+		"update_item": "Update Project Category",
+		"add_new_item": "Add New Project Category",
+		"new_item_name": "New Project Category Name",
+		"search_items": "Search Project Categories",
+		"popular_items": "Popular Project Categories",
+		"separate_items_with_commas": "Separate project categories with commas",
+		"add_or_remove_items": "Add or remove project categories",
+		"choose_from_most_used": "Choose from the most used project categories",
+		"not_found": "No project categories found",
+		"no_terms": "No project categories",
+		"items_list_navigation": "Project Categories list navigation",
+		"items_list": "Project Categories list",
+		"back_to_items": "Back to Project Categories"
+	},
+	"modified": 1756431000
+}

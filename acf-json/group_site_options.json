@@ -173,6 +173,64 @@
 			"default_value": "/#contact"
 		},
 		{
+			"key": "field_site_options_projects_tab",
+			"label": "Projects Page",
+			"name": "",
+			"type": "tab",
+			"placement": "top"
+		},
+		{
+			"key": "field_site_options_projects_title",
+			"label": "Projects Archive Title",
+			"name": "projects_title",
+			"type": "text",
+			"default_value": "Projects &"
+		},
+		{
+			"key": "field_site_options_projects_title_highlight",
+			"label": "Projects Archive Title (Gradient Part)",
+			"name": "projects_title_highlight",
+			"type": "text",
+			"default_value": "case studies"
+		},
+		{
+			"key": "field_site_options_projects_intro",
+			"label": "Projects Archive Intro",
+			"name": "projects_intro",
+			"type": "textarea",
+			"rows": 3,
+			"new_lines": ""
+		},
+		{
+			"key": "field_site_options_projects_cta_title",
+			"label": "Projects CTA Title",
+			"name": "projects_cta_title",
+			"type": "text",
+			"default_value": "Have a project in mind?"
+		},
+		{
+			"key": "field_site_options_projects_cta_text",
+			"label": "Projects CTA Text",
+			"name": "projects_cta_text",
+			"type": "textarea",
+			"rows": 2,
+			"new_lines": ""
+		},
+		{
+			"key": "field_site_options_projects_cta_btn_text",
+			"label": "Projects CTA Button Text",
+			"name": "projects_cta_btn_text",
+			"type": "text",
+			"default_value": "Start a conversation"
+		},
+		{
+			"key": "field_site_options_projects_cta_btn_link",
+			"label": "Projects CTA Button Link",
+			"name": "projects_cta_btn_link",
+			"type": "text",
+			"default_value": "/#contact"
+		},
+		{
 			"key": "field_site_options_footer_tab",
 			"label": "Footer",
 			"name": "",

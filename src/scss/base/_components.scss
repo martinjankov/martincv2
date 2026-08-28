@@ -123,6 +123,27 @@
 	}
 }
 
+.stat-tile {
+	border-radius: 1rem;
+	border: 1px solid hsl(var(--border) / .6);
+	background: hsl(var(--muted) / .4);
+	padding: 1.25rem;
+
+	&__value {
+		font-size: 1.5rem;
+		line-height: 2rem;
+		font-weight: 700;
+		color: hsl(var(--foreground));
+	}
+
+	&__label {
+		margin-top: .25rem;
+		font-size: .875rem;
+		line-height: 1.25rem;
+		color: hsl(var(--muted-foreground));
+	}
+}
+
 .marquee-track {
 	animation: marquee 30s linear infinite;
 }

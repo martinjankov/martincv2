@@ -1,0 +1,162 @@
+{
+	"key": "group_project",
+	"title": "Project Case Study",
+	"fields": [
+		{
+			"key": "field_project_featured",
+			"label": "Featured",
+			"name": "featured",
+			"type": "true_false",
+			"ui": 1,
+			"instructions": "The first featured project renders as the large hero card on the projects archive."
+		},
+		{
+			"key": "field_project_client",
+			"label": "Client",
+			"name": "client",
+			"type": "text",
+			"placeholder": "Nordic Retail Group"
+		},
+		{
+			"key": "field_project_year",
+			"label": "Year",
+			"name": "year",
+			"type": "text",
+			"placeholder": "2025"
+		},
+		{
+			"key": "field_project_excerpt",
+			"label": "Short Description",
+			"name": "short_description",
+			"type": "textarea",
+			"rows": 3,
+			"new_lines": "",
+			"instructions": "Shown on the archive card and below the title on the case study."
+		},
+		{
+			"key": "field_project_tech",
+			"label": "Tech Stack",
+			"name": "tech",
+			"type": "textarea",
+			"rows": 5,
+			"new_lines": "",
+			"instructions": "One technology per line."
+		},
+		{
+			"key": "field_project_stats",
+			"label": "Results / Stats",
+			"name": "stats",
+			"type": "repeater",
+			"layout": "table",
+			"button_label": "Add Stat",
+			"sub_fields": [
+				{
+					"key": "field_project_stat_value",
+					"label": "Value",
+					"name": "value",
+					"type": "text",
+					"placeholder": "63%"
+				},
+				{
+					"key": "field_project_stat_label",
+					"label": "Label",
+					"name": "label",
+					"type": "text",
+					"placeholder": "Faster first paint"
+				}
+			]
+		},
+		{
+			"key": "field_project_role",
+			"label": "Role",
+			"name": "role",
+			"type": "text",
+			"placeholder": "Lead Web Developer"
+		},
+		{
+			"key": "field_project_timeline",
+			"label": "Timeline",
+			"name": "timeline",
+			"type": "text",
+			"placeholder": "14 weeks"
+		},
+		{
+			"key": "field_project_services",
+			"label": "Services",
+			"name": "services_provided",
+			"type": "text",
+			"placeholder": "Headless architecture, Performance engineering"
+		},
+		{
+			"key": "field_project_challenge",
+			"label": "The Challenge",
+			"name": "challenge",
+			"type": "textarea",
+			"rows": 4,
+			"new_lines": ""
+		},
+		{
+			"key": "field_project_approach",
+			"label": "The Approach",
+			"name": "approach",
+			"type": "repeater",
+			"layout": "block",
+			"button_label": "Add Step",
+			"sub_fields": [
+				{
+					"key": "field_project_approach_title",
+					"label": "Title",
+					"name": "title",
+					"type": "text"
+				},
+				{
+					"key": "field_project_approach_description",
+					"label": "Description",
+					"name": "description",
+					"type": "textarea",
+					"rows": 3,
+					"new_lines": ""
+				}
+			]
+		},
+		{
+			"key": "field_project_quote",
+			"label": "Client Quote",
+			"name": "quote",
+			"type": "textarea",
+			"rows": 3,
+			"new_lines": ""
+		},
+		{
+			"key": "field_project_quote_author",
+			"label": "Quote Author",
+			"name": "quote_author",
+			"type": "text",
+			"placeholder": "Ingrid Halvorsen"
+		},
+		{
+			"key": "field_project_quote_role",
+			"label": "Quote Author Role",
+			"name": "quote_role",
+			"type": "text",
+			"placeholder": "Head of Digital, Nordic Retail Group"
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "post_type",
+				"operator": "==",
+				"value": "project"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"active": true,
+	"show_in_rest": 0,
+	"modified": 1756431000
+}
