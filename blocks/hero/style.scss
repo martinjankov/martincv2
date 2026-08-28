@@ -245,6 +245,9 @@
 			width: max-content;
 			gap: 3rem;
 			white-space: nowrap;
+			// 6 item sets instead of the base 2 — slow down proportionally
+			// so the visual speed stays the same.
+			animation-duration: 90s;
 		}
 	}
 

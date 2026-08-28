@@ -116,7 +116,11 @@ $wrapper_attrs = get_block_wrapper_attributes(
 	<?php if ( $skills ) : ?>
 		<div class="hero-block__marquee">
 			<div class="marquee-track">
-				<?php for ( $martincv_i = 0; $martincv_i < 2; $martincv_i++ ) : ?>
+				<?php
+				// Repeat the set so half the track always exceeds the viewport width
+				// (the loop animation translates by -50%); 6 sets cover up to ~2560px.
+				for ( $martincv_i = 0; $martincv_i < 6; $martincv_i++ ) :
+					?>
 					<?php foreach ( $skills as $martincv_skill ) : ?>
 						<span class="hero-block__marquee-item"><?php echo esc_html( $martincv_skill['name'] ?? '' ); ?></span>
 					<?php endforeach; ?>
