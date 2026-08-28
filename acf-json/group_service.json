@@ -1,0 +1,211 @@
+{
+	"key": "group_service",
+	"title": "Service",
+	"fields": [
+		{
+			"key": "field_service_icon",
+			"label": "Icon",
+			"name": "icon",
+			"type": "select",
+			"choices": {
+				"code": "Code",
+				"palette": "Palette",
+				"zap": "Zap",
+				"shield": "Shield",
+				"server": "Server",
+				"search": "Search",
+				"globe": "Globe",
+				"layers": "Layers",
+				"database": "Database"
+			},
+			"default_value": "code"
+		},
+		{
+			"key": "field_service_tagline",
+			"label": "Tagline (Eyebrow)",
+			"name": "tagline",
+			"type": "text",
+			"placeholder": "Built exactly for how your business works"
+		},
+		{
+			"key": "field_service_short_description",
+			"label": "Short Description (Cards)",
+			"name": "short_description",
+			"type": "textarea",
+			"rows": 2,
+			"new_lines": ""
+		},
+		{
+			"key": "field_service_intro",
+			"label": "Intro Text (Single Page)",
+			"name": "intro",
+			"type": "textarea",
+			"rows": 4,
+			"new_lines": ""
+		},
+		{
+			"key": "field_service_tags",
+			"label": "Tags",
+			"name": "tags",
+			"type": "textarea",
+			"rows": 4,
+			"new_lines": "",
+			"instructions": "One tag per line."
+		},
+		{
+			"key": "field_service_timeline",
+			"label": "Typical Timeline",
+			"name": "timeline",
+			"type": "text",
+			"placeholder": "2–6 weeks"
+		},
+		{
+			"key": "field_service_investment",
+			"label": "Investment",
+			"name": "investment",
+			"type": "text",
+			"placeholder": "From $2,500"
+		},
+		{
+			"key": "field_service_quote_btn_text",
+			"label": "Quote Button Text",
+			"name": "quote_btn_text",
+			"type": "text",
+			"default_value": "Request a quote"
+		},
+		{
+			"key": "field_service_quote_btn_link",
+			"label": "Quote Button Link",
+			"name": "quote_btn_link",
+			"type": "text",
+			"default_value": "/#contact"
+		},
+		{
+			"key": "field_service_who_items",
+			"label": "Who This Is For",
+			"name": "who_items",
+			"type": "repeater",
+			"layout": "table",
+			"button_label": "Add Item",
+			"sub_fields": [
+				{
+					"key": "field_service_who_item_text",
+					"label": "Text",
+					"name": "text",
+					"type": "text"
+				}
+			]
+		},
+		{
+			"key": "field_service_benefits",
+			"label": "What You Get",
+			"name": "benefits",
+			"type": "repeater",
+			"layout": "table",
+			"button_label": "Add Item",
+			"sub_fields": [
+				{
+					"key": "field_service_benefit_text",
+					"label": "Text",
+					"name": "text",
+					"type": "text"
+				}
+			]
+		},
+		{
+			"key": "field_service_steps",
+			"label": "How This Service Works",
+			"name": "steps",
+			"type": "repeater",
+			"layout": "block",
+			"button_label": "Add Step",
+			"sub_fields": [
+				{
+					"key": "field_service_step_title",
+					"label": "Title",
+					"name": "title",
+					"type": "text"
+				},
+				{
+					"key": "field_service_step_description",
+					"label": "Description",
+					"name": "description",
+					"type": "textarea",
+					"rows": 2,
+					"new_lines": ""
+				}
+			]
+		},
+		{
+			"key": "field_service_faqs",
+			"label": "Common Questions",
+			"name": "faqs",
+			"type": "repeater",
+			"layout": "block",
+			"button_label": "Add Question",
+			"sub_fields": [
+				{
+					"key": "field_service_faq_question",
+					"label": "Question",
+					"name": "question",
+					"type": "text"
+				},
+				{
+					"key": "field_service_faq_answer",
+					"label": "Answer",
+					"name": "answer",
+					"type": "textarea",
+					"rows": 3,
+					"new_lines": ""
+				}
+			]
+		},
+		{
+			"key": "field_service_cta_title",
+			"label": "Bottom CTA Title",
+			"name": "cta_title",
+			"type": "text",
+			"default_value": "Ready to get started?"
+		},
+		{
+			"key": "field_service_cta_text",
+			"label": "Bottom CTA Text",
+			"name": "cta_text",
+			"type": "textarea",
+			"rows": 2,
+			"new_lines": "",
+			"default_value": "Tell me about your project and I will come back with scope, timeline and a fixed quote."
+		},
+		{
+			"key": "field_service_cta_btn_text",
+			"label": "Bottom CTA Button Text",
+			"name": "cta_btn_text",
+			"type": "text",
+			"default_value": "Get in touch"
+		},
+		{
+			"key": "field_service_cta_btn_link",
+			"label": "Bottom CTA Button Link",
+			"name": "cta_btn_link",
+			"type": "text",
+			"default_value": "/#contact"
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "post_type",
+				"operator": "==",
+				"value": "service"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"active": true,
+	"show_in_rest": 0,
+	"modified": 1756430000
+}

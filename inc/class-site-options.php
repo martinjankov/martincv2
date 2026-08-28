@@ -192,6 +192,62 @@ class Site_Options {
 	}
 
 	/**
+	 * Get services archive title.
+	 *
+	 * @return string
+	 */
+	public static function get_services_title(): string {
+		return (string) get_field( 'services_title', 'option' );
+	}
+
+	/**
+	 * Get services archive intro text.
+	 *
+	 * @return string
+	 */
+	public static function get_services_intro(): string {
+		return (string) get_field( 'services_intro', 'option' );
+	}
+
+	/**
+	 * Get services archive CTA title.
+	 *
+	 * @return string
+	 */
+	public static function get_services_cta_title(): string {
+		return (string) get_field( 'services_cta_title', 'option' );
+	}
+
+	/**
+	 * Get services archive CTA text.
+	 *
+	 * @return string
+	 */
+	public static function get_services_cta_text(): string {
+		return (string) get_field( 'services_cta_text', 'option' );
+	}
+
+	/**
+	 * Get services archive CTA button text.
+	 *
+	 * @return string
+	 */
+	public static function get_services_cta_btn_text(): string {
+		return (string) get_field( 'services_cta_btn_text', 'option' );
+	}
+
+	/**
+	 * Get services archive CTA button link.
+	 *
+	 * @return string
+	 */
+	public static function get_services_cta_btn_link(): string {
+		$link = (string) get_field( 'services_cta_btn_link', 'option' );
+
+		return $link ? $link : '/#contact';
+	}
+
+	/**
 	 * Get footer about text.
 	 *
 	 * @return string

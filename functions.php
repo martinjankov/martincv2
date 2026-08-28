@@ -113,6 +113,20 @@ function martincv_scripts_and_styles() {
 		wp_enqueue_script( 'wp-theme-archive', MARTINCV_THEME_URL . 'build/theme/archive.js', $assets_info['dependencies'], $assets_info['version'], true );
 	}
 
+	if ( is_post_type_archive( 'service' ) && file_exists( MARTINCV_THEME_DIR . 'build/theme/archive-service.asset.php' ) ) {
+		$assets_info = include MARTINCV_THEME_DIR . 'build/theme/archive-service.asset.php';
+
+		wp_enqueue_style( 'wp-theme-archive-service', MARTINCV_THEME_URL . 'build/theme/archive-service.css', array(), $assets_info['version'] );
+		wp_enqueue_script( 'wp-theme-archive-service', MARTINCV_THEME_URL . 'build/theme/archive-service.js', $assets_info['dependencies'], $assets_info['version'], true );
+	}
+
+	if ( is_singular( 'service' ) && file_exists( MARTINCV_THEME_DIR . 'build/theme/single-service.asset.php' ) ) {
+		$assets_info = include MARTINCV_THEME_DIR . 'build/theme/single-service.asset.php';
+
+		wp_enqueue_style( 'wp-theme-single-service', MARTINCV_THEME_URL . 'build/theme/single-service.css', array(), $assets_info['version'] );
+		wp_enqueue_script( 'wp-theme-single-service', MARTINCV_THEME_URL . 'build/theme/single-service.js', $assets_info['dependencies'], $assets_info['version'], true );
+	}
+
 	if ( is_singular( 'post' ) && file_exists( MARTINCV_THEME_DIR . 'build/theme/single.asset.php' ) ) {
 		$assets_info = include MARTINCV_THEME_DIR . 'build/theme/single.asset.php';
 

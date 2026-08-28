@@ -122,6 +122,57 @@
 			"type": "url"
 		},
 		{
+			"key": "field_site_options_services_tab",
+			"label": "Services Page",
+			"name": "",
+			"type": "tab",
+			"placement": "top"
+		},
+		{
+			"key": "field_site_options_services_title",
+			"label": "Services Archive Title",
+			"name": "services_title",
+			"type": "text",
+			"default_value": "End-to-end web development"
+		},
+		{
+			"key": "field_site_options_services_intro",
+			"label": "Services Archive Intro",
+			"name": "services_intro",
+			"type": "textarea",
+			"rows": 3,
+			"new_lines": ""
+		},
+		{
+			"key": "field_site_options_services_cta_title",
+			"label": "Services CTA Title",
+			"name": "services_cta_title",
+			"type": "text",
+			"default_value": "Not sure what you need?"
+		},
+		{
+			"key": "field_site_options_services_cta_text",
+			"label": "Services CTA Text",
+			"name": "services_cta_text",
+			"type": "textarea",
+			"rows": 2,
+			"new_lines": ""
+		},
+		{
+			"key": "field_site_options_services_cta_btn_text",
+			"label": "Services CTA Button Text",
+			"name": "services_cta_btn_text",
+			"type": "text",
+			"default_value": "Book a free consultation"
+		},
+		{
+			"key": "field_site_options_services_cta_btn_link",
+			"label": "Services CTA Button Link",
+			"name": "services_cta_btn_link",
+			"type": "text",
+			"default_value": "/#contact"
+		},
+		{
 			"key": "field_site_options_footer_tab",
 			"label": "Footer",
 			"name": "",
