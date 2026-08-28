@@ -5,10 +5,11 @@
 	overflow: hidden;
 	background: hsl(var(--background));
 	padding-top: 8rem;
-	padding-bottom: 0;
+	padding-bottom: 4rem;
 
 	@media (min-width: variables.$breakpoints--tablet) {
 		padding-top: 10rem;
+		padding-bottom: 6rem;
 	}
 
 	&__bg-grid {
