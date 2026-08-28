@@ -6,4 +6,7 @@ $breakpoints--large-desktop: 1440px;
 $breakpoints--full-hd: 1920px;
 $breakpoints--quad-hd: 2560px;
 
-$martincv-container-width: 1400px;
+$container-6xl: 72rem; // 1152px — default section container (max-w-6xl)
+$container-7xl: 80rem; // 1280px — wide container (max-w-7xl)
+
+$font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";

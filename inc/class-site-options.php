@@ -116,6 +116,73 @@ class Site_Options {
 	}
 
 	/**
+	 * Get GitHub URL.
+	 *
+	 * @return string
+	 */
+	public static function get_github(): string {
+		return (string) get_field( 'github_url', 'option' );
+	}
+
+	/**
+	 * Get X (Twitter) URL.
+	 *
+	 * @return string
+	 */
+	public static function get_x(): string {
+		return (string) get_field( 'x_url', 'option' );
+	}
+
+	/**
+	 * Get Codeable profile URL.
+	 *
+	 * @return string
+	 */
+	public static function get_codeable_url(): string {
+		return (string) get_field( 'codeable_url', 'option' );
+	}
+
+	/**
+	 * Get consultation booking URL.
+	 *
+	 * @return string
+	 */
+	public static function get_consultation_url(): string {
+		return (string) get_field( 'consultation_url', 'option' );
+	}
+
+	/**
+	 * Get resume file URL.
+	 *
+	 * @return string
+	 */
+	public static function get_resume_url(): string {
+		return (string) get_field( 'resume_file', 'option' );
+	}
+
+	/**
+	 * Get header CTA label. Defaults to "Let's Talk".
+	 *
+	 * @return string
+	 */
+	public static function get_header_cta_label(): string {
+		$label = (string) get_field( 'header_cta_label', 'option' );
+
+		return $label ? $label : __( "Let's Talk", 'martincv' );
+	}
+
+	/**
+	 * Get header CTA link. Defaults to the #contact anchor.
+	 *
+	 * @return string
+	 */
+	public static function get_header_cta_link(): string {
+		$link = (string) get_field( 'header_cta_link', 'option' );
+
+		return $link ? $link : '#contact';
+	}
+
+	/**
 	 * Get footer about text.
 	 *
 	 * @return string

@@ -66,7 +66,9 @@ function martincv_theme_setup() {
 	add_theme_support( 'title-tag' );
 
 	register_nav_menu( 'primary', esc_html__( 'Main Menu', 'martincv' ) );
-	register_nav_menu( 'footer', esc_html__( 'Footer Menu', 'martincv' ) );
+	register_nav_menu( 'footer', esc_html__( 'Footer Quick Links', 'martincv' ) );
+	register_nav_menu( 'footer-services', esc_html__( 'Footer Services Menu', 'martincv' ) );
+	register_nav_menu( 'footer-legal', esc_html__( 'Footer Legal Menu', 'martincv' ) );
 
 	add_theme_support( 'post-thumbnails' );
 

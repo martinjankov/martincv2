@@ -1,0 +1,138 @@
+// Shared design components, ported from the reference design (Tailwind → plain CSS).
+// Used by the header/footer and all blocks.
+
+.btn-hero {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 9999px;
+	background-color: hsl(var(--primary));
+	padding: .875rem 1.75rem;
+	font-weight: 600;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: hsl(var(--primary-foreground));
+	border: 0;
+	cursor: pointer;
+	box-shadow: var(--shadow-card);
+	transition: all .3s cubic-bezier(.4, 0, .2, 1);
+
+	&:hover {
+		transform: translateY(-.125rem);
+		box-shadow: var(--shadow-glow);
+		color: hsl(var(--primary-foreground));
+	}
+
+	svg {
+		flex-shrink: 0;
+	}
+}
+
+.btn-secondary {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 9999px;
+	border: 1px solid hsl(var(--border));
+	background-color: hsl(var(--card));
+	padding: .875rem 1.75rem;
+	font-weight: 500;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: hsl(var(--foreground));
+	cursor: pointer;
+	transition: all .3s cubic-bezier(.4, 0, .2, 1);
+
+	&:hover {
+		transform: translateY(-.125rem);
+		border-color: hsl(var(--primary) / .4);
+		color: hsl(var(--foreground));
+	}
+
+	svg {
+		flex-shrink: 0;
+	}
+}
+
+.card-elegant {
+	border-radius: 1rem;
+	border: 1px solid hsl(var(--border) / .7);
+	background-color: hsl(var(--card));
+	padding: 2rem;
+	box-shadow: var(--shadow-card);
+	transition: all .3s cubic-bezier(.4, 0, .2, 1);
+
+	&:hover {
+		border-color: hsl(var(--primary) / .25);
+		box-shadow: var(--shadow-elegant);
+	}
+}
+
+.pill {
+	display: inline-flex;
+	align-items: center;
+	gap: .5rem;
+	border-radius: 9999px;
+	border: 1px solid hsl(var(--border));
+	background-color: hsl(var(--card) / .7);
+	padding: .375rem 1rem;
+	font-size: .75rem;
+	line-height: 1rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: .18em;
+	color: hsl(var(--muted-foreground));
+	-webkit-backdrop-filter: blur(8px);
+	backdrop-filter: blur(8px);
+}
+
+.eyebrow {
+	font-size: .75rem;
+	line-height: 1rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: .22em;
+	color: hsl(var(--primary));
+}
+
+.gradient-text {
+	background-image: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)));
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+
+.bg-grid-pattern {
+	background-image: linear-gradient(hsl(var(--border)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px);
+	background-size: 64px 64px;
+}
+
+.bg-dot-pattern {
+	background-image: radial-gradient(circle at 1px 1px, hsl(var(--border)) 1px, transparent 0);
+	background-size: 22px 22px;
+}
+
+.fade-in {
+	transform: translateY(2rem);
+	opacity: 0;
+	transition: all .7s cubic-bezier(.4, 0, .2, 1);
+
+	&.visible {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.marquee-track {
+	animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+	0% {
+		transform: translate(0);
+	}
+
+	to {
+		transform: translate(-50%);
+	}
+}

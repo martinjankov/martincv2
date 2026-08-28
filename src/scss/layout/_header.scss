@@ -1,46 +1,127 @@
 @use '../abstracts/variables';
 
-// Structural skeleton — visual design comes with the new designs.
+// Floating pill header — fixed, translucent, blurred.
 .site-header {
-	position: sticky;
+	position: fixed;
 	top: 0;
-	z-index: 100;
-	background: var(--wp--preset--color--white);
-	transition: box-shadow 0.2s ease;
+	left: 0;
+	width: 100%;
+	z-index: 50;
+	padding: 1rem 1rem 0;
+}
 
-	&--scrolled {
-		box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-	}
+.site-header__pill {
+	max-width: variables.$container-6xl;
+	margin: 0 auto;
+	border-radius: 9999px;
+	border: 1px solid hsl(var(--border));
+	background-color: hsl(var(--background) / .8);
+	-webkit-backdrop-filter: blur(24px);
+	backdrop-filter: blur(24px);
+	box-shadow: var(--shadow-card);
+	transition: all .3s cubic-bezier(.4, 0, .2, 1);
+}
+
+.site-header--scrolled .site-header__pill {
+	box-shadow: var(--shadow-elegant);
 }
 
 .header-inner {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: 24px;
-	width: 100%;
-	max-width: variables.$martincv-container-width;
-	margin: 0 auto;
-	padding: 16px;
+	height: 3.5rem;
+	padding-left: 1.25rem;
+	padding-right: .5rem;
 
-	@media (min-width: variables.$breakpoints--tablet) {
-		padding: 16px 32px;
+	@media (min-width: 640px) {
+		padding-left: 1.5rem;
+		padding-right: .75rem;
 	}
 }
 
 .header-logo {
 	display: flex;
 	align-items: center;
+	flex-shrink: 0;
 
 	img {
-		max-height: 48px;
+		max-height: 2.5rem;
 		width: auto;
 	}
 
-	.site-name {
-		font-size: 1.25rem;
-		font-weight: 700;
-		color: var(--wp--preset--color--dark);
+	&__link {
+		display: flex;
+		align-items: center;
+		gap: .625rem;
 		text-decoration: none;
+	}
+
+	&__mark {
+		display: grid;
+		place-items: center;
+		height: 2rem;
+		width: 2rem;
+		border-radius: .5rem;
+		background-color: hsl(var(--primary));
+		font-size: .875rem;
+		font-weight: 700;
+		color: hsl(var(--primary-foreground));
+	}
+
+	&__name {
+		font-size: 1rem;
+		font-weight: 600;
+		letter-spacing: -.025em;
+		color: hsl(var(--foreground));
+	}
+}
+
+.header-actions {
+	display: none;
+	align-items: center;
+	gap: .5rem;
+
+	@media (min-width: variables.$breakpoints--small-desktop) {
+		display: flex;
+	}
+}
+
+.header-resume {
+	display: flex;
+	align-items: center;
+	gap: .5rem;
+	border-radius: 9999px;
+	padding: .5rem .875rem;
+	font-size: .875rem;
+	font-weight: 500;
+	color: hsl(var(--muted-foreground));
+	text-decoration: none;
+	transition: color .2s cubic-bezier(.4, 0, .2, 1);
+
+	&:hover {
+		color: hsl(var(--foreground));
+	}
+
+	svg {
+		flex-shrink: 0;
+	}
+}
+
+.header-cta {
+	display: inline-flex;
+	align-items: center;
+	border-radius: 9999px;
+	background-color: hsl(var(--primary));
+	padding: .625rem 1.25rem;
+	font-size: .875rem;
+	font-weight: 600;
+	color: hsl(var(--primary-foreground));
+	text-decoration: none;
+	transition: all .3s cubic-bezier(.4, 0, .2, 1);
+
+	&:hover {
+		box-shadow: var(--shadow-glow);
+		color: hsl(var(--primary-foreground));
 	}
 }

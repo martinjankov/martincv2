@@ -3,34 +3,47 @@
 .header-menu {
 	display: flex;
 	align-items: center;
-	gap: 32px;
+	gap: .25rem;
 	list-style: none;
 	margin: 0;
 	padding: 0;
 
 	a {
-		color: var(--wp--preset--color--dark);
-		text-decoration: none;
+		display: inline-block;
+		border-radius: 9999px;
+		padding: .5rem .875rem;
+		font-size: .875rem;
 		font-weight: 500;
+		color: hsl(var(--muted-foreground));
+		text-decoration: none;
+		transition: color .2s cubic-bezier(.4, 0, .2, 1), background-color .2s cubic-bezier(.4, 0, .2, 1);
 
 		&:hover {
-			color: var(--wp--preset--color--primary);
+			background-color: hsl(var(--muted) / .6);
+			color: hsl(var(--foreground));
 		}
 	}
 
 	.current-menu-item > a {
-		color: var(--wp--preset--color--primary);
+		color: hsl(var(--foreground));
 	}
 
 	.sub-menu {
 		display: none;
 		position: absolute;
+		min-width: 12rem;
 		list-style: none;
-		margin: 0;
-		padding: 12px;
-		background: var(--wp--preset--color--white);
-		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-		border-radius: 8px;
+		margin: .5rem 0 0;
+		padding: .5rem;
+		background: hsl(var(--card));
+		border: 1px solid hsl(var(--border));
+		border-radius: var(--radius);
+		box-shadow: var(--shadow-elegant);
+
+		a {
+			display: block;
+			border-radius: calc(var(--radius) - 4px);
+		}
 	}
 
 	li {

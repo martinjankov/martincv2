@@ -1,0 +1,39 @@
+// Design tokens — raw HSL channels, used as hsl(var(--primary)) / hsl(var(--primary) / .3).
+// Mirrors the reference design so section CSS can be ported 1:1.
+:root {
+	--background: 210 20% 98%;
+	--foreground: 215 25% 15%;
+
+	--card: 0 0% 100%;
+	--card-foreground: 215 25% 15%;
+
+	--primary: 210 100% 35%;
+	--primary-foreground: 0 0% 98%;
+	--primary-glow: 210 100% 45%;
+
+	--secondary: 210 40% 85%;
+	--secondary-foreground: 210 60% 15%;
+
+	--muted: 210 30% 90%;
+	--muted-foreground: 210 40% 35%;
+
+	--accent: 210 100% 25%;
+	--accent-foreground: 0 0% 98%;
+
+	--border: 215 20% 90%;
+	--input: 215 20% 92%;
+	--ring: 215 85% 35%;
+
+	--radius: .75rem;
+
+	--gradient-hero: linear-gradient(135deg, hsl(210 100% 30%), hsl(210 100% 40%));
+	--gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 40% 95%));
+	--gradient-subtle: linear-gradient(180deg, hsl(210 40% 95%), hsl(210 30% 92%));
+
+	--shadow-elegant: 0 10px 40px -15px hsl(210 60% 10% / .25);
+	--shadow-card: 0 4px 20px -2px hsl(210 60% 10% / .15);
+	--shadow-glow: 0 0 30px hsl(210 100% 35% / .3);
+
+	--transition-smooth: all .3s cubic-bezier(.4, 0, .2, 1);
+	--transition-bounce: all .4s cubic-bezier(.175, .885, .32, 1.275);
+}

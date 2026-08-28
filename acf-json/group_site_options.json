@@ -3,6 +3,37 @@
 	"title": "Site Options",
 	"fields": [
 		{
+			"key": "field_site_options_header_tab",
+			"label": "Header",
+			"name": "",
+			"type": "tab",
+			"placement": "top"
+		},
+		{
+			"key": "field_site_options_header_cta_label",
+			"label": "Header CTA Label",
+			"name": "header_cta_label",
+			"type": "text",
+			"placeholder": "Let's Talk"
+		},
+		{
+			"key": "field_site_options_header_cta_link",
+			"label": "Header CTA Link",
+			"name": "header_cta_link",
+			"type": "text",
+			"placeholder": "#contact",
+			"instructions": "URL or anchor (e.g. #contact)."
+		},
+		{
+			"key": "field_site_options_resume_file",
+			"label": "Resume File",
+			"name": "resume_file",
+			"type": "file",
+			"return_format": "url",
+			"library": "all",
+			"instructions": "The Resume button is hidden when empty."
+		},
+		{
 			"key": "field_site_options_contact_tab",
 			"label": "Contact Info",
 			"name": "",
@@ -30,11 +61,41 @@
 			"placeholder": "City, Country"
 		},
 		{
+			"key": "field_site_options_codeable_url",
+			"label": "Codeable Profile URL",
+			"name": "codeable_url",
+			"type": "url"
+		},
+		{
+			"key": "field_site_options_consultation_url",
+			"label": "Consultation Booking URL",
+			"name": "consultation_url",
+			"type": "url"
+		},
+		{
 			"key": "field_site_options_social_tab",
 			"label": "Social",
 			"name": "",
 			"type": "tab",
 			"placement": "top"
+		},
+		{
+			"key": "field_site_options_linkedin_url",
+			"label": "LinkedIn URL",
+			"name": "linkedin_url",
+			"type": "url"
+		},
+		{
+			"key": "field_site_options_github_url",
+			"label": "GitHub URL",
+			"name": "github_url",
+			"type": "url"
+		},
+		{
+			"key": "field_site_options_x_url",
+			"label": "X (Twitter) URL",
+			"name": "x_url",
+			"type": "url"
 		},
 		{
 			"key": "field_site_options_facebook_url",
@@ -46,12 +107,6 @@
 			"key": "field_site_options_instagram_url",
 			"label": "Instagram URL",
 			"name": "instagram_url",
-			"type": "url"
-		},
-		{
-			"key": "field_site_options_linkedin_url",
-			"label": "LinkedIn URL",
-			"name": "linkedin_url",
 			"type": "url"
 		},
 		{
@@ -75,7 +130,7 @@
 			"return_format": "url",
 			"library": "all",
 			"preview_size": "medium",
-			"instructions": "Optional. Falls back to the site custom logo when empty."
+			"instructions": "Optional. The footer shows the gradient site name when empty."
 		},
 		{
 			"key": "field_site_options_footer_about",
@@ -102,5 +157,5 @@
 	"instruction_placement": "label",
 	"active": true,
 	"show_in_rest": 0,
-	"modified": 1756339200
+	"modified": 1756425600
 }

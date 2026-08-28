@@ -1,4 +1,6 @@
 @use './base/reset';
+@use './base/tokens';
+@use './base/components';
 @use './abstracts/mixins';
 @use './abstracts/variables';
 @use './layout/header';
@@ -7,27 +9,82 @@
 @use './layout/mobile-drawer';
 @use './layout/footer';
 
-.martincv-container {
-	width: 100%;
-	max-width: variables.$martincv-container-width;
-	margin: 0 auto;
-	padding-left: 16px;
-	padding-right: 16px;
-
-	@media (min-width: variables.$breakpoints--tablet) {
-		padding-left: 32px;
-		padding-right: 32px;
-	}
-
-	@media (min-width: variables.$breakpoints--desktop) {
-		padding-left: 1rem;
-		padding-right: 1rem;
-	}
+html {
+	scroll-behavior: smooth;
 }
 
 body {
-	background-color: var(--wp--preset--color--white);
+	background-color: hsl(var(--background));
+	color: hsl(var(--foreground));
+	font-family: variables.$font-sans;
+	font-size: 16px;
+	line-height: 1.5;
+}
 
+h1 {
+	font-size: 3rem;
+	line-height: 1;
+	font-weight: 700;
+	letter-spacing: -.03em;
+
+	@media (min-width: variables.$breakpoints--tablet) {
+		font-size: 4.5rem;
+		line-height: 1;
+	}
+}
+
+h2 {
+	font-size: 1.875rem;
+	line-height: 2.25rem;
+	font-weight: 600;
+	letter-spacing: -.02em;
+
+	@media (min-width: variables.$breakpoints--tablet) {
+		font-size: 3rem;
+		line-height: 1;
+	}
+}
+
+h3 {
+	font-size: 1.25rem;
+	line-height: 1.75rem;
+	font-weight: 600;
+	letter-spacing: -.01em;
+
+	@media (min-width: variables.$breakpoints--tablet) {
+		font-size: 1.5rem;
+		line-height: 2rem;
+	}
+}
+
+.martincv-container {
+	width: 100%;
+	max-width: variables.$container-6xl;
+	margin: 0 auto;
+	padding-left: 1rem;
+	padding-right: 1rem;
+
+	@media (min-width: 640px) {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+	}
+
+	@media (min-width: variables.$breakpoints--small-desktop) {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+	&--wide {
+		max-width: variables.$container-7xl;
+	}
+}
+
+// Generic pages: keep content clear of the fixed floating header.
+.wp-page-main {
+	padding-top: 7rem;
+}
+
+body {
 	// Flex-based WordPress block alignments
 	.aligncenter {
 		display: flex;
@@ -57,7 +114,7 @@ body {
 	.alignwide {
 		display: flex;
 		width: 100vw;
-		max-width: 1200px;
+		max-width: variables.$container-7xl;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -98,27 +155,39 @@ img {
 }
 
 .error-404 {
-	padding: 96px 0;
+	padding: 10rem 0 6rem;
 	text-align: center;
 
 	&__code {
 		font-size: 6rem;
 		font-weight: 800;
 		margin: 0;
-		color: var(--wp--preset--color--primary);
+		color: hsl(var(--primary));
 	}
 
 	&__title {
-		margin: 8px 0 16px;
+		margin: .5rem 0 1rem;
+	}
+
+	&__desc {
+		color: hsl(var(--muted-foreground));
 	}
 
 	&__btn {
-		display: inline-block;
-		margin-top: 24px;
-		padding: 12px 28px;
-		background: var(--wp--preset--color--primary);
-		color: var(--wp--preset--color--white);
-		border-radius: 8px;
+		display: inline-flex;
+		margin-top: 1.5rem;
+		padding: .875rem 1.75rem;
+		background: hsl(var(--primary));
+		color: hsl(var(--primary-foreground));
+		border-radius: 9999px;
+		font-weight: 600;
 		text-decoration: none;
+		box-shadow: var(--shadow-card);
+		transition: var(--transition-smooth);
+
+		&:hover {
+			transform: translateY(-.125rem);
+			box-shadow: var(--shadow-glow);
+		}
 	}
 }
