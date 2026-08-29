@@ -528,3 +528,30 @@
 		color: hsl(var(--muted-foreground));
 	}
 }
+
+// Wide/full Gutenberg alignments cannot bleed outside the article card —
+// they fill the card's width instead, and block layouts (media-text grid,
+// columns flex) are restored after the global .alignfull display: flex.
+.single-post__content {
+	.alignwide,
+	.alignfull {
+		display: block;
+		width: 100%;
+		max-width: 100%;
+		margin: 0 0 1.5rem;
+	}
+
+	.wp-block-media-text {
+		&.alignwide,
+		&.alignfull {
+			display: grid;
+		}
+	}
+
+	.wp-block-columns {
+		&.alignwide,
+		&.alignfull {
+			display: flex;
+		}
+	}
+}
