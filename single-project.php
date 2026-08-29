@@ -72,7 +72,12 @@ while ( have_posts() ) :
 								<p class="single-project__intro"><?php echo esc_html( (string) get_field( 'short_description' ) ); ?></p>
 							<?php endif; ?>
 							<?php if ( get_field( 'project_short_description' ) ) : ?>
-								<div class="single-project__about"><?php echo wp_kses_post( (string) get_field( 'project_short_description' ) ); ?></div>
+								<div class="single-project__about">
+									<div class="single-project__rich single-project__about-content" data-about-content><?php echo wp_kses_post( (string) get_field( 'project_short_description' ) ); ?></div>
+									<button type="button" class="single-project__about-more" data-about-open hidden>
+										<?php esc_html_e( '… Read more', 'martincv' ); ?>
+									</button>
+								</div>
 							<?php endif; ?>
 							<?php if ( get_field( 'project_link' ) ) : ?>
 								<a href="<?php echo esc_url( (string) get_field( 'project_link' ) ); ?>" class="btn-hero single-project__live" target="_blank" rel="noopener noreferrer">
@@ -88,6 +93,19 @@ while ( have_posts() ) :
 						<?php endif; ?>
 					</div>
 				</header>
+
+				<?php if ( get_field( 'project_short_description' ) ) : ?>
+					<div class="single-project__about-modal" data-about-modal hidden>
+						<div class="single-project__about-modal-backdrop" data-about-close></div>
+						<div class="single-project__about-modal-card" role="dialog" aria-modal="true" aria-label="<?php the_title_attribute(); ?>">
+							<button type="button" class="single-project__about-modal-close" data-about-close aria-label="<?php esc_attr_e( 'Close', 'martincv' ); ?>">
+								<?php Utility::icon( 'x', 18 ); ?>
+							</button>
+							<h2 class="single-project__about-modal-title"><?php the_title(); ?></h2>
+							<div class="single-project__rich"><?php echo wp_kses_post( (string) get_field( 'project_short_description' ) ); ?></div>
+						</div>
+					</div>
+				<?php endif; ?>
 
 				<?php if ( get_field( 'role' ) || get_field( 'timeline' ) || get_field( 'services_provided' ) ) : ?>
 					<div class="card-elegant single-project__facts">
