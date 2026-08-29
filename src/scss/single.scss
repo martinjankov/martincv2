@@ -3,9 +3,9 @@
 .single-post {
 	padding: 1rem 0 6rem;
 
-	// Reference article layout uses max-w-3xl.
+	// Slightly wider than the reference max-w-3xl — matches the case-study width.
 	&__container {
-		max-width: 48rem;
+		max-width: 56rem;
 	}
 
 	&__back {
