@@ -16,6 +16,7 @@ interface SliderDefinition {
 const SLIDERS: SliderDefinition[] = [
 	{ scroller: ".services-block__grid", slide: ".services-block__card" },
 	{ scroller: ".testimonials-block__viewport", slide: ".testimonials-block__slide" },
+	{ scroller: ".single-project__gallery", slide: ".single-project__gallery-item" },
 ];
 
 class MobileSlider {

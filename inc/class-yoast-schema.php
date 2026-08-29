@@ -65,6 +65,11 @@ class Yoast_Schema {
 
 		if ( is_singular( 'service' ) ) {
 			$graph[] = $this->get_single_service_schema();
+
+			$service_faq = $this->get_service_faq_schema();
+			if ( $service_faq ) {
+				$graph[] = $service_faq;
+			}
 		}
 
 		if ( is_singular( 'project' ) ) {
@@ -332,6 +337,44 @@ class Yoast_Schema {
 		}
 
 		return $schema;
+	}
+
+	/**
+	 * FAQPage schema built from the "Common questions" repeater on a service.
+	 *
+	 * @return array|null
+	 */
+	private function get_service_faq_schema(): ?array {
+		$faqs = \MartinCV\Utility::rows( get_field( 'faqs' ) );
+
+		$entities = array();
+		foreach ( $faqs as $faq ) {
+			$question = trim( (string) ( $faq['question'] ?? '' ) );
+			$answer   = trim( (string) ( $faq['answer'] ?? '' ) );
+
+			if ( '' === $question || '' === $answer ) {
+				continue;
+			}
+
+			$entities[] = array(
+				'@type'          => 'Question',
+				'name'           => $question,
+				'acceptedAnswer' => array(
+					'@type' => 'Answer',
+					'text'  => $answer,
+				),
+			);
+		}
+
+		if ( ! $entities ) {
+			return null;
+		}
+
+		return array(
+			'@type'      => 'FAQPage',
+			'@id'        => get_permalink() . '#faq',
+			'mainEntity' => $entities,
+		);
 	}
 
 	/**

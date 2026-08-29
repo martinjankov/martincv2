@@ -66,9 +66,24 @@ while ( have_posts() ) :
 						<?php endif; ?>
 					</div>
 					<h1 class="single-project__title"><?php the_title(); ?></h1>
-					<?php if ( get_field( 'short_description' ) ) : ?>
-						<p class="single-project__intro"><?php echo esc_html( (string) get_field( 'short_description' ) ); ?></p>
-					<?php endif; ?>
+					<div class="single-project__header-row<?php echo has_post_thumbnail() ? ' single-project__header-row--has-thumb' : ''; ?>">
+						<div class="single-project__header-main">
+							<?php if ( get_field( 'short_description' ) ) : ?>
+								<p class="single-project__intro"><?php echo esc_html( (string) get_field( 'short_description' ) ); ?></p>
+							<?php endif; ?>
+							<?php if ( get_field( 'project_link' ) ) : ?>
+								<a href="<?php echo esc_url( (string) get_field( 'project_link' ) ); ?>" class="btn-hero single-project__live" target="_blank" rel="noopener noreferrer">
+									<?php esc_html_e( 'View Live Project', 'martincv' ); ?>
+									<?php Utility::icon( 'external-link', 16 ); ?>
+								</a>
+							<?php endif; ?>
+						</div>
+						<?php if ( has_post_thumbnail() ) : ?>
+							<div class="single-project__thumb">
+								<?php the_post_thumbnail( 'medium_large' ); ?>
+							</div>
+						<?php endif; ?>
+					</div>
 				</header>
 
 				<?php if ( get_field( 'role' ) || get_field( 'timeline' ) || get_field( 'services_provided' ) ) : ?>
@@ -115,6 +130,25 @@ while ( have_posts() ) :
 										</div>
 									</div>
 								</div>
+							<?php endforeach; ?>
+						</div>
+					</section>
+				<?php endif; ?>
+
+				<?php $martincv_gallery = \MartinCV\Utility::rows( get_field( 'project_gallery' ) ); ?>
+				<?php if ( $martincv_gallery ) : ?>
+					<section class="single-project__section">
+						<h2 class="single-project__section-title"><?php esc_html_e( 'Gallery', 'martincv' ); ?></h2>
+						<div class="single-project__gallery">
+							<?php foreach ( $martincv_gallery as $martincv_image_id ) : ?>
+								<a
+									href="<?php echo esc_url( (string) wp_get_attachment_image_url( (int) $martincv_image_id, 'full' ) ); ?>"
+									class="single-project__gallery-item"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<?php echo wp_get_attachment_image( (int) $martincv_image_id, 'large' ); ?>
+								</a>
 							<?php endforeach; ?>
 						</div>
 					</section>

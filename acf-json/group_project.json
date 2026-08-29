@@ -34,6 +34,14 @@
 			"instructions": "Shown on the archive card and below the title on the case study."
 		},
 		{
+			"key": "field_project_link",
+			"label": "Live Project URL",
+			"name": "project_link",
+			"type": "url",
+			"instructions": "Shown as the \"View Live Project\" button on the case study.",
+			"placeholder": "https://"
+		},
+		{
 			"key": "field_project_tech",
 			"label": "Tech Stack",
 			"name": "tech",
@@ -118,6 +126,15 @@
 					"new_lines": ""
 				}
 			]
+		},
+		{
+			"key": "field_project_gallery",
+			"label": "Gallery",
+			"name": "project_gallery",
+			"type": "gallery",
+			"return_format": "id",
+			"preview_size": "medium",
+			"instructions": "Optional screenshots shown in a gallery section on the case study."
 		},
 		{
 			"key": "field_project_quote",
