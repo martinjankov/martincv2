@@ -168,6 +168,15 @@ class Site_Options {
 	}
 
 	/**
+	 * Get WordPress.org profile URL.
+	 *
+	 * @return string
+	 */
+	public static function get_wordpress_org(): string {
+		return (string) get_field( 'wordpress_org_url', 'option' );
+	}
+
+	/**
 	 * Get X (Twitter) URL.
 	 *
 	 * @return string
