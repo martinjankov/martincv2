@@ -97,6 +97,31 @@
 		text-decoration: none;
 	}
 
+	// Richer description below the intro line.
+	&__about {
+		margin-top: 1.25rem;
+		font-size: 1rem;
+		line-height: 1.625;
+		color: hsl(var(--muted-foreground));
+
+		p {
+			margin: 0 0 .75rem;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		strong {
+			font-weight: 600;
+			color: hsl(var(--foreground));
+		}
+
+		a {
+			color: hsl(var(--primary));
+		}
+	}
+
 	&__gallery {
 		display: grid;
 		gap: 1rem;

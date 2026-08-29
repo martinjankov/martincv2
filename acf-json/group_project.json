@@ -34,6 +34,16 @@
 			"instructions": "Shown on the archive card and below the title on the case study."
 		},
 		{
+			"key": "field_project_short_description",
+			"label": "Project Short Description",
+			"name": "project_short_description",
+			"type": "wysiwyg",
+			"tabs": "visual",
+			"toolbar": "basic",
+			"media_upload": 0,
+			"instructions": "Richer description shown in the case-study header, under the intro line."
+		},
+		{
 			"key": "field_project_link",
 			"label": "Live Project URL",
 			"name": "project_link",

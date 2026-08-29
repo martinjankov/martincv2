@@ -71,6 +71,9 @@ while ( have_posts() ) :
 							<?php if ( get_field( 'short_description' ) ) : ?>
 								<p class="single-project__intro"><?php echo esc_html( (string) get_field( 'short_description' ) ); ?></p>
 							<?php endif; ?>
+							<?php if ( get_field( 'project_short_description' ) ) : ?>
+								<div class="single-project__about"><?php echo wp_kses_post( (string) get_field( 'project_short_description' ) ); ?></div>
+							<?php endif; ?>
 							<?php if ( get_field( 'project_link' ) ) : ?>
 								<a href="<?php echo esc_url( (string) get_field( 'project_link' ) ); ?>" class="btn-hero single-project__live" target="_blank" rel="noopener noreferrer">
 									<?php esc_html_e( 'View Live Project', 'martincv' ); ?>
