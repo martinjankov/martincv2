@@ -74,6 +74,11 @@ class Yoast_Schema {
 
 		if ( is_singular( 'project' ) ) {
 			$graph[] = $this->get_case_study_schema();
+
+			$software = $this->get_software_schema();
+			if ( $software ) {
+				$graph[] = $software;
+			}
 		}
 
 		// FAQPage for any page containing the FAQ block (home included).
@@ -334,6 +339,48 @@ class Yoast_Schema {
 				'@type' => 'Organization',
 				'name'  => $client,
 			);
+		}
+
+		return $schema;
+	}
+
+	/**
+	 * SoftwareApplication schema for projects flagged as WordPress.org plugins.
+	 *
+	 * @return array|null
+	 */
+	private function get_software_schema(): ?array {
+		if ( ! get_field( 'is_plugin' ) ) {
+			return null;
+		}
+
+		$schema = array(
+			'@type'               => 'SoftwareApplication',
+			'@id'                 => get_permalink() . '#software',
+			'name'                => get_the_title(),
+			'description'         => wp_strip_all_tags( (string) get_field( 'short_description' ) ),
+			'url'                 => get_permalink(),
+			'applicationCategory' => 'Plugin',
+			'operatingSystem'     => 'WordPress',
+			'author'              => array( '@id' => home_url( '/#person' ) ),
+			'publisher'           => array( '@id' => home_url( '/#organization' ) ),
+			// Repo plugins are free — Google requires offers or ratings for
+			// SoftwareApplication rich results.
+			'offers'              => array(
+				'@type'         => 'Offer',
+				'price'         => '0',
+				'priceCurrency' => 'USD',
+			),
+		);
+
+		$link = (string) get_field( 'project_link' );
+		if ( $link ) {
+			$schema['downloadUrl'] = $link;
+			$schema['installUrl']  = $link;
+		}
+
+		if ( has_post_thumbnail() ) {
+			$schema['image'] = (string) get_the_post_thumbnail_url( null, 'large' );
 		}
 
 		return $schema;

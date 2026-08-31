@@ -52,6 +52,15 @@
 			"placeholder": "https://"
 		},
 		{
+			"key": "field_project_is_plugin",
+			"label": "WordPress.org Plugin",
+			"name": "is_plugin",
+			"type": "true_false",
+			"ui": 1,
+			"default_value": 0,
+			"instructions": "Enable for plugins published on the WordPress.org repo — adds SoftwareApplication schema (free offer, WordPress platform), using the Live Project URL as the download link."
+		},
+		{
 			"key": "field_project_tech",
 			"label": "Tech Stack",
 			"name": "tech",
