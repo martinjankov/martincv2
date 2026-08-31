@@ -22,6 +22,13 @@ const ICONS = {
 
 /** Largest candidate from srcset (or the plain src), skipping placeholders. */
 function fullSizeSrc(img: HTMLImageElement): string {
+	// An anchor wrapping the image that points at a media file wins —
+	// that is the exact full-size original (gallery items, linked images).
+	const link = img.closest("a")?.getAttribute("href") || "";
+	if ( /\.(png|jpe?g|gif|webp|avif)(\?|$)/i.test(link) ) {
+		return link;
+	}
+
 	const srcset = img.getAttribute("srcset") || img.getAttribute("data-lazy-srcset") || "";
 	let best = "";
 	let bestWidth = 0;
@@ -179,31 +186,40 @@ function collectGroups(root: HTMLElement): HTMLImageElement[][] {
 	return clusters;
 }
 
+let sharedLightbox: Lightbox | null = null;
+
+function getLightbox(): Lightbox {
+	if (!sharedLightbox) {
+		sharedLightbox = new Lightbox();
+	}
+	return sharedLightbox;
+}
+
+/** Wire a set of images as one slidable lightbox group. */
+export function wireLightboxGroup(imgs: HTMLImageElement[]): void {
+	if (!imgs.length) {
+		return;
+	}
+
+	const group: LightboxImage[] = imgs.map((img) => ({
+		src: fullSizeSrc(img),
+		caption: captionFor(img),
+	}));
+
+	imgs.forEach((img, i) => {
+		img.classList.add("mcv-zoomable");
+		img.addEventListener("click", (e: Event) => {
+			e.preventDefault();
+			getLightbox().open(group, i);
+		});
+	});
+}
+
 export function initializeLightbox(rootSelector: string): void {
 	const root = document.querySelector<HTMLElement>(rootSelector);
 	if (!root) {
 		return;
 	}
 
-	const clusters = collectGroups(root);
-	if (!clusters.length) {
-		return;
-	}
-
-	const lightbox = new Lightbox();
-
-	clusters.forEach((imgs) => {
-		const group: LightboxImage[] = imgs.map((img) => ({
-			src: fullSizeSrc(img),
-			caption: captionFor(img),
-		}));
-
-		imgs.forEach((img, i) => {
-			img.classList.add("mcv-zoomable");
-			img.addEventListener("click", (e: Event) => {
-				e.preventDefault();
-				lightbox.open(group, i);
-			});
-		});
-	});
+	collectGroups(root).forEach(wireLightboxGroup);
 }
